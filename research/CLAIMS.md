@@ -92,9 +92,11 @@ $a=(x+y)/\sqrt2$, $b=(x-y)/\sqrt2$. This pair has unit cost, zero slope, and
 phase $r$. Scale to the target and reverse one force for a negative target.
 These are simultaneous coherent forces, not an average over protocols.
 
-The lower bound and attainment are proved in
-[the consolidated theorem, §4](../archive/consolidation-2026-10-09/THEOREM.md)
-and [the finite-space proof](../archive/consolidation-2026-10-09/prior/THEOREM.md).
+The lower bound, unique centering, and coherent attaining controls are proved
+in [the self-contained theory](THEORY.md). Infeasibility has the exact
+characterization $r=0$ if and only if $K=cD$ for some real $c$; this includes
+every one-dimensional force space. The nominal target is already infeasible
+when $K=0$.
 The scalar optimization is a structured equality-S-lemma consequence, not a
 new general optimization theorem.
 
@@ -167,22 +169,40 @@ positive coefficient and C1. In conjugation-invariant spaces angle robustness
 is free **after** displacement constraints; imposing those constraints can
 itself raise the cost.
 
-## C4. A cost certificate below the robust threshold
+## C4. Exact sensitivity at every force budget
 
-Every pair in $V$ satisfies
+Fix a nominally feasible space and put $t=|\Theta_0|$ and
+$\rho(\zeta)=\|K-\zeta D\|$. For every feasible budget
+$B\geq t/\|K\|$, the minimum angle sensitivity is
 
-$$|\Theta|\le rE+|\zeta_*|\,|\chi|.$$
+$$s(B):=\min_{\Theta=\Theta_0,\ E\leq B}|\chi|
+=\max\left\{0,\sup_{\zeta\ne0}
+\frac{t-B\rho(\zeta)}{|\zeta|}\right\}.$$
 
-When $\zeta_*\ne0$, a nominally feasible budget below $E_{\mathrm{angle}}$
-therefore forces a positive quadratic-infidelity coefficient of at least
+The minimum is attained by a single coherent pair of forces. Using $E=B$
+gives the same attainable phase/slope pairs as allowing $E\leq B$; this
+uses the complex control space and the joint numerical range of two block
+Hermitian matrices. It does not introduce randomized protocols.
 
-$$
-\frac45\left(\frac{[|\Theta_0|-rE]_+}{|\zeta_*|}\right)^2.
-$$
+For $r>0$, $s(B)=0$ precisely when $B\geq t/r$. For $K=cD\ne0$,
+robustness is infeasible and $s(B)=t/|c|$ at every feasible budget. The dual
+formula uses a supremum because a finite nonzero optimizing multiplier need
+not exist at the nominal-budget endpoint. The primal controls still attain
+the optimum there.
 
-This lower bound need not be attained. It is not the complete sensitivity-cost
-frontier or a finite-detuning guarantee. For $\zeta_*=0$, no cost gap exists
-and this division is unnecessary.
+The simpler certificate
+
+$$|\Theta|\leq rE+|\zeta_*|\,|\chi|$$
+
+is recovered by choosing the centered multiplier. It can be strictly weaker
+than the exact frontier. The [frontier proof](SENSITIVITY_FRONTIER.md) gives
+endpoint constructions and an exactly solved physical two-tone example.
+
+In a first-moment-zero space, the optimal quadratic thermal-infidelity
+coefficient is exactly $4s(B)^2/5$. In a general nominally closed space this
+quantity is a lower bound: displacement contributions must also be included,
+and their joint minimization is a different objective. These are local
+small-detuning coefficients for fixed controls, not finite-error guarantees.
 
 ## C5. A positive spectral band forces growing cost
 
@@ -205,16 +225,15 @@ The result is a same-model consequence of C1, with a complete
 [spectral proof and normalization](SPECTRAL_RESTRICTION.md). It establishes
 neither a sharp universal prefactor nor a device-power or finite-detuning law.
 
-## Evidence and remaining assessment
+## Attribution and evidence
 
-The archive contains twenty scientific check groups and explicit analytical
-proofs. Three supplemental exact symbolic groups check C5. The
-[separate proof review](PROOF_REVIEW.md) assesses the original derivations;
-the [source review](SOURCE_REVIEW.md) records the established ingredients and
-the limits of the literature comparison. Run receipts distinguish numerical
-assertions from exact reference-byte identity.
+The exact force-resource characterization uses established equality-S-lemma
+and numerical-range mathematics. Independent controls, quadrature gates,
+displacement moments, trajectory-overlap sensitivity, and the leading thermal
+fidelity expansion have direct precedents. The [matched comparison](RELATED_WORK.md)
+identifies those passages and states how the optimization tasks differ.
 
-The scoped candidate contribution is an attainable physical cost
-classification that separates restrictions of the control space from costs
-introduced by a particular construction. The present record establishes
-neither exhaustive novelty nor experimental significance beyond the model.
+The self-contained proofs and [analytical review](PROOF_REVIEW.md) support the
+claims. The twenty archived scientific groups and supplemental checks provide
+reproducible evidence for their stated identities and constructions. Verification
+receipts separately record assertion success and reference-byte identity.

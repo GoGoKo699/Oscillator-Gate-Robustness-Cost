@@ -1,57 +1,42 @@
 # Workspace
 
-This workspace belongs only to
+Work only in
 [`GoGoKo699/Oscillator-Gate-Robustness-Cost`](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost).
-The user has authorized modification and merge in this repository.
+The user has authorized repository modification and merge. Follow
+[the repository rules](AGENTS.md) and [current work order](work_orders/CURRENT.md).
 
-## Scientific position
+## Scientific account
 
-The [claims page](research/CLAIMS.md) is the current reading entry point. The
-recovered result gives an exact attainable integrated-force cost for static
-angle robustness in a fixed finite nominally closed space. Projection onto
-the first-moment kernel yields the minimum for quartic thermal average
-infidelity. Balanced phase extrema characterize zero extra angle cost.
+Start with [the claims](research/CLAIMS.md), then read the self-contained
+[theory and proofs](research/THEORY.md). The exact jointly attained force cost
+classifies static angle robustness in a prescribed finite space. The
+[sensitivity frontier](research/SENSITIVITY_FRONTIER.md) determines the optimal
+residual angle slope at every feasible budget. On the first-moment kernel,
+it also determines the minimum quadratic thermal-infidelity coefficient.
+
 The [spectral corollary](research/SPECTRAL_RESTRICTION.md) gives a positive-band
-lower bound and a four-tone family with unbounded angle-robustness overhead.
-The [control-access analysis](research/CONTROL_ACCESS.md) distinguishes a
-missing force direction from attenuation and derives the fixed-spin sideband
-mapping. Its QSCOUT audit does not establish a physically enforced one-sided
-space for that family.
+cost bound and a feasible four-tone family with unbounded overhead. The
+[control-access account](research/CONTROL_ACCESS.md) derives the sideband
+mapping and distinguishes missing directions from attenuation. Its QSCOUT
+sources do not establish a hard one-sided force restriction.
 
-The [proof review](research/PROOF_REVIEW.md) found no unresolved gap in these
-scoped claims. The [source review](research/SOURCE_REVIEW.md) confirms the
-established mathematical and physical ingredients and resolves the previous
-Bentley and Mostaan Ghalejough full-text access gaps for targeted passages.
-Neither review establishes
-exhaustive novelty, external peer approval, or device-level significance.
+Use [the matched comparison](research/RELATED_WORK.md) and
+[source passages](research/SOURCE_REVIEW.md) for attribution. In particular,
+the trajectory-overlap sensitivity and leading thermal fidelity expansion
+have direct prior literature. The equality S-lemma and numerical-range
+convexity are established mathematical ingredients. Keep the contribution
+focused on the scoped jointly attained resource characterization.
 
-The archived Fourier-matrix helper assumes distinct nonzero integer harmonics.
-All archived examples satisfy this. It is research code, not a validated API
-for arbitrary frequencies; validate that precondition before future reuse.
+## Verification and preservation
 
-## Repository position
+The immutable scientific archive contains 89 files anchored by
+`provenance/archive.json`. Current exposition and new checks live outside it.
+See [reproducibility](REPRODUCIBILITY.md) for pinned execution and receipt
+interpretation. Review and verify the actual PR head, inspect hosted results,
+merge with an expected-head guard, and separately verify merged main.
+GitHub PR and Actions records carry exact-commit completion evidence.
 
-The intact 89-file scientific package is under
-`archive/consolidation-2026-10-09/`. The unavailable later initialization tree
-is documented in [the recovery record](provenance/RECOVERY.md). Current wrapper
-code and exposition are reconstructed; archive byte identity is anchored by
-`provenance/archive.json`.
-
-Use [the verification instructions](REPRODUCIBILITY.md) and inspect each actual
-receipt. Scientific pass and canonical report byte identity are separate
-outcomes. A historical local pass does not establish current hosted success.
-
-## Continue here
-
-Read [the current work order](work_orders/CURRENT.md) before editing. The
-current bounded task is the physical-control audit, with no expansion of the
-physical model. The [author assessment](work_orders/PRL_ASSESSMENT.md) records
-its negative conclusion for the proposed QSCOUT justification. The existing
-theory can be developed as a focused manuscript; further PRL-directed physical
-claims require an independently motivated restriction.
-
-Preserve the archive and do not silently replace previous reports. Review and
-verify the actual proposed commit, merge with an expected-head guard, and
-check the merged main separately. GitHub PR and Actions records are the
-authoritative publication state; this page need not be rewritten after every
-commit merely to repeat its SHA.
+The archived Fourier helper assumes distinct nonzero integer harmonics over
+their common period. Every archived example meets that precondition; it is
+not a validated API for arbitrary frequencies. Do not alter its preserved
+source or historical tests to extend its use.

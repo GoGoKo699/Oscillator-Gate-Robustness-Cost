@@ -25,6 +25,13 @@ def passing_supplemental_report():
                        for identifier in verify.SUPPLEMENTAL_GROUPS]}
 
 
+def passing_frontier_report():
+    return {"schema_version": 1, "suite": "sensitivity_frontier", "status": "PASS",
+            "method": "exact_symbolic_algebra", "test_groups": 4,
+            "groups": [{"id": identifier, "status": "PASS", "identities": {"example": "0"}}
+                       for identifier in verify.FRONTIER_GROUPS]}
+
+
 class TemporaryRepository(unittest.TestCase):
     def setUp(self):
         # All fixtures stay in this authorized repository, including direct test runs.
@@ -198,12 +205,13 @@ class ExecutionTests(TemporaryRepository):
         sentinel = self.root / "existing.json"
         sentinel.write_bytes(b"preserve this report")
         protected_output = ROOT / "archive/supplemental-must-not-be-created.json"
-        for index, target in enumerate((sentinel, protected_output)):
-            with self.subTest(target=target):
-                result = verify.run_logged(
-                    [sys.executable, "-B", str(ROOT / "checks/check_spectral_cost.py"), "--output", str(target)],
-                    self.root / f"refusal-{index}.log", dict(os.environ), timeout=10)
-                self.assertEqual(result["returncode"], 2)
+        for script in ("check_spectral_cost.py", "check_sensitivity_frontier.py"):
+            for index, target in enumerate((sentinel, protected_output)):
+                with self.subTest(script=script, target=target):
+                    result = verify.run_logged(
+                        [sys.executable, "-B", str(ROOT / "checks" / script), "--output", str(target)],
+                        self.root / f"{script}-refusal-{index}.log", dict(os.environ), timeout=10)
+                    self.assertEqual(result["returncode"], 2)
         self.assertEqual(sentinel.read_bytes(), b"preserve this report")
         self.assertFalse(protected_output.exists())
 
@@ -233,6 +241,32 @@ class SupplementalResultTests(unittest.TestCase):
                 self.assertFalse(verify.supplemental_summary(report, returncode)["scientific_assertions_pass"])
 
 
+class FrontierResultTests(unittest.TestCase):
+    def test_complete_exact_frontier_report_is_accepted(self):
+        result = verify.frontier_summary(passing_frontier_report(), 0)
+        self.assertTrue(result["scientific_assertions_pass"])
+        self.assertTrue(result["report_valid"])
+        self.assertEqual(result["test_groups"], 4)
+
+    def test_missing_failed_or_incomplete_frontier_cannot_pass(self):
+        good = passing_frontier_report()
+        bad_group = copy.deepcopy(good)
+        bad_group["groups"][2]["status"] = "FAIL"
+        missing_identities = copy.deepcopy(good)
+        missing_identities["groups"][2]["identities"] = {}
+        duplicate = copy.deepcopy(good)
+        duplicate["groups"][2]["id"] = duplicate["groups"][0]["id"]
+        for report, returncode in ((None, 0), ({}, 0), (good, 1),
+                                   ({**good, "status": "FAIL"}, 0),
+                                   ({**good, "groups": good["groups"][:-1]}, 0),
+                                   ({**good, "test_groups": 3}, 0),
+                                   ({**good, "method": "numeric_sweep"}, 0),
+                                   (passing_supplemental_report(), 0),
+                                   (bad_group, 0), (missing_identities, 0), (duplicate, 0)):
+            with self.subTest(report=report, returncode=returncode):
+                self.assertFalse(verify.frontier_summary(report, returncode)["scientific_assertions_pass"])
+
+
 class ReportPolicyTests(unittest.TestCase):
     def setUp(self):
         self.record = {
@@ -246,6 +280,7 @@ class ReportPolicyTests(unittest.TestCase):
                                    "finite_numeric_differences_only": True,
                                    "numeric_difference_count": 2},
             "supplemental_scientific": verify.supplemental_summary(passing_supplemental_report(), 0),
+            "frontier_scientific": verify.frontier_summary(passing_frontier_report(), 0),
         }
 
     def test_numeric_report_differences_require_explicit_opt_in(self):
@@ -265,6 +300,9 @@ class ReportPolicyTests(unittest.TestCase):
             ("supplemental_scientific", "returncode", 1),
             ("supplemental_scientific", "scientific_assertions_pass", False),
             ("supplemental_scientific", "report_valid", False),
+            ("frontier_scientific", "returncode", 1),
+            ("frontier_scientific", "scientific_assertions_pass", False),
+            ("frontier_scientific", "report_valid", False),
         ]
         for section, field, value in failures:
             with self.subTest(section=section, field=field):
@@ -274,6 +312,13 @@ class ReportPolicyTests(unittest.TestCase):
 
     def test_missing_supplemental_cannot_be_waived_by_report_policy(self):
         del self.record["supplemental_scientific"]
+        self.assertFalse(verify.verification_passes(self.record, True))
+        self.record["scientific"].update(all_canonical_reports_byte_identical=True, wrapper_returncode=0)
+        self.record["report_comparisons"].update(all_byte_identical=True, numeric_difference_count=0)
+        self.assertFalse(verify.verification_passes(self.record, False))
+
+    def test_missing_frontier_cannot_be_waived_by_report_policy(self):
+        del self.record["frontier_scientific"]
         self.assertFalse(verify.verification_passes(self.record, True))
         self.record["scientific"].update(all_canonical_reports_byte_identical=True, wrapper_returncode=0)
         self.record["report_comparisons"].update(all_byte_identical=True, numeric_difference_count=0)

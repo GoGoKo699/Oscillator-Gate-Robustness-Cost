@@ -26,7 +26,7 @@ jobs:
           cache: pip
       - name: Install recorded scientific dependencies
         run: python -m pip install -r requirements.txt
-      - name: Verify archive and exact spectral identities; record historical report differences
+      - name: Verify archive and exact spectral/frontier identities; record report differences
         run: python scripts/verify.py --output-dir verification-results/ci --allow-report-differences
       - name: Preserve reports and logs even when verification fails
         if: always()

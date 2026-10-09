@@ -1,64 +1,74 @@
 # Oscillator-Gate-Robustness-Cost
 
-**When does first-order detuning robustness cost extra force?** For two qubits
-coupled through one ideal oscillator, this project gives the exact answer in a
-prescribed finite control space: angle robustness can be free, strictly costly,
-or infeasible. The optimum is attained by an explicit pair of independent
-forces. The resource is integrated squared effective force, with a fixed
-normalization and target angle.
+**When does detuning robustness cost extra force?** For two independently
+controlled qubits coupled through one ideal oscillator, the answer depends on
+the allowed force space. This project determines the exact minimum integrated
+squared force, constructs attaining controls, and classifies angle robustness
+as free, costly, or infeasible.
 
-For the phase matrix $K$ and positive displacement-overlap matrix $D$, let
+The comparison fixes a finite nominally closed complex force space, gate
+duration, force normalization, and nonzero unwrapped entangling angle
+$\Theta_0$. For its phase operator $K$ and positive trajectory-overlap operator
+$D$, define
 
-$$
-\lambda=\lVert K\rVert,\qquad
-r=\min_{\zeta\in\mathbb R}\lVert K-\zeta D\rVert.
-$$
+$$\lambda=\|K\|,\qquad
+\rho(\zeta)=\|K-\zeta D\|,\qquad r=\min_{\zeta\in\mathbb R}\rho(\zeta).$$
 
-The nominal and angle-robust minimum costs are
-$E_{\mathrm{nom}}=|\Theta_0|/\lambda$ and
-$E_{\mathrm{angle}}=|\Theta_0|/r$. Zero efficiency means the prescribed nonzero
-target is infeasible. Balanced extreme eigenvalues of $K$ characterize zero
-additional angle-robustness cost. The two preserved four-tone examples have
-cost factors **1** and **5.213046…**, under their stated matched constraints.
+The exact nominal and angle-robust costs are
 
-More generally, positive integer harmonics in a band $[a,b]$ over their common
-period, with zero first force moment, force a cost ratio of at least $(a+b)/(b-a)$.
-A four-tone family realizes unbounded overhead with the same growth order.
-The [spectral bound and proof](research/SPECTRAL_RESTRICTION.md) explain why
-the allowed controls can turn free robustness into a parametrically costly
-requirement.
+$$\boxed{E_{\mathrm{nom}}=\frac{|\Theta_0|}{\lambda},\qquad
+E_{\mathrm{angle}}=\frac{|\Theta_0|}{r}.}$$
 
-For a fixed thermal oscillator, eliminating both displacement derivatives and
-the angle derivative is necessary and sufficient for quartic small-detuning
-average infidelity. Projecting onto the first-moment kernel gives the exact
-minimum cost for that stronger task. It need not be free relative to the
-unconstrained nominal gate.
+A zero denominator means infeasibility. Balanced extreme eigenvalues of $K$
+characterize zero additional angle cost. Conjugation-invariant spaces satisfy
+this condition. Conversely, a narrow positive spectral band can force a large
+penalty: for positive integer harmonics over their common period, with zero
+first force moment and frequencies in $[a,b]$,
+
+$$\frac{E_{\mathrm{angle}}}{E_{\mathrm{nom}}}\geq\frac{a+b}{b-a}.$$
+
+A four-tone family has feasible robust gates at every finite band offset and
+unbounded cost ratio as that offset increases. The nominal cost also increases;
+each ratio compares the two optima in the same allowed space.
+
+The full tradeoff is attainable too. For a feasible force budget
+$B\geq E_{\mathrm{nom}}$, the smallest absolute static angle slope is
+
+$$\boxed{s(B)=\max\left\{0,\sup_{\zeta\ne0}
+\frac{|\Theta_0|-B\rho(\zeta)}{|\zeta|}\right\}.}$$
+
+In a space with zero first force moment, the minimum leading thermal
+average-infidelity coefficient is exactly $4s(B)^2/5$. Projecting an original
+space onto that moment kernel gives the exact cost of quartic-or-better
+small-detuning infidelity.
 
 ## Read the result
 
-| Question | Current account |
+| Question | Account |
 |---|---|
-| What is proved, with which assumptions? | [Claims and physical meaning](research/CLAIMS.md) |
-| Where are the complete derivations and constructions? | [Preserved theorem](archive/consolidation-2026-10-09/THEOREM.md) and [finite-space proof](archive/consolidation-2026-10-09/prior/THEOREM.md) |
-| How large can the forced penalty become? | [Spectral restriction and four-tone family](research/SPECTRAL_RESTRICTION.md) |
-| What control access and resource assumptions matter physically? | [Sideband mapping and conjugate access](research/CONTROL_ACCESS.md) |
-| What did the focused proof review find? | [Proof review](research/PROOF_REVIEW.md) |
-| Which ingredients are established? | [Source review](research/SOURCE_REVIEW.md) |
-| How do I reproduce the evidence? | [Verification](REPRODUCIBILITY.md) |
-| What is the current task and handoff? | [Workspace](WORKSPACE.md) and [work order](work_orders/CURRENT.md) |
+| What is the model and what is proved? | [Claims and physical meaning](research/CLAIMS.md) |
+| How do the dynamics, proofs, and attaining controls work? | [Self-contained theory](research/THEORY.md) |
+| What is achievable at each force budget? | [Exact sensitivity frontier](research/SENSITIVITY_FRONTIER.md) |
+| How large can the forced penalty become? | [Spectral bound and four-tone family](research/SPECTRAL_RESTRICTION.md) |
+| How do effective forces relate to physical controls? | [Sideband mapping and control access](research/CONTROL_ACCESS.md) |
+| What does the result add to prior pulse design? | [Matched related-work comparison](research/RELATED_WORK.md) |
+| Which sources and proof steps support it? | [Source passages](research/SOURCE_REVIEW.md) and [analytical review](research/PROOF_REVIEW.md) |
+| How do I reproduce the checks? | [Verification instructions](REPRODUCIBILITY.md) |
 
-The mathematical optimizer is a structured application of the equality
-S-lemma. Independent-pulse stabilization, quadrature gates, and displacement
-moments have prior literature. The candidate contribution is the exact
-attainable cost classification in this physical control class. Neither a
-general novelty claim nor an editorial acceptance forecast is established.
+The optimization uses established equality-S-lemma and numerical-range
+mathematics. Independent-pulse stabilization, quadrature gates, displacement
+moments, trajectory-overlap sensitivity, and the leading thermal fidelity
+expansion have direct predecessors. The result developed here is the exact
+joint resource classification and attainable tradeoff in the prescribed
+control class, together with their spectral and full-gate consequences.
 
-The result concerns a single-mode, static-error, integrated-force model. It
-does not determine laboratory power, individual peak limits, or a finite-error
-operating window. A preserved peak-cap obstruction makes this distinction
-concrete.
+Cost means integrated squared **effective force**. The single-mode,
+static-error model supplies the comparison; laboratory actuator power,
+individual peak caps, and multimode operation require their own resource and
+control specifications. The control-access analysis makes this distinction
+explicit.
 
-## Run the evidence
+## Reproduce the checks
 
 Use Python 3.13 and the pinned dependencies:
 
@@ -68,25 +78,14 @@ python -m venv .venv
 .venv/bin/python scripts/verify.py --output-dir /absolute/path/to/new-results
 ```
 
-The output directory must be new and outside `archive/`. The verification
-receipt separates infrastructure checks, all twenty scientific check groups,
-three supplemental symbolic groups, archive integrity, and canonical report
-comparisons. A numerical report is
-evidence for its stated checks, not a substitute for proof.
+The output directory must be new and outside `archive/`. The verifier checks
+the preserved scientific suites, supplemental proof identities, infrastructure
+regressions, and all 89 archived source files. Its receipt separates scientific
+assertions from canonical report byte identity. The documented portability
+mode permits finite floating-point report differences only after the required
+checks pass, while retaining every difference in the receipt.
 
-Strict mode also requires the old JSON reports to match byte-for-byte. The
-recovered environment shows small floating-point differences despite passing
-every scientific assertion. The explicitly labeled portability mode used by
-CI is documented in [REPRODUCIBILITY.md](REPRODUCIBILITY.md); it reports these
-differences and never relabels them as byte identity.
-
-## Provenance
-
-All 89 files from `quadrature_gate_consolidation_2026-10-09.zip` are preserved
-under [the archive](archive/consolidation-2026-10-09/README.md), with a complete
-[hash inventory](provenance/archive.json). Statements inside that archive about
-publication or repository status describe its historical checkpoint.
-
-The subsequent prepared initialization tree could not be recovered. This
-repository reconstructs its wrapper around the intact scientific package and
-records that limitation in [the recovery note](provenance/RECOVERY.md).
+The [source archive](archive/consolidation-2026-10-09/README.md),
+[hash inventory](provenance/archive.json), and [provenance record](provenance/RECOVERY.md)
+preserve the underlying evidence. Maintainers can continue from the
+[workspace](WORKSPACE.md) and [current work order](work_orders/CURRENT.md).
