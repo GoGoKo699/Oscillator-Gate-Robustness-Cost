@@ -16,8 +16,9 @@ classification for the specified single-oscillator control class. This review
 does not establish its novelty or priority, and does not transfer its numerical
 cost factors to laboratory power or peak-amplitude constraints.
 
-The previously reported Bentley full-text access gap is resolved for the
-targeted passages below. An access improvement is not a priority certificate.
+The previously reported Bentley and Mostaan Ghalejough full-text access gaps
+are resolved for the targeted passages below. An access improvement is not a
+priority certificate.
 
 ## Blümel et al.: independent-pulse stabilization
 
@@ -127,17 +128,82 @@ the entire supplement and every possible implication were not exhaustively
 audited. No plot values, numerical device comparisons, or absence-of-theorem
 claim are used.
 
+## Ellert-Beck and Ge: power-optimal timing robustness
+
+**Checked source:** L. Ellert-Beck and W. Ge, *Power-optimized amplitude
+modulation for robust trapped-ion entangling gates: A study of gate-timing
+errors*, Physical Review A 111, 062422 (2025).
+[Preprint](https://arxiv.org/abs/2412.17789);
+[read PDF](https://arxiv.org/pdf/2412.17789);
+[published article](https://doi.org/10.1103/PhysRevA.111.062422).
+Passage references below are to the 14-page preprint v1.
+
+**Passages read:** Sections III C–D, Eqs. (26)–(35), and the projection and
+whitening immediately after Eq. (35), PDF pp. 6–7.
+For a common real amplitude envelope and timing error, derivative conditions
+become linear coefficient constraints. Eq. (35) maximizes a phase-to-power
+Rayleigh quotient on their kernel, using whitening and an eigenproblem.
+This is a direct predecessor for constrained spectral power optimization.
+The repository instead imposes a bilinear static-angle-slope constraint on
+two independently chosen complex forces. Different errors and control classes
+preclude importing either cost factor into the other problem.
+
+## Ruzic et al.: frequency robustness by mode balancing
+
+**Checked source:** B. P. Ruzic et al., *Leveraging motional-mode balancing
+and simply parametrized waveforms to perform frequency-robust entangling
+gates*, Physical Review Applied 22, 014007 (2024).
+[Preprint](https://arxiv.org/abs/2210.02372);
+[read PDF](https://arxiv.org/pdf/2210.02372);
+[published article](https://doi.org/10.1103/PhysRevApplied.22.014007).
+The read ten-page preprint v1 has an earlier title; published metadata and
+preprint passage numbering are distinguished here.
+
+**Passages read:** Section II A–D, Eqs. (1), (4), (6), and (10)–(13).
+The common amplitude envelope couples to multiple modes. Gaussian pulse
+shaping suppresses residual displacement; choosing the detuning to balance
+mode contributions cancels the entangling-angle derivative in Eq. (13).
+Frequency-robust angle stabilization and its physical interpretation are
+therefore established territory. This design uses cancellation between modes;
+the repository's one-mode result uses independent forces and determines their
+exact matched integrated-force minimum. No experimental-performance comparison
+is drawn from the differing models or article versions.
+
+## Mostaan Ghalejough: spectral and tone-number optimization
+
+**Checked source:** M. R. Mostaan Ghalejough, *Design of Tone-Number-Efficient
+Robust Entangling Gates in Trapped-Ion Systems*, MSc thesis, Simon Fraser
+University (Summer 2026).
+[Full institutional PDF](https://theses.lib.sfu.ca/file/thesis/etd24536-mohammadrezamohammadreza-mostaan-mostaanghalejough-mo.pdf).
+
+**Passages read:** printed pp. 18–20, Eqs. (2.41), (2.47)–(2.49); pp. 54–55,
+Eqs. (3.22)–(3.25); pp. 63–64, Eq. (3.30) and Algorithm 2.
+The first passages use the same pulse on both ions and separate angle and
+motional contributions. Before Eq. (2.49), the angle is treated as calibrated
+through periodic power recalibration, and the robustness constraint concerns
+motional infidelity. Eq. (3.22) minimizes squared amplitudes subject to a target angle
+and truncated motional-infidelity bound. The extended-null-space method
+selects low-infidelity eigendirections, then optimizes a Rayleigh quotient;
+the later SLSQP construction uses squared-amplitude or sparsity objectives.
+
+These passages establish close spectral resource optimization precedent.
+Their stated constraints differ from the repository's uncalibrated static
+angle derivative and exact joint optimum. The full thesis is now accessible;
+this targeted comparison does not assert absence of overlap throughout it.
+
 ## Reading boundaries retained
 
-The review was restricted to these four attribution questions. The earlier
+The review was restricted to these seven attribution questions. The earlier
 Spiller and Jia readings remain inherited records, not newly verified here.
 No comprehensive citation search or assessment of all later literature was
-performed. The operative scientific comparison fixes the control space,
+performed. In particular, the new positive-band corollary is elementary once
+the cost theorem is available; these readings establish neither its novelty
+nor its absence from all prior work. The operative scientific comparison fixes the control space,
 normalization, unwrapped target, error model, and resource before comparing
 costs. Established quadrature gates, displacement moments, independent
 addressing, and familiar spectral machinery must not become novelty claims.
 
 The initial direct Blümel PDF and publisher opens failed in this session; the
 arXiv abstract's PDF link subsequently returned the combined paper successfully.
-The other three primary PDFs were readable. Failed preliminary opens do not
+The remaining primary PDFs were readable. Failed preliminary opens do not
 override the later successful passage checks or support an absence claim.

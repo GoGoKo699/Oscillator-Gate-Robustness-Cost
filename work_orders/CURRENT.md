@@ -1,58 +1,45 @@
-# Current work order: recovery and focused scientific review
+# Current work order: spectral consequence and contribution assessment
 
 ## Authorization and scope
 
-The user authorized takeover, modifications, and merge in
-`GoGoKo699/Oscillator-Gate-Robustness-Cost` only. The 9 October project handoff
-requires recovery/publication of initialization, review of the actual PR
-head, merge, verification of merged main, and then claims-first exposition
-and focused proof/source review.
+The user authorized continuation, repository modifications, and merging in
+`GoGoKo699/Oscillator-Gate-Robustness-Cost`, and asked for a candid assessment
+of PRL prospects. Initialization and recovery are already merged. This work
+addresses the remaining significance question within the same physical model.
 
-The scientific scope remains one linear oscillator, independently controlled
-qubits, a finite nominally closed force space, a fixed unwrapped target,
-static number detuning, and integrated squared effective force. Full-gate
-statements assume a fixed finite thermal initial oscillator. No model or
-resource expansion is part of this work order.
+Keep one ideal linear oscillator, independent complex forces, static number
+detuning, fixed nonzero unwrapped target, prescribed finite nominally closed
+spaces, and integrated squared effective force. The spectral family compares
+matched competitors separately in each space. It adds no error channel or
+laboratory resource assumption.
 
 ## Deliverables
 
-- Recover and hash-anchor all 89 scientific package files without changing
-  sources, assertions, tolerances, or canonical evidence.
-- Reconstruct the missing repository wrapper and state explicitly that it
-  is not the unavailable prepared tree.
-- Supply a claims-first reader route, full-proof links, a separate analytical
-  review, and a focused primary-source attribution review.
-- Reproduce all twenty scientific groups and verify the infrastructure,
-  archive boundaries, source identity, and report comparisons.
-- Publish the reviewed branch as a PR; inspect its actual head and hosted
-  evidence; merge using that expected SHA; then verify merged main separately.
+- Prove a cost lower bound for first-moment-zero positive harmonic bands and
+  a feasible four-tone family with unbounded overhead of the same growth order.
+- Add the corollary to the reader-facing claims with its normalization and
+  comparison boundary, preserving every archived source byte.
+- Check the new algebra exactly in three supplemental groups, separate from
+  the twenty original groups and canonical reference reports.
+- Extend the targeted primary-source comparison and record a candid
+  author-facing contribution assessment.
+- Review and verify the actual PR head, inspect hosted evidence, merge with
+  an expected-head guard, then verify merged main separately.
 
-## Review outcome
+## Analytical review and remaining question
 
-The current [proof review](../research/PROOF_REVIEW.md) finds no unresolved
-gap in the scoped theorem or thermal corollary. The
-[source review](../research/SOURCE_REVIEW.md) closes the Bentley access gap
-for specified passages and preserves narrow attribution. The matrix optimizer
-is not a new general optimization theorem. The scientific result is a
-candidate physical cost classification, with novelty and wider significance
-still open to external assessment.
+Independent derivation confirms the operator bound, full two-dimensional
+constraint kernel, exact matrix pencil, recovery of the existing example,
+units, and asymptotic constants. The supplemental checker verifies exact
+identities; it does not substitute for the analytical proof.
 
-One implementation precondition is documented: the preserved Fourier helper
-assumes distinct nonzero integer harmonics. No archived example violates it;
-no archived scientific correction was needed.
+The new consequence strengthens the physical cost classification. The
+[author assessment](PRL_ASSESSMENT.md) remains cautious about PRL: the most
+important unresolved point is why an asymmetric control restriction matters
+in a credible physical setting. The source review is targeted, not a priority
+certificate. No outside specialist review has been obtained.
 
-## Completion evidence and next decision
-
-The repository's verification receipts and GitHub PR/Actions records determine
-whether publication and merge verification are complete. They must distinguish
-passing assertions from exact canonical-report bytes and record any
-environment-dependent differences. Do not infer a successful hosted run from
-the historical archive or this work order.
-
-After this bounded task, the next scientific decision is whether the scoped
-physical classification warrants a manuscript, assessed against its closest
-predecessors. No active proof blocker was found by the current review, but an
-external specialist's assessment of overlap and significance remains absent.
-Do not automatically start heating, spectator modes, individual-peak
-optimization, or arbitrary higher-order robustness. Each would require an
-explicitly scoped new research question.
+GitHub PR/Actions records and exact-commit receipts establish completion of
+publication and verification. Do not infer hosted success from this work
+order. Further research should address the stated physical question; any
+extension of the model requires its own scoped scientific work order.

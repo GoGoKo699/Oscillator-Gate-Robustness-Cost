@@ -21,6 +21,13 @@ target is infeasible. Balanced extreme eigenvalues of $K$ characterize zero
 additional angle-robustness cost. The two preserved four-tone examples have
 cost factors **1** and **5.213046…**, under their stated matched constraints.
 
+More generally, positive integer harmonics in a band $[a,b]$ over their common
+period, with zero first force moment, force a cost ratio of at least $(a+b)/(b-a)$.
+A four-tone family realizes unbounded overhead with the same growth order.
+The [spectral bound and proof](research/SPECTRAL_RESTRICTION.md) explain why
+the allowed controls can turn free robustness into a parametrically costly
+requirement.
+
 For a fixed thermal oscillator, eliminating both displacement derivatives and
 the angle derivative is necessary and sufficient for quartic small-detuning
 average infidelity. Projecting onto the first-moment kernel gives the exact
@@ -33,6 +40,7 @@ unconstrained nominal gate.
 |---|---|
 | What is proved, with which assumptions? | [Claims and physical meaning](research/CLAIMS.md) |
 | Where are the complete derivations and constructions? | [Preserved theorem](archive/consolidation-2026-10-09/THEOREM.md) and [finite-space proof](archive/consolidation-2026-10-09/prior/THEOREM.md) |
+| How large can the forced penalty become? | [Spectral restriction and four-tone family](research/SPECTRAL_RESTRICTION.md) |
 | What did the focused proof review find? | [Proof review](research/PROOF_REVIEW.md) |
 | Which ingredients are established? | [Source review](research/SOURCE_REVIEW.md) |
 | How do I reproduce the evidence? | [Verification](REPRODUCIBILITY.md) |
@@ -61,7 +69,8 @@ python -m venv .venv
 
 The output directory must be new and outside `archive/`. The verification
 receipt separates infrastructure checks, all twenty scientific check groups,
-archive integrity, and canonical report comparisons. A numerical report is
+three supplemental symbolic groups, archive integrity, and canonical report
+comparisons. A numerical report is
 evidence for its stated checks, not a substitute for proof.
 
 Strict mode also requires the old JSON reports to match byte-for-byte. The
