@@ -140,7 +140,7 @@ primary-source anchors in [the source review](SOURCE_REVIEW.md).
 |---|---|
 | B. P. Ruzic et al., *Leveraging motional-mode balancing and simply parametrized waveforms to perform frequency-robust entangling gates* (2024); [preprint v1](https://arxiv.org/pdf/2210.02372v1), Sec. II D, Eq. (13) | Selects a detuning that cancels angle slopes between modes while Gaussian shaping suppresses displacement. This is a multimode stabilization mechanism, not the present one-mode independent-force optimum. |
 | L. Ellert-Beck and W. Ge, *Power-optimized amplitude modulation for robust trapped-ion entangling gates: a study of gate-timing errors* (2025); [preprint v1](https://arxiv.org/pdf/2412.17789v1), Sec. III C–D, Eqs. (26)–(37) | Projects a common amplitude pulse onto timing-robustness constraints and optimizes a phase-to-power Rayleigh quotient. Constrained spectral power optimization is established; the error and bilinear joint-pulse constraint differ here. |
-| J.-B. Wang, *Robust quantum gate optimization with first-order derivatives of ion–phonon and ion–ion couplings in trapped ions* (2025); [publisher abstract](https://cpb.iphy.ac.cn/article/doi/10.1088/1674-1056/adb40e) | The abstract describes adding both coupling derivatives to the optimization cost. This credits derivative-penalty optimization; no detailed equation-level or global-optimality comparison is inferred from the abstract. |
+| J.-B. Wang, *Robust quantum gate optimization with first-order derivatives of ion–phonon and ion–ion couplings in trapped ions* (2025); [society full text](https://www.cpsjournals.cn/en/article/doi/10.1088/1674-1056/adb40e), Secs. 3, 4.1–4.2, discussion of Eq. (18) | Uses numerical SLSQP optimization of a displacement/angle derivative-penalty objective with segmented amplitude/phase controls and a peak Rabi cap. Its stated optimization differs from the exact integrated-force minimum and attained sensitivity frontier here. |
 | W. Zhang et al., *Robust Mølmer-Sørensen Gate Against Symmetric and Asymmetric Errors* (2025); [preprint v1](https://arxiv.org/pdf/2501.02847v1), Sec. II and Sec. III B–C, especially Eq. (13) | Treats symmetric detuning and asymmetric qubit/laser-frequency errors using displacement conditions and generator-based compensation. The latter introduces composite entangling and single-qubit operations outside this repository's fixed commuting-force model. |
 | E. J. Páez, S. S. Vedaie and B. C. Sanders, *Closed-loop control for two-qubit gates with trapped ions* (2026); [preprint v1](https://arxiv.org/html/2607.00462v1), Sec. III.1 and III.3 | Uses a continuously monitored spectator ion and reinforcement-learning control in stochastic multimode dynamics. The controls respond to measurements, whereas the present theorem fixes error-independent open-loop forces. |
 
@@ -180,5 +180,6 @@ They do not provide a comprehensive priority determination. Numerical
 performance from different noise models, control sets, durations, targets,
 or optical-resource conventions is not used to claim superiority.
 
-Source passages checked through 9 October 2026; the Wang comparison uses
-only the explicitly identified publisher abstract.
+Source passages checked through 9 October 2026. The Wang comparison uses
+the full-text discussion of its objective, controls, and numerical method;
+no objective weights are transcribed from its unrendered display equations.
