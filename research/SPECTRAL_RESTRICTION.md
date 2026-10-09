@@ -170,6 +170,11 @@ the spectral restriction, rather than detuning robustness alone, drives the
 penalty. Its relevance to a particular device needs a justified description
 of that device's admissible controls.
 
+The [control-access analysis](CONTROL_ACCESS.md) explains why attenuation
+alone cannot impose the one-sided space under the present resource model.
+It also separates the effective-force spectrum from laboratory sideband
+labels and examines a documented implementation.
+
 ## Verification
 
 [The exact symbolic checker](../checks/check_spectral_cost.py) verifies the

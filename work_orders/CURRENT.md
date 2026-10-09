@@ -1,45 +1,54 @@
-# Current work order: spectral consequence and contribution assessment
+# Current work order: physical control and resource audit
 
 ## Authorization and scope
 
-The user authorized continuation, repository modifications, and merging in
-`GoGoKo699/Oscillator-Gate-Robustness-Cost`, and asked for a candid assessment
-of PRL prospects. Initialization and recovery are already merged. This work
-addresses the remaining significance question within the same physical model.
+The user authorized continuing the proposed physical-realization investigation,
+repository modifications, and merge in
+`GoGoKo699/Oscillator-Gate-Robustness-Cost` only. This work tests whether one
+documented trapped-ion implementation justifies the asymmetric effective-force
+space used by the spectral-cost corollary.
 
-Keep one ideal linear oscillator, independent complex forces, static number
-detuning, fixed nonzero unwrapped target, prescribed finite nominally closed
-spaces, and integrated squared effective force. The spectral family compares
-matched competitors separately in each space. It adds no error channel or
-laboratory resource assumption.
+The comparison remains one ideal oscillator, two independent error-independent
+forces, a fixed finite nominally closed space, static number detuning, fixed
+nonzero unwrapped target, and integrated squared effective force. A laboratory
+mapping must expose its approximations and control assumptions. It does not
+extend the theorem to the complete device or change the resource to input
+power, peak limits, or hardware calibration effort.
 
-## Deliverables
+## Deliverables and decision
 
-- Prove a cost lower bound for first-moment-zero positive harmonic bands and
-  a feasible four-tone family with unbounded overhead of the same growth order.
-- Add the corollary to the reader-facing claims with its normalization and
-  comparison boundary, preserving every archived source byte.
-- Check the new algebra exactly in three supplemental groups, separate from
-  the twenty original groups and canonical reference reports.
-- Extend the targeted primary-source comparison and record a candid
-  author-facing contribution assessment.
-- Review and verify the actual PR head, inspect hosted evidence, merge with
-  an expected-head guard, then verify merged main separately.
+- Read the QSCOUT implementation and its control-hardware source, with the
+  standard red/blue sideband phase dictionary as a primary-source anchor.
+- Derive the fixed-spin-axis force mapping, cost normalization, and conditions
+  under which conjugate force directions are accessible.
+- Prove the distinction between a missing force direction and a nonzero but
+  attenuated direction under the present unconstrained-input resource model.
+- If a genuine asymmetric restriction is supported, identify a finite regime
+  with valid offsets and required amplitudes and one matched design consequence.
+  If it is not supported, record that bounded negative result without assigning
+  a fabricated operating window or extending the model to obtain one.
+- Update reader-facing interpretation and the author assessment, preserve all
+  archived evidence, review and verify the actual published head, merge with
+  an expected-head guard, and separately verify merged main.
 
-## Analytical review and remaining question
+## Audit outcome
 
-Independent derivation confirms the operator bound, full two-dimensional
-constraint kernel, exact matrix pencil, recovery of the existing example,
-units, and asymptotic constants. The supplemental checker verifies exact
-identities; it does not substitute for the analytical proof.
+The QSCOUT candidate does not establish a hard one-sided output-force space.
+The sideband mapping is conditional on a fixed spin axis and controlled
+single-mode approximation; the documented gate deliberately uses mode
+balancing. Phase-programmable controls do not by themselves certify every
+conjugated waveform under hardware limits.
 
-The new consequence strengthens the physical cost classification. The
-[author assessment](PRL_ASSESSMENT.md) remains cautious about PRL: the most
-important unresolved point is why an asymmetric control restriction matters
-in a credible physical setting. The source review is targeted, not a priority
-certificate. No outside specialist review has been obtained.
+The exact attenuation argument shows why nonzero transmission alone cannot
+remove conjugate directions under unrestricted inputs and output-force cost.
+The original spectral result remains intact. The finite operating-window step
+is unsupported after the physical restriction fails, so no regime is invented.
+The next author task is a focused theory account; the PRL hardware-asymmetry
+route remains unsupported by this candidate.
 
-GitHub PR/Actions records and exact-commit receipts establish completion of
-publication and verification. Do not infer hosted success from this work
-order. Further research should address the stated physical question; any
-extension of the model requires its own scoped scientific work order.
+## Completion evidence
+
+Analytical and source reviews determine the scientific conclusion. Exact-commit
+receipts and GitHub PR/Actions records determine publication and verification.
+The existing twenty historical groups and three supplemental symbolic groups
+remain separate; their passing cannot establish a physical control assumption.
