@@ -4,10 +4,11 @@ Reviewed on 9 October 2026 (UTC). This is a separate-agent analytical check of
 the recovered account, not external peer review. It does not establish
 publication priority. No archive file was changed.
 
-**Conclusion:** the stated finite-space cost theorem and its full thermal-gate
-corollary follow under the declared assumptions. No unresolved mathematical
-gap was found in the claims reviewed below. The numerical and source-review
-limitations at the end remain distinct from that conclusion.
+**Conclusion:** the finite-space cost theorem, exact sensitivity frontier,
+and full thermal-gate consequences follow under the declared assumptions.
+The current self-contained account retains the original normalization and
+attainment claims. No unresolved mathematical gap was found in the claims
+reviewed below. Source attribution is assessed separately from correctness.
 
 ## Scope and inputs
 
@@ -19,7 +20,9 @@ force. The target is a fixed nonzero unwrapped angle. The full-channel claim
 also assumes an initially uncorrelated thermal oscillator with fixed finite
 occupation. These hypotheses are essential to the conclusions stated here.
 
-The analytical inputs were the [consolidated theorem](../archive/consolidation-2026-10-09/THEOREM.md),
+The current analytical inputs are the [self-contained theory](THEORY.md),
+[sensitivity frontier](SENSITIVITY_FRONTIER.md), and [claims](CLAIMS.md).
+They were checked against the [consolidated theorem](../archive/consolidation-2026-10-09/THEOREM.md),
 the [finite-space theorem](../archive/consolidation-2026-10-09/prior/THEOREM.md),
 the [earlier resource review](../archive/consolidation-2026-10-09/prior/prior/REVIEW.md),
 and the [original pilot](../archive/consolidation-2026-10-09/prior/prior/prior/PILOT.md).
@@ -36,7 +39,9 @@ they are not asserted by this analytical review.
 | Zero extra angle-robustness cost iff balanced extrema | Resolved for finite nonzero $K$ and strictly positive $D$ |
 | Full thermal quadratic coefficient and quartic iff | Resolved for each fixed pulse and finite thermal occupation |
 | Projection gives the global quartic-error minimum | Resolved within the originally granted control space |
-| Below-threshold sensitivity lower bound | Resolved as a leading-coefficient bound, without an attainability claim |
+| Exact sensitivity at every feasible budget | Resolved, including coherent attainment, nominal endpoints, and proportional matrices |
+| Optimal leading thermal coefficient after displacement constraints | Resolved as $4s(B)^2/5$; the general-space expression remains a lower bound |
+| Earlier single-multiplier sensitivity certificate | Valid, and strictly weaker than the exact frontier in the new two-tone example |
 | Symmetric four-tone individual-peak obstruction | Resolved at the exact integrated-cost minimum |
 
 ## 1. Force reduction and the physical derivative
@@ -206,16 +211,68 @@ allowed in $V_0$. An empty space or zero robust efficiency gives
 infeasibility. Cost equality after this projection says nothing about the
 possible cost of imposing the projection itself.
 
-## 5. Sensitivity floor and peak caveat
+## 5. Exact sensitivity frontier
 
 For an arbitrary pair, the same decomposition gives
 $\Theta=x^\dagger Lx-y^\dagger Ly-\zeta_*\chi$. Therefore
 $|\Theta|\le rE+|\zeta_*||\chi|$. Combining its rearrangement with
 the positive thermal coefficient proves the archived below-threshold
-quadratic-error floor. It is a lower bound, with no proof of simultaneous
-attainability at each cost cap. When $\zeta_*=0$, the nominal and
+quadratic-error floor. That particular bound need not be attained at each
+cost cap. When $\zeta_*=0$, the nominal and
 angle-robust minima coincide, and there is no interval requiring the
 division by $|\zeta_*|$.
+
+The current frontier instead optimizes all supporting multipliers. With
+$M=\operatorname{diag}(K,-K)$ and $N=\operatorname{diag}(D,-D)$, the
+unit-cost pairs $(\Theta,q)$, with $q=-\chi$, form the numerical range of
+$M+iN$. The
+established Toeplitz--Hausdorff theorem makes this set compact and convex;
+block exchange makes it centrally symmetric. Its support function is
+$\|\alpha K+\beta D\|$. Therefore a budget $B$ and absolute-slope cap $s$
+are feasible exactly when
+
+$$t\leq B\|K-\zeta D\|+|\zeta|s\quad\text{for every real }\zeta,$$
+
+where $t=|\Theta_0|$. Necessity follows from the support function.
+For sufficiency, a strict separator between the attainable set and
+$\{(t,q):|q|\leq s\}$ would have positive phase coefficient, since its
+opposing support is nonnegative. Rescaling it produces a violated displayed
+inequality. This argument includes the nominal-budget endpoint and requires
+no unproved multiplier-attainment assumption.
+
+Consequently the stated supremum formula is exact. Its value is attained
+by controls because the feasible set is compact. For a positive optimum
+strictly above the nominal budget, the multiplier maximizer is finite and
+nonzero: the objective tends to $-\infty$ at zero and to $-B\|D\|$ at
+infinity. Compression to the exposed eigenspace then supplies coherent
+endpoint-eigenvector weights attaining the target and slope simultaneously.
+At the nominal endpoint, compression of $N$ to the top eigenspace of $M$
+gives the complete Rayleigh interval and its distance from zero. Degenerate
+extrema therefore cause no missing pulse directions or arbitrary-eigenvector
+choice. A limiting dual multiplier does not prevent primal attainment.
+
+The budget conditions $E\leq B$ and $E=B$ have the same phase/slope pairs.
+Besides the convex-set proof, the reciprocal change
+$(a,b)\mapsto(ca,c^{-1}b)$ with real $c>0$ preserves both observables and
+can raise the cost to any larger value. This uses the absence of individual
+force caps. For $K=cD\ne0$, the identity $\Theta=-c\chi$ correctly gives
+$s(B)=t/|c|$ at every feasible budget, including one-dimensional spaces.
+
+The noncommuting physical two-tone example was independently checked
+algebraically. Its nominal endpoint has $s(1)=2$; at target one and
+$B=5/4$, the displayed force pair and supporting eigenvector give exactly
+$s(B)=(7-\sqrt6)/4$. Both values strictly exceed the earlier centered-
+multiplier certificate. These examples optimize angle sensitivity; their
+force space does not impose displacement robustness.
+
+On the first-moment kernel, every displacement contribution to the thermal
+quadratic coefficient vanishes. Thus the attained minimum of that
+coefficient is exactly $4s(B)^2/5$. On a general nominally closed space,
+the same expression is only a lower bound because the positive displacement
+terms remain. No interchange of a finite-detuning optimization and a
+small-error limit is needed.
+
+## 6. Individual-peak obstruction
 
 For the symmetric four-tone peak claim, use the real basis $(u,v)$ with
 $K=kJ$, $J^2=I$, and positive diagonal $D$. Equality in the
@@ -241,10 +298,13 @@ problem.
 
 ## Remaining boundaries
 
-- **Source priority is not resolved by this check.** The archive identifies
-  the equality S-lemma and the physical predecessors. This review checks
-  the direct arguments; bibliographic coverage and originality require
-  the separate source review and, ultimately, external scrutiny.
+- **Correctness and attribution are separate.** The exact-cost proof uses
+  the established equality S-lemma, and the frontier uses classical
+  numerical-range convexity and support functions. The [matched source
+  comparison](RELATED_WORK.md) and [source review](SOURCE_REVIEW.md) identify
+  prior pulse-design and thermal-error formulas. This analytical review
+  verifies the specialization and attaining controls, not publication
+  priority for those established ingredients.
 - **Floating-point residuals are not certified intervals.** The archived
   solver correctly refuses to decide the near-zero robust-efficiency
   case numerically. Its successful finite checks do not prove general
@@ -260,8 +320,8 @@ problem.
   temperature-uniform errors, other initial oscillator states, physical
   actuator power, and changed control models are outside this review.
 
-No new numerical tests were added: the claims were resolved analytically,
-and the existing independent implementations already target the displayed
-constructions. Repetition of those tests would not strengthen the proof
-conclusion.
+The supplemental symbolic frontier checks verify the new example and
+boundary identities. Their execution belongs to the verification receipt;
+the general duality and attainment conclusions rest on the analytical
+arguments above. The archived statements and checks remain unchanged.
 

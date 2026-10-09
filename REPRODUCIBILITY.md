@@ -14,6 +14,13 @@ checks outside the archive, recorded separately from its twenty groups and
 four canonical reports. They verify the band identities, four-tone matrix
 pencil, and asymptotic constants without numerical sweeps.
 
+Four additional exact groups check the [sensitivity frontier](research/SENSITIVITY_FRONTIER.md):
+physical Fourier forms and coherent-force identities, a smooth noncommuting
+optimum and nominal endpoint, support-face attainment and the robust endpoint,
+and proportional-matrix infeasibility with exact-budget padding. Their report
+is separate from the spectral report and the four historical reports. All
+**27 scientific groups** (20 historical, 3 spectral, 4 frontier) are required.
+
 ## Environment and commands
 
 The scientific archive records CPython 3.13.5, NumPy 2.3.5, SciPy 1.17.0, and
@@ -37,7 +44,7 @@ overwritten. Use a different new directory for each run.
 **Strict mode** is the default. Exit zero requires passing infrastructure and
 scientific assertions, unchanged archive bytes, and exact byte identity of all
 four regenerated scientific JSON reports with their historical references.
-All three supplemental symbolic groups must also pass with a complete report.
+All seven supplemental symbolic groups must also pass with complete reports.
 
 **Portability mode** runs the same assertions and preserves the same references:
 
@@ -52,7 +59,7 @@ all scientific assertions pass. Keys, list lengths, types, integers, strings,
 and booleans must match, all reports and twenty groups must be present, and
 source integrity must pass before and after execution. Nonfinite values,
 subprocess failures, missing reports, or altered archive files remain fatal.
-The supplemental symbolic checks must pass under either policy; portability
+Both supplemental symbolic suites must pass under either policy; portability
 never waives their failure or an incomplete report.
 It does not establish numerical equality or certified error intervals; the
 original scientific assertions define the scientific acceptance tolerances.
@@ -78,7 +85,9 @@ Read `<output-dir>/receipt.json` and the logs, not just the exit code:
 | `scientific.all_canonical_reports_byte_identical` | Exact reference-byte comparison, never inferred from a scientific pass |
 | `scientific.wrapper_returncode` | Unmodified historical wrapper's exit code |
 | `supplemental_run` | Symbolic-check command, log, exit code, and execution error |
-| `supplemental_scientific` | Separate three-group pass, report validation, exact method, and report hash |
+| `supplemental_scientific` | Separate three-group spectral pass, report validation, exact method, and report hash |
+| `frontier_run` | Frontier-check command, log, exit code, and execution error |
+| `frontier_scientific` | Separate four-group frontier pass, report validation, exact method, and report hash |
 | `report_comparisons` | Independently inspected generated/reference files, hashes, and difference classification |
 | `source` and `environment` | Commit, tree, working-tree status, verifier inputs, interpreter, packages, and thread settings |
 
@@ -87,8 +96,9 @@ original wrapper. Its four reports and logs remain adjacent. No canonical
 evidence is rewritten. A dirty source status identifies a development run;
 review the exact clean PR head and merged main separately for release evidence.
 `spectral-cost.json` and `spectral-cost.log` sit beside the root receipt and
-record the supplemental proof identities. Source identity includes the new
-checker as well as the wrapper and infrastructure tests.
+record the spectral proof identities. `sensitivity-frontier.json` and
+`sensitivity-frontier.log` record the frontier checks. Source identity includes
+both checkers as well as the wrapper and infrastructure tests.
 
 ## Recovery-platform review
 

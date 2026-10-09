@@ -30,6 +30,8 @@ MANIFEST = ROOT / "provenance/archive.json"
 EXPECTED_FILE_COUNT = 89
 SUITES = ("consolidation", "cost_audit", "resource_review", "pilot")
 SUPPLEMENTAL_GROUPS = ("positive_band_factors", "four_tone_exact_matrices", "matrix_pencil_asymptotics")
+FRONTIER_GROUPS = ("force_geometry_and_fourier_forms", "noncommuting_smooth_frontier",
+                   "coherent_kink_and_robust_endpoint", "proportional_infeasibility_and_budget_padding")
 REFERENCE_REPORTS = {
     "consolidation": "evidence/final.json",
     "cost_audit": "prior/evidence/final.json",
@@ -234,6 +236,32 @@ def supplemental_summary(report: dict | None, returncode: int | None) -> dict:
     return result
 
 
+def frontier_summary(report: dict | None, returncode: int | None) -> dict:
+    """Require all distinct exact frontier groups, independently of old reports."""
+    result = {"suite": "sensitivity_frontier", "scientific_assertions_pass": False,
+              "report_valid": False, "returncode": returncode, "test_groups": 0,
+              "method": "exact_symbolic_algebra", "groups": []}
+    if not isinstance(report, dict):
+        return result
+    groups = report.get("groups")
+    valid = (
+        report.get("schema_version") == 1 and report.get("suite") == "sensitivity_frontier"
+        and report.get("method") == "exact_symbolic_algebra"
+        and type(report.get("test_groups")) is int and report["test_groups"] == 4
+        and isinstance(groups, list) and len(groups) == 4
+        and all(isinstance(group, dict) and isinstance(group.get("id"), str) for group in groups)
+        and sorted(group["id"] for group in groups) == sorted(FRONTIER_GROUPS)
+        and all(isinstance(group.get("identities"), dict) and group["identities"]
+                and all(isinstance(value, str) for value in group["identities"].values())
+                for group in groups))
+    result.update(report_valid=bool(valid),
+                  test_groups=report.get("test_groups", 0), groups=groups or [],
+                  scientific_assertions_pass=bool(valid and returncode == 0
+                      and report.get("status") == "PASS"
+                      and all(group.get("status") == "PASS" for group in groups)))
+    return result
+
+
 def classify_report_difference(reference, actual, path="") -> dict:
     """Accept only finite float changes; integer metadata must remain identical."""
     result = {"numeric_difference_count": 0, "max_absolute_difference": 0.0,
@@ -297,6 +325,7 @@ def inspect_reports(output: Path, archive: Path = ARCHIVE) -> dict:
 def verification_passes(record: dict, allow_report_differences: bool) -> bool:
     science = record["scientific"]
     supplemental = record.get("supplemental_scientific")
+    frontier = record.get("frontier_scientific")
     comparisons = record.get("report_comparisons")
     report_policy_pass = bool(comparisons and comparisons["all_byte_identical"]
                              and comparisons["finite_numeric_differences_only"]
@@ -316,6 +345,8 @@ def verification_passes(record: dict, allow_report_differences: bool) -> bool:
         and science["receipt_valid"] and science["scientific_assertions_pass"]
         and supplemental and supplemental["report_valid"]
         and supplemental["scientific_assertions_pass"] and supplemental["returncode"] == 0
+        and frontier and frontier["report_valid"]
+        and frontier["scientific_assertions_pass"] and frontier["returncode"] == 0
         and science["source_unchanged"] and report_policy_pass)
 
 
@@ -341,6 +372,7 @@ def main(argv=None) -> int:
         "archive_integrity_after": None, "infrastructure_tests": None,
         "scientific_wrapper": None, "scientific": scientific_summary(None, None),
         "supplemental_run": None, "supplemental_scientific": supplemental_summary(None, None),
+        "frontier_run": None, "frontier_scientific": frontier_summary(None, None),
         "report_comparisons": None,
         "acceptance_policy": ("allow_finite_float_report_differences" if args.allow_report_differences
                               else "strict_report_byte_identity"),
@@ -390,6 +422,20 @@ def main(argv=None) -> int:
                                                     report_identity=file_identity(supplemental_report))
         if not record["supplemental_scientific"]["scientific_assertions_pass"]:
             record["errors"].append("Supplemental exact checks failed or produced an incomplete report; inspect spectral-cost.log")
+
+        frontier_report = output / "sensitivity-frontier.json"
+        frontier_run = run_logged(
+            [sys.executable, "-B", str(ROOT / "checks/check_sensitivity_frontier.py"),
+             "--output", str(frontier_report)], output / "sensitivity-frontier.log", env, 120)
+        record["frontier_run"] = frontier_run
+        frontier_report_exists = frontier_report.is_file() and not frontier_report.is_symlink()
+        frontier = read_json(frontier_report) if frontier_report_exists else None
+        record["frontier_scientific"] = frontier_summary(frontier, frontier_run["returncode"])
+        if frontier_report_exists:
+            record["frontier_scientific"].update(report=frontier_report.name,
+                                               report_identity=file_identity(frontier_report))
+        if not record["frontier_scientific"]["scientific_assertions_pass"]:
+            record["errors"].append("Exact frontier checks failed or produced an incomplete report; inspect sensitivity-frontier.log")
     except (OSError, ValueError, TypeError) as error:
         record["errors"].append(f"{type(error).__name__}: {error}")
     finally:
@@ -411,6 +457,8 @@ def main(argv=None) -> int:
                       "all_canonical_reports_byte_identical": science["all_canonical_reports_byte_identical"],
                       "supplemental_scientific_assertions_pass": record["supplemental_scientific"]["scientific_assertions_pass"],
                       "supplemental_test_groups": record["supplemental_scientific"]["test_groups"],
+                      "frontier_scientific_assertions_pass": record["frontier_scientific"]["scientific_assertions_pass"],
+                      "frontier_test_groups": record["frontier_scientific"]["test_groups"],
                       "report_comparisons": [
                           {key: run[key] for key in ("suite", "byte_identical", "numeric_difference_count",
                                                     "max_absolute_difference", "incompatible_paths")}

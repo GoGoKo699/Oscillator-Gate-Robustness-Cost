@@ -1,7 +1,7 @@
 # Focused primary-source review
 
-Reviewed 9 October 2026 UTC (10 October in Asia/Shanghai). This review checks the
-attribution in the preserved [theorem, Sections 7–8](../archive/consolidation-2026-10-09/THEOREM.md),
+This passage-level record supports the [matched related-work comparison](RELATED_WORK.md)
+and the current [theory account](THEORY.md). It also checks attribution in the preserved [theorem, Sections 7–8](../archive/consolidation-2026-10-09/THEOREM.md),
 [review](../archive/consolidation-2026-10-09/REVIEW.md),
 [reading record](../archive/consolidation-2026-10-09/prior/SOURCE_READINGS.md), and
 [earlier comparison](../archive/consolidation-2026-10-09/prior/prior/SOURCES.md).
@@ -16,9 +16,10 @@ classification for the specified single-oscillator control class. This review
 does not establish its novelty or priority, and does not transfer its numerical
 cost factors to laboratory power or peak-amplitude constraints.
 
-The previously reported Bentley and Mostaan Ghalejough full-text access gaps
-are resolved for the targeted passages below. An access improvement is not a
-priority certificate.
+The closest physical comparisons, including direct readings of Spiller, Jia,
+Huo and the thermal-fidelity source of Wu, are collected in
+[RELATED_WORK.md](RELATED_WORK.md). This page retains the mathematical
+certificate and additional control/resource passages.
 
 ## Blümel et al.: independent-pulse stabilization
 
@@ -97,11 +98,13 @@ therefore uses $d=4$, giving $(4F_e+1)/5$.
 Nielsen explicitly attributes this relation to M., P., and R. Horodecki and
 provides a simplified proof. “Nielsen, Eq. (3)” is an appropriate passage
 citation; mathematical priority should not be assigned to Nielsen alone.
-The repository's thermal-displacement expansion and its coefficient $4/5$
-require the repository's own channel calculation as well as this identity.
-Eq. (3) alone does not establish the robustness-cost theorem.
+The exact channel calculation is given in [THEORY.md](THEORY.md). Direct
+physical precedents for the thermal expansion are identified in
+[the matched comparison](RELATED_WORK.md); the coefficient is not presented
+as an independent new result. Eq. (3) alone does not establish the resource
+optimization theorem.
 
-## Bentley et al.: previously unread comparison
+## Bentley et al.: independent complex controls
 
 **Checked source:** C. D. B. Bentley et al., *Numeric optimization for
 configurable, parallel, error-robust entangling gates in large ion registers*.
@@ -215,19 +218,28 @@ force space and its output-force norm. The bounded audit does not establish
 an unavoidable one-sided device restriction or hardware-feasible realization
 of every conjugated pulse.
 
-## Reading boundaries retained
+## Numerical-range convexity and support lines
 
-The review was restricted to the sources and passages listed above. The earlier
-Spiller and Jia readings remain inherited records, not newly verified here.
-No comprehensive citation search or assessment of all later literature was
-performed. In particular, the new positive-band corollary is elementary once
-the cost theorem is available; these readings establish neither its novelty
-nor its absence from all prior work. The operative scientific comparison fixes the control space,
-normalization, unwrapped target, error model, and resource before comparing
-costs. Established quadrature gates, displacement moments, independent
-addressing, and familiar spectral machinery must not become novelty claims.
+**Checked source:** J. H. Shapiro, *Notes on the Numerical Range*, 5 May 2017,
+[author-hosted PDF](https://www.joelshapiro.org/Pubvit/Downloads/NumRangeNotes/numrange_notes.pdf).
+Proposition 1.1(g), p. 2, gives finite-dimensional compactness; Proposition 2.8,
+pp. 7–8, treats direct sums; Theorem 6.1, pp. 16–17, states and proves the
+Toeplitz–Hausdorff convexity theorem with attribution to the original authors.
+Section 9, pp. 23–24, relates support lines to extremal Hermitian eigenvalues.
 
-The initial direct Blümel PDF and publisher opens failed in this session; the
-arXiv abstract's PDF link subsequently returned the combined paper successfully.
-The remaining primary PDFs were readable. Failed preliminary opens do not
-override the later successful passage checks or support an absence claim.
+The [sensitivity frontier](SENSITIVITY_FRONTIER.md) applies this established
+geometry to the block pair $\operatorname{diag}(K,-K)$ and
+$\operatorname{diag}(D,-D)$. Its support function is $\|uK+vD\|$.
+Convexity concerns the numerical range of coherent coefficient vectors,
+which is why attainment does not require mixing protocols. The treatment of
+budget endpoints and the physical force construction are supplied in the
+frontier proof.
+
+## Comparison boundary
+
+These are targeted passage readings, with the fresh closest-work and later-work
+checks recorded in [RELATED_WORK.md](RELATED_WORK.md). They establish specific
+antecedents and distinctions, rather than exhaustive priority. Compare costs
+only after matching control space, normalization, unwrapped target, error model,
+and resource. The exact theory does not assign a laboratory performance ratio
+to a source that solves a different physical or optimization problem.
