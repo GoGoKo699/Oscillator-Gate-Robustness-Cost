@@ -1,0 +1,173 @@
+{
+  "exact_space": {
+    "complex_dimension": 2,
+    "detuning_overlap_matrix": "Matrix([[2/5, 0], [0, 5/8]])",
+    "force_minimum": "pi*sqrt(10)*abs(Theta)/T",
+    "frequencies_in_units_nu": [
+      1,
+      2,
+      -1,
+      -2
+    ],
+    "interpretation": "Global within the declared four-effective-offset space, including force endpoints and first displacement moment.",
+    "phase_matrix": "Matrix([[0, sqrt(10)*I/5], [-sqrt(10)*I/5, 0]])"
+  },
+  "finite_error": {
+    "effective_model_thermal_occupation": 5.0,
+    "max_even_part_identity_error": 3.3306690738754696e-16,
+    "rows": [
+      {
+        "common": {
+          "infidelity": 5.1578087487680335e-06,
+          "phase_error": -0.0025379374391271137,
+          "residual_norm": 2.3641950357628242e-05
+        },
+        "epsilon": 0.004,
+        "fixed_first_projection": {
+          "infidelity": 1.8274096569292908e-08,
+          "phase_error": 7.953541834360145e-06,
+          "residual_norm": 4.550660530780834e-05
+        },
+        "split": {
+          "infidelity": 4.993051971879936e-09,
+          "phase_error": 7.854201537593752e-06,
+          "residual_norm": 2.3701987824908337e-05
+        }
+      },
+      {
+        "common": {
+          "infidelity": 2.056492073521099e-05,
+          "phase_error": -0.005060484201309223,
+          "residual_norm": 9.432616679823845e-05
+        },
+        "epsilon": 0.008,
+        "fixed_first_projection": {
+          "infidelity": 2.923176092295421e-07,
+          "phase_error": 3.2214033091171324e-05,
+          "residual_norm": 0.00018199885907409235
+        },
+        "split": {
+          "infidelity": 7.988747618981051e-08,
+          "phase_error": 3.14194447500471e-05,
+          "residual_norm": 9.480706418310152e-05
+        }
+      },
+      {
+        "common": {
+          "infidelity": 0.0002939522244791437,
+          "phase_error": -0.018673062661074713,
+          "residual_norm": 0.0013074796800412204
+        },
+        "epsilon": 0.03,
+        "fixed_first_projection": {
+          "infidelity": 5.7723439643830865e-05,
+          "phase_error": 0.00048426035848303517,
+          "residual_norm": 0.002557097294623202
+        },
+        "split": {
+          "infidelity": 1.5793111173834085e-05,
+          "phase_error": 0.00044248125788415305,
+          "residual_norm": 0.001333007035420355
+        }
+      }
+    ],
+    "scope": "Finite checks of static fourth-order full-channel scaling; general-waveform statement protects phase only."
+  },
+  "general_basis": {
+    "cases": [
+      {
+        "compiled_efficiency": 0.1011299793694863,
+        "dimension": 2,
+        "spectral_radius": 0.10112997936948631,
+        "static_angle_derivative": -0.0
+      },
+      {
+        "compiled_efficiency": 0.10741723110591493,
+        "dimension": 3,
+        "spectral_radius": 0.10741723110591497,
+        "static_angle_derivative": -0.0
+      },
+      {
+        "compiled_efficiency": 0.10806570909840525,
+        "dimension": 4,
+        "spectral_radius": 0.10806570909840527,
+        "static_angle_derivative": -0.0
+      },
+      {
+        "compiled_efficiency": 0.10813899019430043,
+        "dimension": 5,
+        "spectral_radius": 0.10813899019430044,
+        "static_angle_derivative": -0.0
+      },
+      {
+        "compiled_efficiency": 0.10919854262451864,
+        "dimension": 6,
+        "spectral_radius": 0.10919854262451863,
+        "static_angle_derivative": -0.0
+      }
+    ],
+    "max_pointwise_force_difference": 1.7763568394002505e-15,
+    "note": "Finite checks of the general spectral proof, not random-search proof of optimality."
+  },
+  "matched_projection_comparison": {
+    "fixed_first_cost_factor": 4.664020413736748,
+    "overlap_exact": "9/sqrt(1762)",
+    "protocols": [
+      {
+        "analytic_phase_derivative": -0.6364345607775628,
+        "force_cost": 1.2418235332245127,
+        "integrated_phase_derivative": -0.6364345608411703,
+        "method": "common",
+        "nominal_phase": 0.7853981633974484,
+        "relative_cost": 1.0
+      },
+      {
+        "analytic_phase_derivative": -0.0,
+        "force_cost": 1.2418235332245127,
+        "integrated_phase_derivative": 0.0,
+        "method": "split",
+        "nominal_phase": 0.7853981633974484,
+        "relative_cost": 1.0
+      },
+      {
+        "analytic_phase_derivative": 6.661338147750939e-16,
+        "force_cost": 5.791890309217822,
+        "integrated_phase_derivative": 1.9984014443252815e-10,
+        "method": "fixed_first_projection",
+        "nominal_phase": 0.7853981633974481,
+        "relative_cost": 4.664020413736749
+      }
+    ],
+    "scope": "Our single-mode, four-offset application of BG21 S16 recipe, not the published multimode data or a universal comparison with independent-pulse optimizers."
+  },
+  "scope_controls": {
+    "circle_peak_amplitude_ratio": 1.4142135623730951,
+    "conjugate_notch_after": "2*pi",
+    "four_offset_peak_amplitudes": {
+      "common": [
+        0.4445698525097308,
+        0.4445698525097308
+      ],
+      "split": [
+        0.543928417895264,
+        0.6287167148414677
+      ]
+    },
+    "mirror_offsets_needed": [
+      -1,
+      -2,
+      -3
+    ],
+    "one_dimensional_angle_relation": "Theta_prime=-Theta/2, in nu=1 units",
+    "one_sided_force_shape": "exp(it)-4 exp(2it)+3 exp(3it)",
+    "one_sided_offsets": [
+      1,
+      2,
+      3
+    ],
+    "spectator_notch_before": "0",
+    "warning": "No theorem for per-qubit peak-constrained, arbitrary one-sided, multimode, or physical optical-power optimization."
+  },
+  "status": "PASS",
+  "test_groups": 5
+}

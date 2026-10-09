@@ -1,0 +1,243 @@
+{
+  "controls": {
+    "amplitude_error": [
+      {
+        "angle": 0.7869697451223987,
+        "average_infidelity_nbar5": 1.975893667904849e-06,
+        "relative_amplitude_error": 0.001
+      },
+      {
+        "angle": 0.8011846664817294,
+        "average_infidelity_nbar5": 0.00019935438226548197,
+        "relative_amplitude_error": 0.01
+      }
+    ],
+    "interpretation": "No claim of arbitrary-waveform full-gate robustness, amplitude robustness, or immunity to heating.",
+    "oscillating_detuning": [
+      {
+        "average_infidelity_nbar5": 1.3732348385864235e-05,
+        "displacement_norm": 0.001249208105328197,
+        "epsilon": 0.002,
+        "phase_error": 5.890473288028275e-07
+      },
+      {
+        "average_infidelity_nbar5": 5.4926506481534076e-05,
+        "displacement_norm": 0.0024984148052963535,
+        "epsilon": 0.004,
+        "phase_error": 2.3561739050936836e-06
+      },
+      {
+        "average_infidelity_nbar5": 0.00021965984076344203,
+        "displacement_norm": 0.004996818367696568,
+        "epsilon": 0.008,
+        "phase_error": 9.42444871654402e-06
+      }
+    ],
+    "uncentered_path_displacement_ratio": 1.999996130401483
+  },
+  "exact_example": {
+    "A": 0.19881768219176266,
+    "B": 0.31435835742073387,
+    "T": 6.283185307179586,
+    "area": "4*pi*A*B",
+    "common_phase_derivative": "-pi*(8*A**2 + 5*B**2)/4",
+    "force_squared_integral": "pi*(5*A**2 + 2*B**2)",
+    "split_beta_leading": "beta1=O(epsilon^3), beta2=-(3*pi*B/2)*epsilon^2+O(epsilon^3)",
+    "split_phase_second_coefficient": "5*pi*A*B/2",
+    "target": 0.7853981633974483
+  },
+  "independent_schrodinger": [
+    {
+      "Hilbert_dimension": 112,
+      "input_Fock": 0,
+      "last_three_level_population": 3.2671923068442386e-52,
+      "layout": "common",
+      "norm_error": 1.1812772982011666e-13,
+      "reduced_state_error": 2.9887472922932355e-13
+    },
+    {
+      "Hilbert_dimension": 112,
+      "input_Fock": 3,
+      "last_three_level_population": 6.12691158352653e-42,
+      "layout": "common",
+      "norm_error": 3.390621117205228e-13,
+      "reduced_state_error": 6.508358520666317e-13
+    },
+    {
+      "Hilbert_dimension": 112,
+      "input_Fock": 0,
+      "last_three_level_population": 5.130653292428744e-57,
+      "layout": "split",
+      "norm_error": 9.059419880941277e-14,
+      "reduced_state_error": 2.4905940066666164e-13
+    },
+    {
+      "Hilbert_dimension": 112,
+      "input_Fock": 3,
+      "last_three_level_population": 8.007395819047694e-49,
+      "layout": "split",
+      "norm_error": 2.914335439641036e-13,
+      "reduced_state_error": 6.696831943881254e-13
+    },
+    {
+      "Hilbert_dimension": 112,
+      "input_Fock": 0,
+      "last_three_level_population": 1.2137420740714484e-57,
+      "layout": "split",
+      "norm_error": 9.181544413650045e-14,
+      "profile": "cosine",
+      "reduced_state_error": 2.5053964141657636e-13
+    }
+  ],
+  "static_comparison": {
+    "common_phase_slope": -0.6364345607775627,
+    "common_quadratic_coefficient": 0.3240391601217033,
+    "limits": "Fixed finite thermal occupation; only the stipulated force model. epsilon=delta/nu, not delta/physical_mode_frequency.",
+    "split_quartic_coefficient_at_nbar5": 19.504218971672376,
+    "table": [
+      {
+        "common": {
+          "angle": 0.7822281586855723,
+          "average_infidelity": 8.051110056639388e-06,
+          "residual_displacement_norm": 3.691699370629218e-05
+        },
+        "epsilon": 0.005,
+        "nbar": 5.0,
+        "split": {
+          "angle": 0.7854104357806153,
+          "average_infidelity": 1.2190029652359158e-08,
+          "residual_displacement_norm": 3.703429100208731e-05
+        }
+      },
+      {
+        "common": {
+          "angle": 0.7790820794973725,
+          "average_infidelity": 3.210456508973003e-05,
+          "residual_displacement_norm": 0.00014719516631676836
+        },
+        "epsilon": 0.01,
+        "nbar": 5.0,
+        "split": {
+          "angle": 0.7854472593715416,
+          "average_infidelity": 1.950352881419093e-07,
+          "residual_displacement_norm": 0.00014813499818185064
+        }
+      },
+      {
+        "common": {
+          "angle": 0.7728592869573849,
+          "average_infidelity": 0.00012878286676443196,
+          "residual_displacement_norm": 0.0005849638766300551
+        },
+        "epsilon": 0.02,
+        "nbar": 5.0,
+        "split": {
+          "angle": 0.7855946502931604,
+          "average_infidelity": 3.120224287611606e-06,
+          "residual_displacement_norm": 0.0005925053374374454
+        }
+      },
+      {
+        "common": {
+          "angle": 0.7547049350087227,
+          "average_infidelity": 0.0008662569297422928,
+          "residual_displacement_norm": 0.0035827944786031686
+        },
+        "epsilon": 0.05,
+        "nbar": 5.0,
+        "split": {
+          "angle": 0.786630695058146,
+          "average_infidelity": 0.00012177585889328046,
+          "residual_displacement_norm": 0.0037016416140370173
+        }
+      },
+      {
+        "common": {
+          "angle": 0.7259219694134791,
+          "average_infidelity": 0.004497520107536013,
+          "residual_displacement_norm": 0.013822172174200351
+        },
+        "epsilon": 0.1,
+        "nbar": 5.0,
+        "split": {
+          "angle": 0.790391408434947,
+          "average_infidelity": 0.0019388737148308133,
+          "residual_displacement_norm": 0.014784865955765534
+        }
+      }
+    ]
+  },
+  "status": "PASS",
+  "symmetry": {
+    "cases": [
+      {
+        "common_even_part_error": 2.220446049250313e-16,
+        "epsilon": 0.013,
+        "profile": "static",
+        "sign_reversal_error": 0.0,
+        "split_angle": 0.7854811456064092
+      },
+      {
+        "common_even_part_error": 2.220446049250313e-16,
+        "epsilon": 0.12,
+        "profile": "static",
+        "sign_reversal_error": 0.0,
+        "split_angle": 0.7926407148482608
+      },
+      {
+        "common_even_part_error": 6.661338147750939e-16,
+        "epsilon": 0.7,
+        "profile": "static",
+        "sign_reversal_error": 0.0,
+        "split_angle": 1.1029940260945483
+      },
+      {
+        "common_even_part_error": 0.0,
+        "epsilon": 0.013,
+        "profile": "cosine",
+        "sign_reversal_error": 0.0,
+        "split_angle": 0.7854230484060427
+      },
+      {
+        "common_even_part_error": 4.440892098500626e-16,
+        "epsilon": 0.12,
+        "profile": "cosine",
+        "sign_reversal_error": 0.0,
+        "split_angle": 0.7875021014626997
+      },
+      {
+        "common_even_part_error": 1.1102230246251565e-16,
+        "epsilon": 0.7,
+        "profile": "cosine",
+        "sign_reversal_error": 0.0,
+        "split_angle": 0.839431982842321
+      },
+      {
+        "common_even_part_error": 2.220446049250313e-16,
+        "epsilon": 0.013,
+        "profile": "shaped",
+        "sign_reversal_error": 0.0,
+        "split_angle": 0.7854720449906172
+      },
+      {
+        "common_even_part_error": 5.551115123125783e-16,
+        "epsilon": 0.12,
+        "profile": "shaped",
+        "sign_reversal_error": 0.0,
+        "split_angle": 0.7917364666380445
+      },
+      {
+        "common_even_part_error": 0.0,
+        "epsilon": 0.7,
+        "profile": "shaped",
+        "sign_reversal_error": 0.0,
+        "split_angle": 1.0134671482043176
+      }
+    ],
+    "max_evenness_error": 0.0,
+    "max_phase_symmetrization_error": 6.661338147750939e-16,
+    "max_power_difference": 1.6653345369377348e-16,
+    "resources": "Same duration and sum_j |f_j(t)|^2 at every time; independent per-qubit controls required."
+  },
+  "test_groups": 5
+}

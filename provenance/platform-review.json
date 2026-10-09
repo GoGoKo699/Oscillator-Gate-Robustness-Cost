@@ -1,0 +1,932 @@
+{
+  "all_differences_reviewed_as_finite_floating_point_values": true,
+  "archive_source_unchanged_in_both_runs": true,
+  "canonical_reports_byte_identical": false,
+  "decision": "Keep historical reports and scientific tolerances unchanged. Strict mode remains available; explicit portability policy separates passing scientific assertions from report byte identity.",
+  "packages": {
+    "mpmath": "1.3.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "python_versions": [
+    "3.12.14",
+    "3.13.5"
+  ],
+  "review_date_utc": "2026-10-09",
+  "runs": [
+    {
+      "canonical_byte_identical": false,
+      "canonical_reference": "evidence/final.json",
+      "differences": [
+        {
+          "absolute_difference": 2.7755575615628914e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/0/certificate_min_eigenvalue",
+          "reference": -3.191891195797325e-16,
+          "run": -4.163336342344337e-17
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/0/radius",
+          "reference": 0.6500011999998669,
+          "run": 0.6500011999998672
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/0/slope_residual",
+          "reference": 6.661338147750939e-16,
+          "run": 4.440892098500626e-16
+        },
+        {
+          "absolute_difference": 7.355227538141662e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/1/slope_residual",
+          "reference": 2.7755575615628914e-17,
+          "run": 7.632783294297951e-16
+        },
+        {
+          "absolute_difference": 5.551115123125783e-17,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/2/certificate_min_eigenvalue",
+          "reference": 0.0,
+          "run": -5.551115123125783e-17
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/2/slope_residual",
+          "reference": 4.440892098500626e-16,
+          "run": 0.0
+        },
+        {
+          "absolute_difference": 4.4051134268086045e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/3/certificate_min_eigenvalue",
+          "reference": -4.324882466044677e-16,
+          "run": 8.023096076392733e-18
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/3/radius",
+          "reference": 1.5096013795916317,
+          "run": 1.509601379591632
+        },
+        {
+          "absolute_difference": 1.1102230246251565e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/3/slope_residual",
+          "reference": 7.216449660063518e-16,
+          "run": 6.106226635438361e-16
+        },
+        {
+          "absolute_difference": 8.81239525796218e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/4/certificate_min_eigenvalue",
+          "reference": 5.811323644522304e-16,
+          "run": -3.0010716134398763e-16
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/4/radius",
+          "reference": 2.5340363687859435,
+          "run": 2.534036368785943
+        },
+        {
+          "absolute_difference": 4.163336342344337e-17,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/4/zeta",
+          "reference": -0.020705104298350388,
+          "run": -0.020705104298350346
+        },
+        {
+          "absolute_difference": 2.6888213877473903e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/5/certificate_min_eigenvalue",
+          "reference": -2.664960840772069e-16,
+          "run": 2.386054697532137e-18
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/5/radius",
+          "reference": 1.869795870272084,
+          "run": 1.8697958702720845
+        },
+        {
+          "absolute_difference": 3.885780586188048e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/5/slope_residual",
+          "reference": 7.771561172376096e-16,
+          "run": 1.1657341758564144e-15
+        },
+        {
+          "absolute_difference": 1.3877787807814457e-17,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/5/zeta",
+          "reference": -0.04329024930514862,
+          "run": -0.04329024930514863
+        },
+        {
+          "absolute_difference": 1.1102751171514127e-15,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/6/certificate_min_eigenvalue",
+          "reference": -2.3635280987805543e-15,
+          "run": -3.473803215931967e-15
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/6/radius",
+          "reference": 3.1983114104367942,
+          "run": 3.1983114104367933
+        },
+        {
+          "absolute_difference": 1.7763568394002505e-15,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/6/slope_residual",
+          "reference": 8.881784197001252e-16,
+          "run": 2.6645352591003757e-15
+        },
+        {
+          "absolute_difference": 1.9760054154270352e-15,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/7/certificate_min_eigenvalue",
+          "reference": -2.382996754026097e-15,
+          "run": -4.0699133859906166e-16
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/7/radius",
+          "reference": 3.777637001374205,
+          "run": 3.777637001374204
+        },
+        {
+          "absolute_difference": 1.1102230246251565e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/7/slope_residual",
+          "reference": 2.7755575615628914e-16,
+          "run": 1.6653345369377348e-16
+        },
+        {
+          "absolute_difference": 2.7755575615628914e-17,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/7/zeta",
+          "reference": -0.09437506097096146,
+          "run": -0.09437506097096143
+        },
+        {
+          "absolute_difference": 8.673617379884035e-19,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/8/certificate_min_eigenvalue",
+          "reference": 5.430768681979892e-16,
+          "run": 5.422095064600008e-16
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/certificate/random_diagnostics/8/slope_residual",
+          "reference": 2.7755575615628914e-16,
+          "run": 4.996003610813204e-16
+        },
+        {
+          "absolute_difference": 6.733957100975925e-34,
+          "kind": "numeric",
+          "path": "/full_gate_error/cases/1/predicted_quadratic_infidelity",
+          "reference": 8.274701056485714e-34,
+          "run": 1.5407439555097888e-34
+        },
+        {
+          "absolute_difference": 1.8283332074128617e-17,
+          "kind": "numeric",
+          "path": "/full_gate_error/cases/1/slope",
+          "reference": -3.2161119881943074e-17,
+          "run": -1.3877787807814457e-17
+        },
+        {
+          "absolute_difference": 6.3999593648495274e-18,
+          "kind": "numeric",
+          "path": "/full_gate_error/cases/2/slope",
+          "reference": 6.3999593648495274e-18,
+          "run": -0.0
+        },
+        {
+          "absolute_difference": 7.360778653264788e-14,
+          "kind": "numeric",
+          "path": "/full_gate_error/cases/3/symmetrized_error_over_delta_squared/0",
+          "reference": 0.8555805780419498,
+          "run": 0.8555805780420234
+        },
+        {
+          "absolute_difference": 3.5493830097266255e-13,
+          "kind": "numeric",
+          "path": "/full_gate_error/cases/3/symmetrized_error_over_delta_squared/1",
+          "reference": 0.8555815729659354,
+          "run": 0.8555815729662903
+        },
+        {
+          "absolute_difference": 3.469446951953614e-18,
+          "kind": "numeric",
+          "path": "/full_gate_error/cases/3/theta0",
+          "reference": 0.0007000000000000027,
+          "run": 0.0006999999999999992
+        },
+        {
+          "absolute_difference": 1.1102230246251565e-16,
+          "kind": "numeric",
+          "path": "/full_gate_projection/cases/0/dual_block_min_eigenvalue",
+          "reference": -1.6653345369377348e-16,
+          "run": -5.551115123125783e-17
+        },
+        {
+          "absolute_difference": 1.1102230246251565e-16,
+          "kind": "numeric",
+          "path": "/full_gate_projection/cases/0/robust_efficiency",
+          "reference": 0.6324555320336758,
+          "run": 0.6324555320336759
+        },
+        {
+          "absolute_difference": 8.326672684688674e-17,
+          "kind": "numeric",
+          "path": "/full_gate_projection/cases/1/dual_block_min_eigenvalue",
+          "reference": -9.020562075079397e-17,
+          "run": -6.938893903907228e-18
+        },
+        {
+          "absolute_difference": 6.938893903907228e-17,
+          "kind": "numeric",
+          "path": "/full_gate_projection/cases/1/robust_efficiency",
+          "reference": 0.09467535586548059,
+          "run": 0.09467535586548066
+        },
+        {
+          "absolute_difference": 1.1911036946760945e-44,
+          "kind": "numeric",
+          "path": "/joint_error_operator/largest_top_two_level_probability",
+          "reference": 3.442965958042303e-31,
+          "run": 3.4429659580424223e-31
+        },
+        {
+          "absolute_difference": 4.860451278561728e-16,
+          "kind": "numeric",
+          "path": "/joint_error_operator/max_nominal_return_error",
+          "reference": 9.311843069862848e-15,
+          "run": 9.797888197719021e-15
+        },
+        {
+          "absolute_difference": 2.8121891110864774e-15,
+          "kind": "numeric",
+          "path": "/joint_error_operator/max_tangent_vector_error",
+          "reference": 2.665735826805358e-13,
+          "run": 2.693857717916223e-13
+        }
+      ],
+      "groups": 5,
+      "python312_python313_report_bytes_equal": true,
+      "report_sha256": "e0393b791fcdab83ac8d5ca6b1cb0a80128142ac17ad0b2dadbc3456b1a1b8b3",
+      "scientific_status": "PASS",
+      "suite": "consolidation"
+    },
+    {
+      "canonical_byte_identical": false,
+      "canonical_reference": "prior/evidence/final.json",
+      "differences": [
+        {
+          "absolute_difference": 1.9984014443252818e-15,
+          "kind": "numeric",
+          "path": "/criterion/tests/1/ratio",
+          "reference": 1.0257371198528757,
+          "run": 1.0257371198528737
+        },
+        {
+          "absolute_difference": 5.551115123125783e-16,
+          "kind": "numeric",
+          "path": "/dynamics/angle_asymmetry_at_plus_minus_002",
+          "reference": 3.113412845978658e-06,
+          "run": 3.1134128465337696e-06
+        },
+        {
+          "absolute_difference": 1.0732155904709845e-11,
+          "kind": "numeric",
+          "path": "/dynamics/fourth_order_stencil_phase_slope",
+          "reference": 3.5157062446463288e-12,
+          "run": -7.216449660063517e-12
+        },
+        {
+          "absolute_difference": 1.847129928709629e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/-0.0001/residual_displacement_norm",
+          "reference": 4.014879150736923e-09,
+          "run": 4.014880997866852e-09
+        },
+        {
+          "absolute_difference": 2.3314683517128287e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/-0.0001/theta",
+          "reference": 0.7853981617418041,
+          "run": 0.7853981617418064
+        },
+        {
+          "absolute_difference": 7.361482380148768e-16,
+          "kind": "numeric",
+          "path": "/dynamics/rows/-0.0002/residual_displacement_norm",
+          "reference": 1.6062253054292036e-08,
+          "run": 1.6062252318143798e-08
+        },
+        {
+          "absolute_difference": 7.771561172376096e-16,
+          "kind": "numeric",
+          "path": "/dynamics/rows/-0.0002/theta",
+          "reference": 0.7853981567815648,
+          "run": 0.785398156781564
+        },
+        {
+          "absolute_difference": 4.075685372962462e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/-0.01/residual_displacement_norm",
+          "reference": 4.083188193955072e-05,
+          "run": 4.083188193547504e-05
+        },
+        {
+          "absolute_difference": 7.771561172376096e-16,
+          "kind": "numeric",
+          "path": "/dynamics/rows/-0.01/theta",
+          "reference": 0.7853814370557084,
+          "run": 0.7853814370557092
+        },
+        {
+          "absolute_difference": 2.5315036525364043e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/-0.02/residual_displacement_norm",
+          "reference": 0.00016610240164088304,
+          "run": 0.00016610240164341455
+        },
+        {
+          "absolute_difference": 7.771561172376096e-16,
+          "kind": "numeric",
+          "path": "/dynamics/rows/-0.02/theta",
+          "reference": 0.7853304529677444,
+          "run": 0.7853304529677436
+        },
+        {
+          "absolute_difference": 4.0504382294522875e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.0/residual_displacement_norm",
+          "reference": 1.0810237428093162e-14,
+          "run": 6.759799198640875e-15
+        },
+        {
+          "absolute_difference": 3.3306690738754696e-16,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.0/theta",
+          "reference": 0.7853981633949583,
+          "run": 0.7853981633949586
+        },
+        {
+          "absolute_difference": 1.4692481037142588e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.0001/residual_displacement_norm",
+          "reference": 4.013503895297414e-09,
+          "run": 4.013505364545518e-09
+        },
+        {
+          "absolute_difference": 7.771561172376096e-16,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.0001/theta",
+          "reference": 0.7853981617421938,
+          "run": 0.7853981617421946
+        },
+        {
+          "absolute_difference": 3.3243871102704398e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.0002/residual_displacement_norm",
+          "reference": 1.6051241517220552e-08,
+          "run": 1.6051244841607662e-08
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.0002/theta",
+          "reference": 0.7853981567846777,
+          "run": 0.7853981567846782
+        },
+        {
+          "absolute_difference": 2.857462259430593e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.01/residual_displacement_norm",
+          "reference": 3.9455620211938435e-05,
+          "run": 3.94556202147959e-05
+        },
+        {
+          "absolute_difference": 1.4432899320127035e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.01/theta",
+          "reference": 0.7853818261248389,
+          "run": 0.7853818261248403
+        },
+        {
+          "absolute_difference": 1.5514662037724447e-15,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.02/residual_displacement_norm",
+          "reference": 0.00015509324622827085,
+          "run": 0.00015509324622671938
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/dynamics/rows/0.02/theta",
+          "reference": 0.7853335663805904,
+          "run": 0.7853335663805902
+        },
+        {
+          "absolute_difference": 3.2400082616845793e-10,
+          "kind": "numeric",
+          "path": "/dynamics/second_order_displacement_ratio",
+          "reference": 3.930827734938074,
+          "run": 3.930827734614073
+        },
+        {
+          "absolute_difference": 6.661338147750939e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/1/derivative_residual",
+          "reference": 8.881784197001252e-16,
+          "run": 2.220446049250313e-16
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/1/phase_residual",
+          "reference": 4.440892098500626e-16,
+          "run": 2.220446049250313e-16
+        },
+        {
+          "absolute_difference": 3.8337388819087437e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/3/derivative_residual",
+          "reference": 4.423544863740858e-16,
+          "run": 5.898059818321144e-17
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/3/mu",
+          "reference": -0.09086231946057355,
+          "run": -0.09086231946057333
+        },
+        {
+          "absolute_difference": 3.3306690738754696e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/3/phase_residual",
+          "reference": 5.551115123125783e-16,
+          "run": 2.220446049250313e-16
+        },
+        {
+          "absolute_difference": 3.3306690738754696e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/3/r",
+          "reference": 0.847002452003972,
+          "run": 0.8470024520039716
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/4/largest_random_feasible_efficiency",
+          "reference": 1.177599842636335,
+          "run": 1.1775998426363352
+        },
+        {
+          "absolute_difference": 9.71445146547012e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/4/mu",
+          "reference": -0.07983300340665712,
+          "run": -0.07983300340665722
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/4/phase_residual",
+          "reference": 0.0,
+          "run": 4.440892098500626e-16
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/5/largest_random_feasible_efficiency",
+          "reference": 1.9569434910147656,
+          "run": 1.9569434910147654
+        },
+        {
+          "absolute_difference": 2.0816681711721685e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/5/mu",
+          "reference": -0.058510989241413666,
+          "run": -0.058510989241413645
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/5/r",
+          "reference": 2.2666959782677045,
+          "run": 2.266695978267704
+        },
+        {
+          "absolute_difference": 5.551115123125783e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/6/derivative_residual",
+          "reference": 2.7755575615628914e-16,
+          "run": 2.220446049250313e-16
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/6/largest_random_feasible_efficiency",
+          "reference": 0.7541714445426906,
+          "run": 0.7541714445426908
+        },
+        {
+          "absolute_difference": 2.2551405187698492e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/6/mu",
+          "reference": 0.01148873925633333,
+          "run": 0.011488739256333308
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/6/phase_residual",
+          "reference": 2.220446049250313e-16,
+          "run": 0.0
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/6/r",
+          "reference": 1.031250565686676,
+          "run": 1.0312505656866762
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/7/derivative_residual",
+          "reference": 0.0,
+          "run": 8.881784197001252e-16
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/7/largest_random_feasible_efficiency",
+          "reference": 2.095961665781504,
+          "run": 2.0959616657815046
+        },
+        {
+          "absolute_difference": 4.163336342344337e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/7/mu",
+          "reference": -0.08431588052244784,
+          "run": -0.0843158805224478
+        },
+        {
+          "absolute_difference": 1.3322676295501878e-15,
+          "kind": "numeric",
+          "path": "/pencil/cases/7/phase_residual",
+          "reference": 2.4868995751603507e-14,
+          "run": 2.353672812205332e-14
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/7/r",
+          "reference": 2.772774989865421,
+          "run": 2.7727749898654204
+        },
+        {
+          "absolute_difference": 4.996003610813204e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/8/derivative_residual",
+          "reference": 2.1649348980190553e-15,
+          "run": 1.6653345369377348e-15
+        },
+        {
+          "absolute_difference": 5.551115123125783e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/8/mu",
+          "reference": -0.020463149205895315,
+          "run": -0.02046314920589537
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/8/phase_residual",
+          "reference": 2.6645352591003757e-15,
+          "run": 3.552713678800501e-15
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/8/r",
+          "reference": 3.083472324252332,
+          "run": 3.0834723242523316
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/9/largest_random_feasible_efficiency",
+          "reference": 1.9021187505932473,
+          "run": 1.902118750593247
+        },
+        {
+          "absolute_difference": 1.3877787807814457e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/9/mu",
+          "reference": 0.0861435690417041,
+          "run": 0.08614356904170409
+        },
+        {
+          "absolute_difference": 1.3322676295501878e-15,
+          "kind": "numeric",
+          "path": "/pencil/cases/9/nominal",
+          "reference": 3.69764406388323,
+          "run": 3.697644063883229
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/9/phase_residual",
+          "reference": 5.773159728050814e-15,
+          "run": 4.884981308350689e-15
+        },
+        {
+          "absolute_difference": 1.1102230246251565e-15,
+          "kind": "numeric",
+          "path": "/pencil/cases/10/derivative_residual",
+          "reference": 4.440892098500626e-16,
+          "run": 1.5543122344752192e-15
+        },
+        {
+          "absolute_difference": 1.3877787807814457e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/10/mu",
+          "reference": 0.040638406542723396,
+          "run": 0.04063840654272338
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/10/phase_residual",
+          "reference": 8.881784197001252e-16,
+          "run": 1.7763568394002505e-15
+        },
+        {
+          "absolute_difference": 6.661338147750939e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/10/r",
+          "reference": 1.6253291427486538,
+          "run": 1.6253291427486531
+        },
+        {
+          "absolute_difference": 6.661338147750939e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/11/derivative_residual",
+          "reference": 2.220446049250313e-16,
+          "run": 8.881784197001252e-16
+        },
+        {
+          "absolute_difference": 1.3877787807814457e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/11/mu",
+          "reference": 0.11722526676949194,
+          "run": 0.11722526676949195
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/11/nominal",
+          "reference": 4.201460192315595,
+          "run": 4.201460192315596
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/11/phase_residual",
+          "reference": 6.661338147750939e-15,
+          "run": 6.217248937900877e-15
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/11/r",
+          "reference": 2.7214835327425804,
+          "run": 2.721483532742581
+        },
+        {
+          "absolute_difference": 2.609024107869118e-15,
+          "kind": "numeric",
+          "path": "/pencil/cases/12/derivative_residual",
+          "reference": 3.3861802251067274e-15,
+          "run": 7.771561172376096e-16
+        },
+        {
+          "absolute_difference": 1.214306433183765e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/12/mu",
+          "reference": 0.00401175017039898,
+          "run": 0.004011750170398992
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/12/phase_residual",
+          "reference": 2.6645352591003757e-15,
+          "run": 3.552713678800501e-15
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/12/r",
+          "reference": 3.0945553130792653,
+          "run": 3.094555313079265
+        },
+        {
+          "absolute_difference": 1.3322676295501878e-15,
+          "kind": "numeric",
+          "path": "/pencil/cases/13/derivative_residual",
+          "reference": 2.220446049250313e-15,
+          "run": 3.552713678800501e-15
+        },
+        {
+          "absolute_difference": 7.632783294297951e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/13/mu",
+          "reference": -0.03623082575762498,
+          "run": -0.0362308257576249
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/13/nominal",
+          "reference": 3.5667613812406205,
+          "run": 3.566761381240621
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/13/r",
+          "reference": 3.0846047202169324,
+          "run": 3.084604720216932
+        },
+        {
+          "absolute_difference": 6.661338147750939e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/14/derivative_residual",
+          "reference": 8.881784197001252e-16,
+          "run": 2.220446049250313e-16
+        },
+        {
+          "absolute_difference": 4.440892098500626e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/14/largest_random_feasible_efficiency",
+          "reference": 2.06095187891987,
+          "run": 2.0609518789198695
+        },
+        {
+          "absolute_difference": 3.469446951953614e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/14/mu",
+          "reference": -0.059076504370315745,
+          "run": -0.05907650437031578
+        },
+        {
+          "absolute_difference": 3.1086244689504383e-15,
+          "kind": "numeric",
+          "path": "/pencil/cases/14/nominal",
+          "reference": 3.677238571807783,
+          "run": 3.67723857180778
+        },
+        {
+          "absolute_difference": 1.3322676295501878e-15,
+          "kind": "numeric",
+          "path": "/pencil/cases/14/phase_residual",
+          "reference": 3.1086244689504383e-15,
+          "run": 1.7763568394002505e-15
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/14/r",
+          "reference": 3.247077637273593,
+          "run": 3.247077637273594
+        },
+        {
+          "absolute_difference": 1.3322676295501878e-15,
+          "kind": "numeric",
+          "path": "/pencil/cases/15/derivative_residual",
+          "reference": 8.881784197001252e-16,
+          "run": 2.220446049250313e-15
+        },
+        {
+          "absolute_difference": 2.220446049250313e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/15/largest_random_feasible_efficiency",
+          "reference": 1.5197845161687067,
+          "run": 1.5197845161687065
+        },
+        {
+          "absolute_difference": 2.42861286636753e-17,
+          "kind": "numeric",
+          "path": "/pencil/cases/15/mu",
+          "reference": 0.024073281574138048,
+          "run": 0.024073281574138024
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/15/nominal",
+          "reference": 4.0647691610793,
+          "run": 4.064769161079301
+        },
+        {
+          "absolute_difference": 8.881784197001252e-16,
+          "kind": "numeric",
+          "path": "/pencil/cases/15/phase_residual",
+          "reference": 3.1086244689504383e-15,
+          "run": 2.220446049250313e-15
+        }
+      ],
+      "groups": 5,
+      "python312_python313_report_bytes_equal": true,
+      "report_sha256": "a560bbe8dac847115071777c7b16362b836b8263226c37651059cb10e84a21c4",
+      "scientific_status": "PASS",
+      "suite": "cost_audit"
+    },
+    {
+      "canonical_byte_identical": false,
+      "canonical_reference": "prior/prior/evidence/first.json",
+      "differences": [
+        {
+          "absolute_difference": 4.163336342344337e-17,
+          "kind": "numeric",
+          "path": "/general_basis/cases/2/compiled_efficiency",
+          "reference": 0.10806570909840525,
+          "run": 0.1080657090984053
+        },
+        {
+          "absolute_difference": 1.3877787807814457e-17,
+          "kind": "numeric",
+          "path": "/general_basis/cases/3/compiled_efficiency",
+          "reference": 0.10813899019430043,
+          "run": 0.10813899019430044
+        },
+        {
+          "absolute_difference": 2.7755575615628914e-17,
+          "kind": "numeric",
+          "path": "/general_basis/cases/4/compiled_efficiency",
+          "reference": 0.10919854262451864,
+          "run": 0.10919854262451867
+        }
+      ],
+      "groups": 5,
+      "python312_python313_report_bytes_equal": true,
+      "report_sha256": "7a5025b648aa1010004ff3e38fbcc5641595f7fae7195b6a514fa493416c05c9",
+      "scientific_status": "PASS",
+      "suite": "resource_review"
+    },
+    {
+      "canonical_byte_identical": false,
+      "canonical_reference": "prior/prior/prior/evidence/final.json",
+      "differences": [
+        {
+          "absolute_difference": 9.903990861819194e-18,
+          "kind": "numeric",
+          "path": "/independent_schrodinger/2/reduced_state_error",
+          "reference": 2.4905940066666164e-13,
+          "run": 2.4906930465752346e-13
+        },
+        {
+          "absolute_difference": 1.2187802516638564e-17,
+          "kind": "numeric",
+          "path": "/independent_schrodinger/3/reduced_state_error",
+          "reference": 6.696831943881254e-13,
+          "run": 6.69695382190642e-13
+        }
+      ],
+      "groups": 5,
+      "python312_python313_report_bytes_equal": true,
+      "report_sha256": "495d42a94157ffb8ce8b508d52d08d61944a35ee830d4bad56e7b595e80cbcd0",
+      "scientific_status": "PASS",
+      "suite": "pilot"
+    }
+  ],
+  "schema_version": 1,
+  "scientific_assertions_pass_in_both_runs": true,
+  "scope": "Initial scientific recovery runs before repository wrapper completion; not exact-commit or hosted verification.",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

@@ -1,0 +1,10 @@
+test_01_exact_matched_control_space (__main__.Checks.test_01_exact_matched_control_space) ... ok
+test_02_general_real_basis_optimality (__main__.Checks.test_02_general_real_basis_optimality) ... ok
+test_03_published_strategy_matched_comparison (__main__.Checks.test_03_published_strategy_matched_comparison) ... ok
+test_04_resource_hypothesis_controls (__main__.Checks.test_04_resource_hypothesis_controls) ... ok
+test_05_finite_error_and_all_waveform_phase (__main__.Checks.test_05_finite_error_and_all_waveform_phase) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 4.538s
+
+OK

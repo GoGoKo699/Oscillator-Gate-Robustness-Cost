@@ -1,0 +1,12 @@
+--- before/check_audit.py
++++ after/check_audit.py
+@@ -59,7 +59,8 @@
+                     'nominal':ans.nominal_phase_per_cost,'phase_residual':abs(phase-ans.phase_per_cost),
+                     'derivative_residual':abs(der),'largest_random_feasible_efficiency':max_random})
+         D=np.array([[2.,.3],[.3,1.]])
+-        ans=robust_optimum(1.7*D,D);self.assertEqual(ans.phase_per_cost,0.)
++        with self.assertRaises(ArithmeticError):
++            robust_optimum(1.7*D,D)
+         REPORT['pencil']={'cases':records,'proportional_K_D':'No nonzero robust phase; zero efficiency.'}
+ 
+     def test_02_exact_one_sided_control_space(self):

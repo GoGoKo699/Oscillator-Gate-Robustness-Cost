@@ -1,0 +1,10 @@
+test_01_exact_geometry_moments_and_coefficients (__main__.Checks.test_01_exact_geometry_moments_and_coefficients) ... ok
+test_02_equal_resources_and_general_phase_symmetry (__main__.Checks.test_02_equal_resources_and_general_phase_symmetry) ... ok
+test_03_static_drift_scaling_and_exact_thermal_channel (__main__.Checks.test_03_static_drift_scaling_and_exact_thermal_channel) ... ok
+test_04_full_quantum_dynamics_independent_of_magnus (__main__.Checks.test_04_full_quantum_dynamics_independent_of_magnus) ... ok
+test_05_scope_controls (__main__.Checks.test_05_scope_controls) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.927s
+
+OK
