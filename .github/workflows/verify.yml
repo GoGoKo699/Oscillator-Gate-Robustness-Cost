@@ -1,0 +1,37 @@
+name: Verify preserved scientific package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.5"
+          cache: pip
+      - name: Install recorded scientific dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify scientific assertions and archive; record numerical report differences
+        run: python scripts/verify.py --output-dir verification-results/ci --allow-report-differences
+      - name: Preserve reports and logs even when verification fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: verification-results/ci/
+          if-no-files-found: warn

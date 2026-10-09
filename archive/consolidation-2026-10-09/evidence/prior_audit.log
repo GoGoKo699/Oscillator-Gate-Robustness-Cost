@@ -1,0 +1,10 @@
+test_01_extremal_pencil_and_exact_attainment (__main__.Checks.test_01_extremal_pencil_and_exact_attainment) ... ok
+test_02_exact_one_sided_control_space (__main__.Checks.test_02_exact_one_sided_control_space) ... ok
+test_03_no_penalty_criterion_and_conjugation (__main__.Checks.test_03_no_penalty_criterion_and_conjugation) ... ok
+test_04_independent_force_dynamics (__main__.Checks.test_04_independent_force_dynamics) ... ok
+test_05_all_minimizers_and_peak_obstruction (__main__.Checks.test_05_all_minimizers_and_peak_obstruction) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.386s
+
+OK

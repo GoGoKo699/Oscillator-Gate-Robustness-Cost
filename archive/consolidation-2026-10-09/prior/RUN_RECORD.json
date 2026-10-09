@@ -1,0 +1,52 @@
+{
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "reference": "evidence/final.json",
+      "reference_sha256": "f016af36a36137902ecf7b2212b9f45140b315f65bd589540128242a7f0a8007",
+      "rerun": "evidence/final_repeat.json",
+      "rerun_sha256": "f016af36a36137902ecf7b2212b9f45140b315f65bd589540128242a7f0a8007"
+    },
+    {
+      "byte_identical": true,
+      "reference": "prior/evidence/first.json",
+      "reference_sha256": "f11710d4af63292c991e424c4607be69df70549be621c14e3db3fd53fc7e19b7",
+      "rerun": "evidence/prior_review.json",
+      "rerun_sha256": "f11710d4af63292c991e424c4607be69df70549be621c14e3db3fd53fc7e19b7"
+    },
+    {
+      "byte_identical": true,
+      "reference": "prior/prior/evidence/final.json",
+      "reference_sha256": "0d9a05476dabfae4b1bd9dfd55888b7792395c26cc5261c3e26ce1af8e0b14a3",
+      "rerun": "evidence/prior_pilot.json",
+      "rerun_sha256": "0d9a05476dabfae4b1bd9dfd55888b7792395c26cc5261c3e26ce1af8e0b14a3"
+    }
+  ],
+  "date": "2026-10-09",
+  "failed_formal_runs": 0,
+  "incoming_archive_members_unchanged": 30,
+  "incoming_manifests": [
+    {
+      "manifest": "prior/MANIFEST.json",
+      "members_verified": 29
+    },
+    {
+      "manifest": "prior/prior/MANIFEST.json",
+      "members_verified": 17
+    }
+  ],
+  "largest_legacy_Hilbert_dimension": 112,
+  "largest_new_projected_dimension": 6,
+  "legacy_complete_runs_each": 1,
+  "legacy_groups": {
+    "pilot": 5,
+    "resource_review": 5
+  },
+  "new_check_groups": 5,
+  "new_complete_runs": 4,
+  "new_force_ODE_variables": "two complex displacements and the accumulated phase",
+  "numerical_code_refinement": "After the first two passing runs, near-zero robust efficiency now raises an explicit unresolved-numerics exception rather than reporting exact infeasibility. Both earlier sources and their diffs are retained; no mathematical statement or inequality tolerance was relaxed.",
+  "repositories_read_or_modified": false,
+  "source_pdfs_redistributed": false,
+  "status": "PASS"
+}

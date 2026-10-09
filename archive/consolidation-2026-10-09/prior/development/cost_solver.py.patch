@@ -1,0 +1,11 @@
+--- before/cost_solver.py
++++ after/cost_solver.py
+@@ -40,7 +40,7 @@
+     ev,V=eigh(K-zeta*D)
+     r=float((ev[-1]-ev[0])/2)
+     if r<1e-12*lam:
+-        return RobustOptimum(zeta,0.,lam,np.zeros(len(K),complex),np.zeros(len(K),complex))
++        raise ArithmeticError('Robust efficiency is numerically unresolved near zero. Use exact arithmetic to distinguish infeasibility from a very large finite cost.')
+     up=V[:,-1]; um=V[:,0]
+     qp=float(np.vdot(up,D@up).real); qm=float(np.vdot(um,D@um).real)
+     x=np.sqrt(qm/(qp+qm))*up; y=np.sqrt(qp/(qp+qm))*um

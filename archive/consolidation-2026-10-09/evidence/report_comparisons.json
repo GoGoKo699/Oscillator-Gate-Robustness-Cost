@@ -1,0 +1,38 @@
+[
+  {
+    "byte_identical": true,
+    "differences": [],
+    "differing_fields": 0,
+    "label": "new",
+    "max_absolute_difference": 0,
+    "reference": "evidence/final.json",
+    "rerun": "evidence/repeat.json"
+  },
+  {
+    "byte_identical": true,
+    "differences": [],
+    "differing_fields": 0,
+    "label": "audit",
+    "max_absolute_difference": 0,
+    "reference": "prior/evidence/final.json",
+    "rerun": "evidence/prior_audit.json"
+  },
+  {
+    "byte_identical": true,
+    "differences": [],
+    "differing_fields": 0,
+    "label": "resource_review",
+    "max_absolute_difference": 0,
+    "reference": "prior/prior/evidence/first.json",
+    "rerun": "evidence/prior_review.json"
+  },
+  {
+    "byte_identical": true,
+    "differences": [],
+    "differing_fields": 0,
+    "label": "pilot",
+    "max_absolute_difference": 0,
+    "reference": "prior/prior/prior/evidence/final.json",
+    "rerun": "evidence/prior_pilot.json"
+  }
+]

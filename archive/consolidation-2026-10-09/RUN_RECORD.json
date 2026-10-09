@@ -1,0 +1,52 @@
+{
+  "all_test_assertions_pass": true,
+  "allocation": "GO for a bounded project record; no repository created and no strong editorial forecast.",
+  "code_changes": "Added a fifth projection/source-dictionary group after the first passing four-group run. The earlier source and report are preserved. No physical formula or tolerance repair.",
+  "comparisons": "evidence/report_comparisons.json",
+  "date": "2026-10-09",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "incoming_files_preserved": 56,
+  "initial_four_group_run": "PASS",
+  "largest_legacy_hilbert_dimension": 112,
+  "largest_new_projected_matrix_dimension": 5,
+  "largest_new_qubit_oscillator_hilbert_dimension": 80,
+  "manifests": [
+    {
+      "manifest": "prior/MANIFEST.json",
+      "members": 55
+    },
+    {
+      "manifest": "prior/prior/MANIFEST.json",
+      "members": 29
+    },
+    {
+      "manifest": "prior/prior/prior/MANIFEST.json",
+      "members": 17
+    }
+  ],
+  "new_check_groups": 5,
+  "new_complete_runs": 4,
+  "new_final_five_group_runs": 3,
+  "new_reports_byte_identical": true,
+  "no_legacy_modules_imported_by_new_checker": true,
+  "original_complete_runs_each": 2,
+  "original_groups_rerun": {
+    "audit": 5,
+    "pilot": 5,
+    "resource_review": 5
+  },
+  "repositories_accessed_or_changed": false,
+  "scalar_mathematics_attribution": "Equality S-lemma; exact block-matrix specialization in THEOREM.md Section 7.",
+  "source_pdfs_redistributed": false,
+  "source_repairs": [],
+  "wrapper_receipt": "evidence/wrapper/receipt.json",
+  "wrapper_total_scientific_groups": 20
+}

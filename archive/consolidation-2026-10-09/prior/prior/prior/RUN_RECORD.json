@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-09",
+  "final_reports_byte_identical": true,
+  "final_status": "PASS",
+  "final_test_groups": 5,
+  "initial_reports_byte_identical": true,
+  "max_full_Hilbert_dimension": 112,
+  "max_independent_reduced_state_error": 6.696831943881254e-13,
+  "prior_scientific_suites_imported_or_rerun": false,
+  "repair": "Missing i in a descriptive beta2 coefficient; equations and channel integration were already correct. Preserved initial source/reports; added symbolic and complex finite-difference checks. No tolerance relaxed.",
+  "repositories_accessed_or_modified": false,
+  "scope": "Single effective oscillator with fixed predetermined linear forces and detuning error delta(t)*n; not a device noise simulation."
+}

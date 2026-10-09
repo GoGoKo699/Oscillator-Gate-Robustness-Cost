@@ -1,0 +1,10 @@
+test_01_first_order_joint_error_operator (__main__.Checks.test_01_first_order_joint_error_operator) ... ok
+test_02_spectral_optimum_and_certificate (__main__.Checks.test_02_spectral_optimum_and_certificate) ... ok
+test_03_full_channel_quadratic_coefficient (__main__.Checks.test_03_full_channel_quadratic_coefficient) ... ok
+test_04_nonzero_sensitivity_cost_floor (__main__.Checks.test_04_nonzero_sensitivity_cost_floor) ... ok
+test_05_project_displacement_constraints_before_cost (__main__.Checks.test_05_project_displacement_constraints_before_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.256s
+
+OK

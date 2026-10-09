@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-09",
+  "environment": {
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "methods": {
+    "checks": "Exact symbolic matrices and control constraints; deterministic diagnostic bases; numerical Magnus/thermal-channel checks.",
+    "numerical_tolerances_relaxed": false,
+    "proof": "Compact self-adjoint phase operator, conjugation pairing, exact norm bound and attaining pulse conversion. Finite example evaluated symbolically.",
+    "source_comparison": "S16 fixed-first construction is adapted to the same effective control space. Its ratio is not a source-reported experimental value."
+  },
+  "new_tests": {
+    "first_complete_run": "PASS",
+    "groups": 5,
+    "repeat": "PASS",
+    "report_sha256": "f11710d4af63292c991e424c4607be69df70549be621c14e3db3fd53fc7e19b7",
+    "reports_byte_identical": true,
+    "scientific_repairs": []
+  },
+  "original_archive_files_preserved": 18,
+  "original_inputs": {
+    "/mnt/data/fresh_quadrature_gate_2026-10-09.zip": {
+      "bytes": 35088,
+      "sha256": "c601a0682c4f1193306c0cecd348c64195d467f3e55b8645e2d56b8c9faaf3ae"
+    },
+    "/mnt/data/fresh_quadrature_gate_2026-10-09/PILOT.md": {
+      "bytes": 21545,
+      "sha256": "872b6aae674f30d11329ad24df25bfd5d2d2f3f0cac8cc9f381775ba82a070fc"
+    }
+  },
+  "original_manifest_verified": true,
+  "original_tests": {
+    "canonical_sha256": "0d9a05476dabfae4b1bd9dfd55888b7792395c26cc5261c3e26ce1af8e0b14a3",
+    "groups": 5,
+    "matches_canonical_byte_for_byte": true,
+    "rerun": "PASS"
+  },
+  "scope": {
+    "largest_new_projected_matrix_complex_dimension": 6,
+    "legacy_full_hilbert_space_dimension": 112,
+    "new_full_quantum_hilbert_space_simulation": false,
+    "repositories_accessed": false,
+    "repositories_modified": false,
+    "third_party_PDFs_included": false
+  },
+  "source_access": {
+    "attempted_BG21_and_Q06_PDF_screenshots": "failed",
+    "figure_values_used": false,
+    "other_papers": "Read boundaries specified in SOURCES.md",
+    "primary_text_accessible": true
+  },
+  "task": "Matched-control-space comparison of quadrature-gate pulse conversion"
+}

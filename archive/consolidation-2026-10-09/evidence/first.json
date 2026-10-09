@@ -1,0 +1,180 @@
+{
+  "certificate": {
+    "degenerate_extremes": "PASS",
+    "max_projected_matrix": 5,
+    "one_sided_exact_pencil_square": "2937/327665",
+    "proof_role": "Positive-semidefinite upper witness plus explicitly feasible attaining pair. Numerical residuals are diagnostics, not interval enclosures.",
+    "random_diagnostics": [
+      {
+        "certificate_min_eigenvalue": -3.191891195797325e-16,
+        "dimension": 2,
+        "radius": 0.6500011999998669,
+        "slope_residual": 6.661338147750939e-16,
+        "zeta": 0.26422338762692854
+      },
+      {
+        "certificate_min_eigenvalue": -2.220446049250313e-16,
+        "dimension": 2,
+        "radius": 0.8418683658351762,
+        "slope_residual": 2.7755575615628914e-17,
+        "zeta": -0.02202266051118998
+      },
+      {
+        "certificate_min_eigenvalue": 0.0,
+        "dimension": 2,
+        "radius": 1.1787084358382636,
+        "slope_residual": 4.440892098500626e-16,
+        "zeta": 0.2544251696823402
+      },
+      {
+        "certificate_min_eigenvalue": -4.324882466044677e-16,
+        "dimension": 3,
+        "radius": 1.5096013795916317,
+        "slope_residual": 7.216449660063518e-16,
+        "zeta": -0.02471957910932726
+      },
+      {
+        "certificate_min_eigenvalue": 5.811323644522304e-16,
+        "dimension": 3,
+        "radius": 2.5340363687859435,
+        "slope_residual": 4.440892098500626e-16,
+        "zeta": -0.020705104298350388
+      },
+      {
+        "certificate_min_eigenvalue": -2.664960840772069e-16,
+        "dimension": 3,
+        "radius": 1.869795870272084,
+        "slope_residual": 7.771561172376096e-16,
+        "zeta": -0.04329024930514862
+      },
+      {
+        "certificate_min_eigenvalue": -2.3635280987805543e-15,
+        "dimension": 5,
+        "radius": 3.1983114104367942,
+        "slope_residual": 8.881784197001252e-16,
+        "zeta": -0.07045332679297958
+      },
+      {
+        "certificate_min_eigenvalue": -2.382996754026097e-15,
+        "dimension": 5,
+        "radius": 3.777637001374205,
+        "slope_residual": 2.7755575615628914e-16,
+        "zeta": -0.09437506097096146
+      },
+      {
+        "certificate_min_eigenvalue": 5.430768681979892e-16,
+        "dimension": 5,
+        "radius": 3.3286459112562956,
+        "slope_residual": 2.7755575615628914e-16,
+        "zeta": 0.043659609654131154
+      }
+    ]
+  },
+  "cost_floor": {
+    "bounds": [
+      {
+        "absolute_phase_slope_lower_bound": 0.2907509742406593,
+        "energy_cap": 1.5913340875649271,
+        "fraction_of_robust_minimum": 0.19182642392408827,
+        "quadratic_infidelity_coefficient_lower_bound": 0.06762890321751404
+      },
+      {
+        "absolute_phase_slope_lower_bound": 0.17988151484264137,
+        "energy_cap": 4.147849016344765,
+        "fraction_of_robust_minimum": 0.5,
+        "quadratic_infidelity_coefficient_lower_bound": 0.025885887505666724
+      },
+      {
+        "absolute_phase_slope_lower_bound": 0.08994075742132068,
+        "energy_cap": 6.221773524517149,
+        "fraction_of_robust_minimum": 0.75,
+        "quadratic_infidelity_coefficient_lower_bound": 0.006471471876416681
+      },
+      {
+        "absolute_phase_slope_lower_bound": 0.03597630296852827,
+        "energy_cap": 7.466128229420578,
+        "fraction_of_robust_minimum": 0.9,
+        "quadratic_infidelity_coefficient_lower_bound": 0.001035435500226669
+      }
+    ],
+    "minimum_observed_slope_bound_slack": 0.04154310215376,
+    "nominal_minimum": 1.5913340875649271,
+    "physical_below_threshold_controls": 145,
+    "robust_minimum": 8.29569803268953,
+    "warning": "Bounds, not an exact finite-tolerance Pareto frontier. Amplitude-error derivative remains 2*Theta0."
+  },
+  "full_gate_error": {
+    "cases": [
+      {
+        "case": "moment_common",
+        "predicted_quadratic_infidelity": 0.32403916012170353,
+        "slope": -0.6364345607775629,
+        "sum_squared_displacement_derivatives": 3.8723119133539444e-32,
+        "symmetrized_error_over_delta_squared": [
+          0.3240824796564894,
+          0.32404999002717905
+        ],
+        "theta0": 0.7853981633974485
+      },
+      {
+        "case": "moment_robust",
+        "predicted_quadratic_infidelity": 8.274701056485714e-34,
+        "slope": -3.2161119881943074e-17,
+        "sum_squared_displacement_derivatives": 0.0,
+        "symmetrized_error_over_delta_squared": [
+          4.009615273517773e-05,
+          1.0024047079142982e-05
+        ],
+        "theta0": 0.7853981633974484
+      },
+      {
+        "case": "phase_only",
+        "predicted_quadratic_infidelity": 22.107913858440156,
+        "slope": 6.3999593648495274e-18,
+        "sum_squared_displacement_derivatives": 4.934802200544677,
+        "symmetrized_error_over_delta_squared": [
+          22.10546236436135,
+          22.107300952396933
+        ],
+        "theta0": 0.7853981633974482
+      },
+      {
+        "case": "generic",
+        "predicted_quadratic_infidelity": 0.855581904600998,
+        "slope": 0.026600000000000006,
+        "sum_squared_displacement_derivatives": 0.19085175370557994,
+        "symmetrized_error_over_delta_squared": [
+          0.8555805780419498,
+          0.8555815729659354
+        ],
+        "theta0": 0.0007000000000000027
+      }
+    ],
+    "identity": "lim (1-Favg)/delta^2 = 4/5 [Theta_prime^2+(2*nbar+1) sum_j |int alpha_j|^2]",
+    "scope": "Fixed pulse and fixed thermal occupation; not a uniform bound for arbitrary energy oscillator states.",
+    "thermal_occupation": 2.3
+  },
+  "joint_error_operator": {
+    "cutoff": 20,
+    "full_qubit_oscillator_dimension": 80,
+    "initial_oscillator_numbers": [
+      0,
+      1,
+      2
+    ],
+    "integrated_branch_displaced_occupation": [
+      0.05835,
+      0.11155000000000001,
+      0.11155000000000001,
+      0.05835
+    ],
+    "largest_top_two_level_probability": 3.442965958042303e-31,
+    "max_nominal_return_error": 9.311843069862848e-15,
+    "max_tangent_vector_error": 2.665735826805358e-13,
+    "phase_slope": 0.026600000000000006,
+    "scope": "Finite-core check of the first derivative; not a uniform operator-norm truncation certificate."
+  },
+  "previous_modules_imported": false,
+  "status": "PASS",
+  "test_groups": 4
+}
