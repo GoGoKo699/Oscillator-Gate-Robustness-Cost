@@ -1,4 +1,4 @@
-name: Verify preserved scientific package
+name: Verify archived and supplemental scientific checks
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
           cache: pip
       - name: Install recorded scientific dependencies
         run: python -m pip install -r requirements.txt
-      - name: Verify scientific assertions and archive; record numerical report differences
+      - name: Verify archive and exact spectral identities; record historical report differences
         run: python scripts/verify.py --output-dir verification-results/ci --allow-report-differences
       - name: Preserve reports and logs even when verification fails
         if: always()

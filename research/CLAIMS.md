@@ -174,10 +174,32 @@ This lower bound need not be attained. It is not the complete sensitivity-cost
 frontier or a finite-detuning guarantee. For $\zeta_*=0$, no cost gap exists
 and this division is unnecessary.
 
+## C5. A positive spectral band forces growing cost
+
+Suppose $V\ne\{0\}$ consists of distinct positive integer harmonics
+$\omega_\ell=n_\ell\nu\in[a,b]$, where $T=2\pi/\nu$ and $0<a<b$, and
+every force has zero first moment. Additional linear constraints are allowed.
+Then
+
+$$\frac{E_{\mathrm{angle}}}{E_{\mathrm{nom}}}\geq\frac{a+b}{b-a}.$$
+
+For harmonics $N,N+1,N+2,N+3$ with endpoint and first-moment conditions,
+robust feasibility holds at every integer $N\geq1$ and
+
+$$\frac{E_{\mathrm{angle}}}{E_{\mathrm{nom}}}
+\sim\frac{2\sqrt5}{3}N.$$
+
+This compares matched optima within each prescribed space; the nominal cost
+also grows with $N$. Duration, tone count, and absolute bandwidth stay fixed.
+The result is a same-model consequence of C1, with a complete
+[spectral proof and normalization](SPECTRAL_RESTRICTION.md). It establishes
+neither a sharp universal prefactor nor a device-power or finite-detuning law.
+
 ## Evidence and remaining assessment
 
 The archive contains twenty scientific check groups and explicit analytical
-proofs. The [separate proof review](PROOF_REVIEW.md) assesses the derivations;
+proofs. Three supplemental exact symbolic groups check C5. The
+[separate proof review](PROOF_REVIEW.md) assesses the original derivations;
 the [source review](SOURCE_REVIEW.md) records the established ingredients and
 the limits of the literature comparison. Run receipts distinguish numerical
 assertions from exact reference-byte identity.
