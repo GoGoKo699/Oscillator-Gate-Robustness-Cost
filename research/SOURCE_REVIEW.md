@@ -191,9 +191,33 @@ Their stated constraints differ from the repository's uncalibrated static
 angle derivative and exact joint optimum. The full thesis is now accessible;
 this targeted comparison does not assert absence of overlap throughout it.
 
+## Control access: phase dictionary and QSCOUT
+
+**Phase source:** P. J. Lee et al., *Phase Control of Trapped Ion Quantum
+Gates*, [quant-ph/0505203v1](https://arxiv.org/pdf/quant-ph/0505203), Section 2.3,
+Eqs. (28)–(30), PDF pp. 13–14. These passages separate spin and force phases
+through the two sideband phases. The [control-access note](CONTROL_ACCESS.md)
+states its own consistent sign convention and derives the conjugation rule.
+
+**Hardware source:** S. M. Clark et al., *Engineering the Quantum Scientific
+Computing Open User Testbed (QSCOUT): Design details and user guide*,
+[arXiv:2104.00759v1](https://arxiv.org/html/2104.00759v1), Section VI A and its
+phase-synchronization and gate-sequencer subsections (VI.1 in HTML).
+The inspected passages document tone programming and finite digital limits.
+They do not identify the one-sided harmonic space assumed by the cost bound.
+
+**Gate source:** C. G. Yale et al., *Realization and Calibration of Continuously
+Parameterized Two-Qubit Gates on a Trapped-Ion Quantum Processor*,
+[arXiv:2504.06259v1](https://arxiv.org/html/2504.06259v1), Introduction, Eq. (2),
+Section II, and Eqs. (3)–(4), (13). The selected multimode pulse and the
+calibrated optical/RF response require distinctions from a full admissible
+force space and its output-force norm. The bounded audit does not establish
+an unavoidable one-sided device restriction or hardware-feasible realization
+of every conjugated pulse.
+
 ## Reading boundaries retained
 
-The review was restricted to these seven attribution questions. The earlier
+The review was restricted to the sources and passages listed above. The earlier
 Spiller and Jia readings remain inherited records, not newly verified here.
 No comprehensive citation search or assessment of all later literature was
 performed. In particular, the new positive-band corollary is elementary once

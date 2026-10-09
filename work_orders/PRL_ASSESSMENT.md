@@ -8,7 +8,9 @@ editorial judgment, not external peer review or an acceptance prediction.
 The scoped mathematics supports development of a focused theory paper.
 There is not yet a strong basis for optimism about Physical Review Letters.
 The unresolved issue is physical significance and distinctness from close
-work, rather than an identified proof gap.
+work, rather than an identified proof gap. The completed QSCOUT audit does
+not strengthen the PRL case: it does not establish the one-sided effective-force
+restriction needed for the proposed hardware interpretation.
 
 [PRL's stated criteria](https://journals.aps.org/prl/authors) emphasize a
 substantial advance, innovation, and interest beyond a narrow specialty.
@@ -54,19 +56,31 @@ force. Its strong conclusions should remain in that model. Multimode,
 peak-resource, heating, or finite-error claims cannot be supplied by wording
 changes or by extrapolating the present bound.
 
-## Next scientific decision
+## Decision after the physical-control audit
 
-Before presenting this as a PRL-ready result, establish one concrete physical
-design consequence that follows from the classification and was unavailable
-from the closest constructions. The most focused route is to identify a
-credible reason for the asymmetric admissible spectrum and map it precisely
-to the same effective-force model, normalization, and competitors. The
-mapping must explain why adding the missing conjugate controls is unavailable
-or changes the resource being compared.
+The [control-access analysis](../research/CONTROL_ACCESS.md) supplies a
+fixed-spin sideband mapping and an exact distinction between missing and
+attenuated directions. With unrestricted inputs and the present output-force
+cost, nonzero gains on independently commanded conjugate directions give the
+same conjugate-completed space. Its added angle-robustness cost is zero.
+Input-power penalties or amplitude caps would define a different problem.
 
-This is a question to resolve, not an assumption already established. A
-specialist's critique of overlap and significance would also be informative;
-none has been requested or obtained here. Additional numerical sweeps alone
-would not resolve the main objection. If the physical restriction cannot be
-motivated, the appropriate conclusion is a narrower theory contribution,
-without weakening the theorem or promising a particular journal outcome.
+The checked QSCOUT sources describe programmable tones and a selected
+multimode protocol; they do not establish the hard one-sided space. They also
+do not certify exact mirrored pulses within all hardware limits. The conclusion
+is specific: this candidate fails to supply the proposed physical justification.
+It is neither a universal impossibility result nor a claim that robustness is
+free on the complete device.
+
+The finite-regime step is not supported because the required restriction has
+not been established. No numerical operating window is assigned. The original
+classification, positive-band bound, and four-tone asymptotics remain valid
+inside their prescribed spaces.
+
+Prioritize a focused theory manuscript built around the exact attainable cost,
+parity-occupation interpretation, and free-versus-costly control-space examples.
+Further pursuit of the hardware-asymmetry route should await an independently
+motivated restriction with an honest force-resource mapping. Additional sweeps
+or an unrequested noise/resource extension would not resolve the present
+objection. No outside specialist assessment has been obtained, and this bounded
+source audit neither determines priority nor predicts an editorial decision.

@@ -113,6 +113,16 @@ a conjugate-to-quadrature pulse conversion preserving the pointwise sum of
 squared forces and real-weight moment constraints. A general balanced
 spectrum alone does not imply full waveform phase evenness.
 
+For any nominally feasible space $V$, its conjugate completion
+$W=V+\overline V$ obeys
+$E_{\mathrm{angle}}(W)=E_{\mathrm{nom}}(W)\leq E_{\mathrm{nom}}(V)$.
+Independently commandable conjugate directions with any nonzero gains give
+this same $W$ when input amplitudes are unrestricted. This compares different
+granted spaces and uses output-force cost. It is not a statement about input
+power or uncontrolled leakage. The [control-access proof](CONTROL_ACCESS.md)
+also derives the sideband phase dictionary and records the physical reading
+of the QSCOUT example.
+
 The preserved examples, with identical endpoint and first-moment conditions
 within each comparison, give:
 

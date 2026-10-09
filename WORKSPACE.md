@@ -13,6 +13,10 @@ the first-moment kernel yields the minimum for quartic thermal average
 infidelity. Balanced phase extrema characterize zero extra angle cost.
 The [spectral corollary](research/SPECTRAL_RESTRICTION.md) gives a positive-band
 lower bound and a four-tone family with unbounded angle-robustness overhead.
+The [control-access analysis](research/CONTROL_ACCESS.md) distinguishes a
+missing force direction from attenuation and derives the fixed-spin sideband
+mapping. Its QSCOUT audit does not establish a physically enforced one-sided
+space for that family.
 
 The [proof review](research/PROOF_REVIEW.md) found no unresolved gap in these
 scoped claims. The [source review](research/SOURCE_REVIEW.md) confirms the
@@ -40,10 +44,11 @@ outcomes. A historical local pass does not establish current hosted success.
 ## Continue here
 
 Read [the current work order](work_orders/CURRENT.md) before editing. The
-current bounded task is the spectral consequence, exact supplemental checks,
-and contribution assessment, with no expansion of the physical model. The
-[author assessment](work_orders/PRL_ASSESSMENT.md) identifies physical motivation
-for asymmetric controls as the central remaining significance question.
+current bounded task is the physical-control audit, with no expansion of the
+physical model. The [author assessment](work_orders/PRL_ASSESSMENT.md) records
+its negative conclusion for the proposed QSCOUT justification. The existing
+theory can be developed as a focused manuscript; further PRL-directed physical
+claims require an independently motivated restriction.
 
 Preserve the archive and do not silently replace previous reports. Review and
 verify the actual proposed commit, merge with an expected-head guard, and

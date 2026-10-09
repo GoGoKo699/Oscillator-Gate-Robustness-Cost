@@ -41,6 +41,7 @@ unconstrained nominal gate.
 | What is proved, with which assumptions? | [Claims and physical meaning](research/CLAIMS.md) |
 | Where are the complete derivations and constructions? | [Preserved theorem](archive/consolidation-2026-10-09/THEOREM.md) and [finite-space proof](archive/consolidation-2026-10-09/prior/THEOREM.md) |
 | How large can the forced penalty become? | [Spectral restriction and four-tone family](research/SPECTRAL_RESTRICTION.md) |
+| What control access and resource assumptions matter physically? | [Sideband mapping and conjugate access](research/CONTROL_ACCESS.md) |
 | What did the focused proof review find? | [Proof review](research/PROOF_REVIEW.md) |
 | Which ingredients are established? | [Source review](research/SOURCE_REVIEW.md) |
 | How do I reproduce the evidence? | [Verification](REPRODUCIBILITY.md) |
