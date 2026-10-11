@@ -108,7 +108,7 @@ and the separate merged-main receipt.
 Identical package versions do not guarantee identical floating-point diagnostic
 bytes across platforms. The [platform comparison](provenance/platform-review.json)
 provides a concrete example: 123 finite report fields differ, with maximum
-absolute difference approximately $3.241\times10^{-10}$, while all assertions,
+absolute difference approximately $`3.241\times10^{-10}`$, while all assertions,
 report structures, and source-integrity checks pass. This record contains the
 individual deltas and report hashes for its specified environments.
 
@@ -119,7 +119,7 @@ and uploads receipts even on failure.
 ## Fourier-helper inputs
 
 The Fourier helper supports distinct nonzero integer harmonics over
-their common period $T=2\pi/\nu$. All checked examples satisfy this condition.
+their common period $`T=2\pi/\nu`$. All checked examples satisfy this condition.
 The helper checks nonzero modes and shape but does not reject repeated or
 noninteger inputs; callers must enforce the full precondition. Its Gram formulas
 and reference checks apply to this documented input class.
