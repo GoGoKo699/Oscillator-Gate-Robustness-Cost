@@ -1,40 +1,33 @@
-# Current work order: complete the scoped theory account
+# Current work order: tutorial and reader navigation
 
 ## Authorization and scope
 
-The user authorized the necessary research, integration, and merge in
-`GoGoKo699/Oscillator-Gate-Robustness-Cost`.
+The user selected Blümel et al., *Power-optimal, stabilized entangling gate
+between trapped-ion qubits*, arXiv:1905.09292v2, as the single learning anchor.
+Its paper and supplement form one source. The user authorized repository
+modification and merge, requested the presentation style of
+`GoGoKo699/Quantum-Group-Memory-Laws`, supplied the README purpose/contact
+paragraph, and requested guidance for LLM discovery.
 
-Keep one ideal oscillator, two independent error-independent forces in the
-same finite nominally closed complex space, static number detuning, a fixed
-nonzero unwrapped target angle, and integrated squared effective force.
-The thermal-channel statements assume an initially uncorrelated thermal
-oscillator with fixed finite occupation. No resource or physical-model
-extension is part of this work.
+Work only in `GoGoKo699/Oscillator-Gate-Robustness-Cost`. The reference
+repository is read-only. Preserve the current scientific model, theorems,
+attribution, force normalization, checks, and all 89 immutable archive files.
 
 ## Deliverables
 
-- Consolidate the dynamics, cost theorem, explicit optimizers, feasibility
-  cases, symmetry classification, and thermal-channel consequence into a
-  self-contained current theory account.
-- Directly compare the closest independent-pulse, angle-robust, and quadrature
-  constructions with matched assumptions, objectives, and source passages.
-  Credit established mathematics and distinguish a jointly attained optimum
-  from a particular pulse construction.
-- Determine whether the existing budget-dependent sensitivity certificate
-  admits an exact attainable frontier in the same model. Include a completion
-  only after independent analytical review; retain every necessary endpoint
-  and feasibility qualification.
-- Integrate the results into the reading path and remove superseded editorial
-  planning. Keep the spectral and physical-control analyses connected without
-  duplicating their proofs or inventing a device restriction.
-- Add targeted reproducible checks for any new analytical consequence. Preserve
-  all 89 archive files, expected hashes, reference reports, and tolerances.
+- A tutorial bridge with a selective source route, notation dictionary,
+  derivation of the finite-space optimization, and a worked existing example.
+- A reader-facing README with early navigation, clear mathematical display,
+  the exact results and their scope, the selected anchor, and the requested
+  purpose/contact paragraph.
+- A concise `llms.txt` containing relevant research questions, search phrases,
+  canonical source links, and accurate scope and attribution guidance.
+- Connected maintainer navigation without duplicating the scientific account.
 
-## Review and publication
+## Review and verification
 
-Review the complete scientific statements and source attributions. Verify the
-actual published PR head, inspect its hosted results, merge with an
-expected-head guard, and verify merged main separately. Record assertion
-success, source integrity, and canonical-report identity as distinct facts.
-GitHub PR and Actions records carry the exact-commit completion evidence.
+Check source-section mappings, normalization, local links, and Markdown math.
+Review and verify the actual published PR head, inspect hosted results, merge
+with an expected-head guard, and verify merged main separately. Record
+assertion success, source integrity, and canonical-report identity as distinct
+facts. GitHub PR and Actions records carry exact-commit completion evidence.

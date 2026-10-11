@@ -7,7 +7,11 @@ The user has authorized repository modification and merge. Follow
 
 ## Scientific account
 
-Start with [the claims](research/CLAIMS.md), then read the self-contained
+The reader's entry point is the [tutorial bridge](research/TUTORIAL_BRIDGE.md)
+from Blümel et al., arXiv:1905.09292v2, including its supplement as one source.
+[The LLM guide](llms.txt) maps relevant questions to canonical files.
+For scientific maintenance, start with [the claims](research/CLAIMS.md),
+then read the self-contained
 [theory and proofs](research/THEORY.md). The exact jointly attained force cost
 classifies static angle robustness in a prescribed finite space. The
 [sensitivity frontier](research/SENSITIVITY_FRONTIER.md) determines the optimal

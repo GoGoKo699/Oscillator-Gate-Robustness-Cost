@@ -1,74 +1,137 @@
-# Oscillator-Gate-Robustness-Cost
+# Oscillator Gate Robustness Cost
 
-**When does detuning robustness cost extra force?** For two independently
-controlled qubits coupled through one ideal oscillator, the answer depends on
-the allowed force space. This project determines the exact minimum integrated
-squared force, constructs attaining controls, and classifies angle robustness
-as free, costly, or infeasible.
+**The allowed force space decides whether detuning robustness is free, costly, or impossible.**
 
-The comparison fixes a finite nominally closed complex force space, gate
-duration, force normalization, and nonzero unwrapped entangling angle
-$\Theta_0$. For its phase operator $K$ and positive trajectory-overlap operator
-$D$, define
+Two independently controlled qubits can become entangled by driving a shared
+oscillator around closed trajectories. How much extra force is needed to make
+the entangling angle insensitive to a small frequency error? This repository
+gives the exact minimum integrated squared force, constructs controls that
+attain it, and determines the smallest residual angle sensitivity at every
+feasible force budget.
 
-$$\lambda=\|K\|,\qquad
-\rho(\zeta)=\|K-\zeta D\|,\qquad r=\min_{\zeta\in\mathbb R}\rho(\zeta).$$
-
-The exact nominal and angle-robust costs are
-
-$$\boxed{E_{\mathrm{nom}}=\frac{|\Theta_0|}{\lambda},\qquad
-E_{\mathrm{angle}}=\frac{|\Theta_0|}{r}.}$$
-
-A zero denominator means infeasibility. Balanced extreme eigenvalues of $K$
-characterize zero additional angle cost. Conjugation-invariant spaces satisfy
-this condition. Conversely, a narrow positive spectral band can force a large
-penalty: for positive integer harmonics over their common period, with zero
-first force moment and frequencies in $[a,b]$,
-
-$$\frac{E_{\mathrm{angle}}}{E_{\mathrm{nom}}}\geq\frac{a+b}{b-a}.$$
-
-A four-tone family has feasible robust gates at every finite band offset and
-unbounded cost ratio as that offset increases. The nominal cost also increases;
-each ratio compares the two optima in the same allowed space.
-
-The full tradeoff is attainable too. For a feasible force budget
-$B\geq E_{\mathrm{nom}}$, the smallest absolute static angle slope is
-
-$$\boxed{s(B)=\max\left\{0,\sup_{\zeta\ne0}
-\frac{|\Theta_0|-B\rho(\zeta)}{|\zeta|}\right\}.}$$
-
-In a space with zero first force moment, the minimum leading thermal
-average-infidelity coefficient is exactly $4s(B)^2/5$. Projecting an original
-space onto that moment kernel gives the exact cost of quartic-or-better
-small-detuning infidelity.
-
-## Read the result
-
-| Question | Account |
+| Read next | Purpose |
 |---|---|
-| What is the model and what is proved? | [Claims and physical meaning](research/CLAIMS.md) |
-| How do the dynamics, proofs, and attaining controls work? | [Self-contained theory](research/THEORY.md) |
-| What is achievable at each force budget? | [Exact sensitivity frontier](research/SENSITIVITY_FRONTIER.md) |
-| How large can the forced penalty become? | [Spectral bound and four-tone family](research/SPECTRAL_RESTRICTION.md) |
-| How do effective forces relate to physical controls? | [Sideband mapping and control access](research/CONTROL_ACCESS.md) |
-| What does the result add to prior pulse design? | [Matched related-work comparison](research/RELATED_WORK.md) |
-| Which sources and proof steps support it? | [Source passages](research/SOURCE_REVIEW.md) and [analytical review](research/PROOF_REVIEW.md) |
-| How do I reproduce the checks? | [Verification instructions](REPRODUCIBILITY.md) |
+| [Tutorial bridge](research/TUTORIAL_BRIDGE.md) | Start from one external source, translate its pulse-design framework, and work through an example. |
+| [Claims and physical meaning](research/CLAIMS.md) · [Theory and proofs](research/THEORY.md) | Read the model, exact costs, attaining controls, and full-gate consequence. |
+| [Sensitivity frontier](research/SENSITIVITY_FRONTIER.md) · [Spectral restriction](research/SPECTRAL_RESTRICTION.md) | Understand every force budget and why a narrow positive band can force a large penalty. |
+| [Physical controls](research/CONTROL_ACCESS.md) · [Related work](research/RELATED_WORK.md) | Check the sideband mapping, granted control space, and contribution relative to earlier pulse design. |
+| [Verification](REPRODUCIBILITY.md) | Reproduce the scientific checks and inspect their evidence. |
+| [LLM guide](llms.txt) | Find relevant research questions, search phrases, and authoritative files. |
 
-The optimization uses established equality-S-lemma and numerical-range
-mathematics. Independent-pulse stabilization, quadrature gates, displacement
-moments, trajectory-overlap sensitivity, and the leading thermal fidelity
-expansion have direct predecessors. The result developed here is the exact
-joint resource classification and attainable tradeoff in the prescribed
-control class, together with their spectral and full-gate consequences.
+## The comparison
 
-Cost means integrated squared **effective force**. The single-mode,
-static-error model supplies the comparison; laboratory actuator power,
-individual peak caps, and multimode operation require their own resource and
-control specifications. The control-access analysis makes this distinction
-explicit.
+Fix one ideal linear oscillator, a gate duration, and two independent,
+error-independent complex forces in the same finite-dimensional space
+$`V\subset L^2([0,T])`$. Every allowed force closes the oscillator at zero
+detuning. Both competitors receive the same space, force normalization, and
+nonzero **unwrapped** target angle $`\Theta_0`$ in $`\exp(i\Theta_0Z_1Z_2)`$.
+The error is an unknown static oscillator-frequency shift.
 
-## Reproduce the checks
+The resource is
+
+```math
+E=\int_0^T\left(|f_1(t)|^2+|f_2(t)|^2\right)dt.
+```
+
+This is integrated squared **effective force**. The
+[control-access account](research/CONTROL_ACCESS.md) derives its relation to
+sideband drives and distinguishes it from laboratory actuator power and
+individual peak-amplitude constraints.
+
+## The exact robustness cost
+
+In a nonzero allowed space, $`K`$ is the Hermitian phase matrix and $`D>0`$ is
+the trajectory-overlap matrix. Define
+
+```math
+\lambda=\|K\|,\qquad
+\rho(\zeta)=\|K-\zeta D\|,\qquad
+r=\min_{\zeta\in\mathbb R}\rho(\zeta).
+```
+
+The minimum costs of the nominal gate and the first-order angle-robust gate are
+
+```math
+E_{\mathrm{nom}}=\frac{|\Theta_0|}{\lambda},\qquad
+E_{\mathrm{angle}}=\frac{|\Theta_0|}{r}.
+```
+
+A zero denominator means infeasibility for the nonzero target. For a nominally
+feasible space, the classification is complete:
+
+| Allowed-space geometry | Angle-robust cost |
+|---|---|
+| Balanced extreme eigenvalues of $`K`$, so $`r=\lambda`$ | No additional cost. Conjugation-invariant spaces guarantee this case. |
+| $`0<r<\lambda`$ | A finite, strictly positive penalty. |
+| $`K=cD`$ for a nonzero real $`c`$, so $`r=0`$ | No angle-robust gate at any finite cost. |
+
+The [theory](research/THEORY.md) proves a matching lower bound and constructs
+simultaneous coherent forces that attain it. The physical condition is equal
+**integrated displacement-induced oscillator occupation** in the two qubit
+parity sectors. Their trajectories can enclose different oriented areas while
+satisfying this occupation balance.
+
+## Sensitivity at every budget
+
+For a feasible force budget $`B\geq E_{\mathrm{nom}}`$, the smallest absolute
+static angle slope is
+
+```math
+s(B)=\max\left\{0,\sup_{\zeta\ne0}
+\frac{|\Theta_0|-B\rho(\zeta)}{|\zeta|}\right\}.
+```
+
+Every value is attained by a pair of controls. The
+[frontier](research/SENSITIVITY_FRONTIER.md) is convex and nonincreasing; it
+reaches zero precisely when the budget can afford the angle-robust optimum.
+
+For an initially uncorrelated thermal oscillator with fixed finite occupation,
+angle and displacement errors contribute separately to the leading average
+infidelity. In a space satisfying the first force-moment condition
+$`\int_0^T t f(t)dt=0`$, the minimum quadratic coefficient is exactly
+$`4s(B)^2/5`$. Projecting an original space onto that moment kernel gives the
+exact cost of quartic-or-better small-detuning infidelity. The
+[full-gate statement](research/CLAIMS.md#c3-the-full-gate-requirement-and-its-minimum-cost)
+specifies the channel and assumptions.
+
+A restriction to positive integer harmonics over their common period, with
+zero first force moment and frequencies in $`[a,b]`$, $`0<a<b`$, obeys
+
+```math
+\frac{E_{\mathrm{angle}}}{E_{\mathrm{nom}}}\geq\frac{a+b}{b-a}.
+```
+
+The [four-tone family](research/SPECTRAL_RESTRICTION.md) has feasible robust
+gates at every finite band offset and an unbounded cost ratio as that offset
+increases. Each ratio compares the two optima in the same allowed space; the
+nominal cost also increases.
+
+## One tutorial, then this result
+
+The selected learning anchor is:
+
+> R. Blümel, N. Grzesiak, N. Pisenti, K. Wright, and Y. Nam,
+> **Power-optimal, stabilized entangling gate between trapped-ion qubits** (2021).
+> [Author version, arXiv:1905.09292v2](https://arxiv.org/abs/1905.09292v2) ·
+> [Paper and supplement in one PDF](https://arxiv.org/pdf/1905.09292v2).
+
+This research article's detailed supplement serves as the tutorial. It develops
+linear closure constraints, projected phase matrices, spectral cost
+optimization, and independently stabilized pulses. The
+[tutorial bridge](research/TUTORIAL_BRIDGE.md) selects the sections, translates
+the conventions, and connects that framework to the joint optimization here.
+The route assumes standard quantum mechanics and linear algebra.
+
+Independent-pulse stabilization, quadrature gates, displacement moments,
+trajectory-overlap sensitivity, and the leading thermal fidelity expansion
+have direct predecessors. Equality-S-lemma and numerical-range methods are
+established mathematical ingredients. The contribution here is the exact joint
+resource classification and attainable tradeoff in the prescribed control
+class, together with their spectral and full-gate consequences. The
+[matched comparison](research/RELATED_WORK.md), [source passages](research/SOURCE_REVIEW.md),
+and [analytical review](research/PROOF_REVIEW.md) give the supporting detail.
+
+## Evidence and reproduction
 
 Use Python 3.13 and the pinned dependencies:
 
@@ -78,14 +141,23 @@ python -m venv .venv
 .venv/bin/python scripts/verify.py --output-dir /absolute/path/to/new-results
 ```
 
-The output directory must be new and outside `archive/`. The verifier checks
-the preserved scientific suites, supplemental proof identities, infrastructure
-regressions, and all 89 archived source files. Its receipt separates scientific
-assertions from canonical report byte identity. The documented portability
-mode permits finite floating-point report differences only after the required
-checks pass, while retaining every difference in the receipt.
+The output directory must be new and outside `archive/`. The verifier runs all
+27 scientific groups and the infrastructure tests, and checks all 89 archived
+source files. Its receipt separates scientific assertions from canonical
+report byte identity. [Verification](REPRODUCIBILITY.md) explains the strict
+and portability policies; the latter retains every finite floating-point
+report difference. Numerical checks support the analytical proofs.
 
-The [source archive](archive/consolidation-2026-10-09/README.md),
-[hash inventory](provenance/archive.json), and [provenance record](provenance/RECOVERY.md)
-preserve the underlying evidence. Maintainers can continue from the
-[workspace](WORKSPACE.md) and [current work order](work_orders/CURRENT.md).
+The [source archive](archive/consolidation-2026-10-09/README.md) and
+[hash inventory](provenance/archive.json) preserve the underlying evidence.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+
+The [LLM guide](llms.txt) supplies relevant research questions, search phrases,
+and direct links to authoritative files. Maintainer instructions are in
+[AGENTS.md](AGENTS.md) and [WORKSPACE.md](WORKSPACE.md).
+
+Code is available under the [MIT license](LICENSE). Linked third-party papers
+are not redistributed or relicensed by this repository.
