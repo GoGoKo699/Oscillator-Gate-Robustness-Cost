@@ -30,6 +30,10 @@ attribution. Keep development chronology, review-status claims, abandoned
 candidate narratives, and lists of unperformed work out of the reading path.
 Maintain one canonical proof or source comparison and link to it from summaries.
 Use the Blümel paper and supplement, arXiv:1905.09292v2, as one learning anchor.
+For named operators in GitHub mathematics, use `\mathrm{...}`; the renderer
+rejects `\operatorname`. Keep mathematical content unchanged in display fixes.
+Use fenced `math` blocks for display equations and `$`-backtick delimiters for
+inline mathematics so Markdown preserves matrix row breaks and norm bars.
 
 ## Preservation and verification
 

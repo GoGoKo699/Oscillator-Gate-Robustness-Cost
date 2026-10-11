@@ -11,16 +11,16 @@ under different physical assumptions.
 
 | Item | Fixed in the present result |
 |---|---|
-| Controls | Two independently chosen, error-independent complex forces in the same finite nominally closed space $V$ |
-| Dynamics and error | One ideal linear oscillator with one unknown static number-detuning error $\delta a^\dagger a$ |
-| Target | A prescribed nonzero unwrapped angle in $\exp(i\Theta_0Z_1Z_2)$ |
-| Resource | $E=\int_0^T(\lvert f_1\rvert^2+\lvert f_2\rvert^2)dt$, with the same normalization and duration for both competitors |
+| Controls | Two independently chosen, error-independent complex forces in the same finite nominally closed space $`V`$ |
+| Dynamics and error | One ideal linear oscillator with one unknown static number-detuning error $`\delta a^\dagger a`$ |
+| Target | A prescribed nonzero unwrapped angle in $`\exp(i\Theta_0Z_1Z_2)`$ |
+| Resource | $`E=\int_0^T(\lvert f_1\rvert^2+\lvert f_2\rvert^2)dt`$, with the same normalization and duration for both competitors |
 | Robustness | Zero angle derivative; for quartic thermal average infidelity, also zero first displacement derivatives |
 | Optimization | Joint minimization over both forces, including an explicit attaining pair and a matching lower bound |
 
 With these choices, the result is an attainable cost classification:
-$E_{\mathrm{angle}}=\frac{\lvert\Theta_0\rvert}{\min_{\zeta\in\mathbb R}\lVert K-\zeta D\rVert}$,
-with zero extra angle cost exactly when the extreme eigenvalues of $K$ are
+$`E_{\mathrm{angle}}=\frac{\lvert\Theta_0\rvert}{\min_{\zeta\in\mathbb R}\lVert K-\zeta D\rVert}`$,
+with zero extra angle cost exactly when the extreme eigenvalues of $`K`$ are
 balanced. The [claims](CLAIMS.md) state feasibility conventions and the
 full-gate corollary; the [spectral restriction](SPECTRAL_RESTRICTION.md) gives
 a family whose matched cost ratio grows without bound. The
@@ -55,7 +55,7 @@ construction is a feasible-design predecessor; its broader multimode,
 higher-order task is not solved by the present theorem. Its optical-control
 normalization must be translated before comparing costs. The
 [adapted fixed-first-pulse comparison](CONTROL_EXAMPLES.md#the-cost-of-fixing-the-first-pulse)
-gives the exact factor $\sqrt{1762}/9$ in this repository's symmetric
+gives the exact factor $`\sqrt{1762}/9`$ in this repository's symmetric
 four-tone space. It is a calculation in the stated model, not an experimental
 ratio from the source.
 
@@ -71,7 +71,7 @@ drifts. The construction concatenates two displacement-robust multimode
 pulses with opposite angle slopes. The two-ion frequency-reflection
 construction assumes equal Lamb–Dicke parameters for its two modes; the
 longer-chain construction solves Eq. (16) for two amplitude
-scalings with a total target angle $\pi/4$. The drive on the two ions is common
+scalings with a total target angle $`\pi/4`$. The drive on the two ions is common
 within each pulse. The paper explicitly credits independently addressed
 angle stabilization to Blümel et al.
 
@@ -125,7 +125,7 @@ and displacement-derivative constraints. Its positive-extraction construction
 links the two pulse vectors and minimizes a quadratic trajectory cost.
 
 Appendix G, Eq. (89), already gives the leading thermal average-infidelity
-coefficient as $4/5$ times the sum of thermal displacement-error squares and
+coefficient as $`4/5`$ times the sum of thermal displacement-error squares and
 angle-error square. Eq. (94) gives the displacement-moment relation, and
 Eq. (104) identifies the angle slope with the integrated cross-trajectory
 overlap. Laser-detuning and oscillator-number-detuning conventions have
@@ -202,8 +202,8 @@ Page 3 gives statements (E1)–(E2) and Assumption 1, which requires the equalit
 constraint to take both signs. Section 3, p. 11, Theorem 3 and exceptional
 case (17), supplies the equality S-lemma. Its exception requires a nonconstant
 linear constraint with zero quadratic matrix, alongside additional conditions.
-Here the realified form $h=x^\dagger Dx-y^\dagger Dy$ is a nonzero indefinite
-quadratic form: $y=0$ and $x=0$ supply its two signs. The exceptional case
+Here the realified form $`h=x^\dagger Dx-y^\dagger Dy`$ is a nonzero indefinite
+quadratic form: $`y=0`$ and $`x=0`$ supply its two signs. The exceptional case
 therefore does not apply. [Theory §4](THEORY.md#attribution-and-a-checkable-certificate)
 gives the resulting block-matrix certificate and constructive attaining forces.
 
@@ -214,9 +214,9 @@ dynamical operation*, Physics Letters A 303, 249–252 (2002),
 [arXiv:quant-ph/0205035v2](https://arxiv.org/pdf/quant-ph/0205035v2).
 
 Page 1, definitions (1)–(2) and Eq. (3), give
-$F_{\mathrm{avg}}=(dF_e+1)/(d+1)$ for a trace-preserving channel in dimension
-$d$. Nielsen attributes this relation to M., P., and R. Horodecki and supplies
-a simplified proof. The two-qubit channel uses $d=4$, hence $(4F_e+1)/5$.
+$`F_{\mathrm{avg}}=(dF_e+1)/(d+1)`$ for a trace-preserving channel in dimension
+$`d`$. Nielsen attributes this relation to M., P., and R. Horodecki and supplies
+a simplified proof. The two-qubit channel uses $`d=4`$, hence $`(4F_e+1)/5`$.
 Wu and Huo above supply the physical thermal-channel and expansion precedents;
 [Theory §6](THEORY.md#6-full-thermal-gate-error-and-its-exact-minimum) derives
 their specialization and the cost consequence.
@@ -232,8 +232,8 @@ the classical Toeplitz–Hausdorff convexity theorem. Section 9, pp. 23–24,
 relates support lines to extremal Hermitian eigenvalues.
 
 The exact budget-dependent sensitivity frontier uses the classical
-geometry of the block pair $\operatorname{diag}(K,-K)$ and
-$\operatorname{diag}(D,-D)$, whose support function is $\|uK+vD\|$.
+geometry of the block pair $`\mathrm{diag}(K,-K)`$ and
+$`\mathrm{diag}(D,-D)`$, whose support function is $`\|uK+vD\|`$.
 The [frontier proof](SENSITIVITY_FRONTIER.md) identifies the coherent
 attainable set and handles nominal-budget endpoints and force construction.
 
