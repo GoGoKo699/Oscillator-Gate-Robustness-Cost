@@ -117,8 +117,8 @@ K=P_V\frac{A^\dagger-A}{2i}P_V,
 For the two force coefficient vectors $`c_1,c_2`$,
 
 ```math
-\Theta=2\operatorname{Re}(c_1^\dagger Kc_2),\qquad
-\chi=-2\operatorname{Re}(c_1^\dagger Dc_2),\qquad
+\Theta=2\mathrm{Re}(c_1^\dagger Kc_2),\qquad
+\chi=-2\mathrm{Re}(c_1^\dagger Dc_2),\qquad
 E=\|c_1\|^2+\|c_2\|^2.
 ```
 
@@ -191,7 +191,7 @@ $`c_1=c_2=(1,0)^T/\sqrt2`$ give $`E=1`$, $`\Theta=1`$, and $`\chi=-2`$.
 To obtain the robust optimum, center the two eigenvalues:
 
 ```math
-\operatorname{tr}(K-\zeta D)=\frac32-\frac52\zeta=0
+\mathrm{tr}(K-\zeta D)=\frac32-\frac52\zeta=0
 \quad\Longrightarrow\quad
 \zeta_*=\frac35,\qquad
 K-\zeta_*D=

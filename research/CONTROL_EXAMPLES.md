@@ -33,8 +33,8 @@ J=\begin{pmatrix}0&i\\-i&0\end{pmatrix},\qquad
 D=\frac1{\nu^2}\begin{pmatrix}2/5&0\\0&5/8\end{pmatrix}.
 $$
 
-Thus $\Theta=2\operatorname{Re}(a^\dagger Kb)$,
-$\chi=-2\operatorname{Re}(a^\dagger Db)$, and
+Thus $\Theta=2\mathrm{Re}(a^\dagger Kb)$,
+$\chi=-2\mathrm{Re}(a^\dagger Db)$, and
 $E=\|a\|^2+\|b\|^2$. The phase eigenvalues are $\pm k$, so the
 [balanced-spectrum theorem](THEORY.md#5-free-costly-and-infeasible-robustness)
 gives
@@ -72,13 +72,13 @@ Q_g=I-\frac{(Dg)(Dg)^\dagger}{\|Dg\|^2},\qquad
 $$
 
 To compute the restricted optimum, write $a=s g$, $s>0$. Robustness requires
-$\operatorname{Re}[(Dg)^\dagger b]=0$. Since $g^\dagger Dg$ is real,
+$\mathrm{Re}[(Dg)^\dagger b]=0$. Since $g^\dagger Dg$ is real,
 $Q_g g$ is also the projection of $g$ onto this constraint hyperplane under
-the real inner product $\operatorname{Re}(z^\dagger w)$. Consequently
+the real inner product $\mathrm{Re}(z^\dagger w)$. Consequently
 
 $$
-\operatorname{Re}(g^\dagger b)
-=\operatorname{Re}[(Q_g g)^\dagger b]
+\mathrm{Re}(g^\dagger b)
+=\mathrm{Re}[(Q_g g)^\dagger b]
 \leq\kappa\|b\|.
 $$
 
@@ -104,12 +104,12 @@ The nominal common pair $a=b=Ag$ defines a per-qubit peak cap. To compare it
 with all robust minimizers, first characterize equality in
 
 $$
-\Theta=2k\operatorname{Re}(a^\dagger Jb)
+\Theta=2k\mathrm{Re}(a^\dagger Jb)
 \leq 2k\|a\|\|b\|\leq kE.
 $$
 
 For the positive target and $E=E_{\min}$, equality requires equal force norms
-and $b=Ja$. Write $D=\operatorname{diag}(d_1,d_2)$; then
+and $b=Ja$. Write $D=\mathrm{diag}(d_1,d_2)$; then
 $DJ+JD=(d_1+d_2)J$. Hence zero slope requires $a^\dagger Ja=0$.
 Every such pair, up to a common phase, is
 

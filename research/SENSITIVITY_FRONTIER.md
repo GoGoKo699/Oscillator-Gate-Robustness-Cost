@@ -132,7 +132,7 @@ $$
 At any optimal point, equality in (3) forces
 
 $$
-q=\operatorname{sgn}(\widehat\zeta)s_V(B;t),\qquad
+q=\mathrm{sgn}(\widehat\zeta)s_V(B;t),\qquad
 t-\widehat\zeta q=B\widehat\rho.
 $$
 
@@ -171,7 +171,7 @@ $N_G=P_GN|_G$. Then
 
 $$
 s_V(t/\lambda;t)
-=\frac{t}{\lambda}\,\operatorname{dist}\bigl(0,[\eta_-,\eta_+]\bigr). \tag{4}
+=\frac{t}{\lambda}\,\mathrm{dist}\bigl(0,[\eta_-,\eta_+]\bigr). \tag{4}
 $$
 
 Choose the endpoint eigenvector nearest zero if the interval does not

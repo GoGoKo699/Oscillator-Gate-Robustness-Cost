@@ -29,7 +29,7 @@ device-power or individual peak-amplitude resource.
 
 Write $\alpha_j(t)=-i\int_0^t f_j(u)du$,
 $m_j=\int_0^T\alpha_j(t)dt$, and
-$\chi=-2\operatorname{Re}\int_0^T\alpha_1^*\alpha_2dt$.
+$\chi=-2\mathrm{Re}\int_0^T\alpha_1^*\alpha_2dt$.
 
 | Requirement | Mathematical condition | Meaning |
 |---|---|---|
@@ -64,8 +64,8 @@ $K$ is Hermitian and $D>0$ in a nonzero finite space. For the coefficient
 vectors $a,b$ of the forces,
 
 $$
-\Theta=2\operatorname{Re}a^\dagger Kb,\qquad
-\chi=-2\operatorname{Re}a^\dagger Db,\qquad
+\Theta=2\mathrm{Re}a^\dagger Kb,\qquad
+\chi=-2\mathrm{Re}a^\dagger Db,\qquad
 E=\|a\|^2+\|b\|^2.
 $$
 

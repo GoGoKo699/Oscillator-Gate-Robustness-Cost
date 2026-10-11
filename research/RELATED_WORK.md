@@ -232,8 +232,8 @@ the classical Toeplitz–Hausdorff convexity theorem. Section 9, pp. 23–24,
 relates support lines to extremal Hermitian eigenvalues.
 
 The exact budget-dependent sensitivity frontier uses the classical
-geometry of the block pair $\operatorname{diag}(K,-K)$ and
-$\operatorname{diag}(D,-D)$, whose support function is $\|uK+vD\|$.
+geometry of the block pair $\mathrm{diag}(K,-K)$ and
+$\mathrm{diag}(D,-D)$, whose support function is $\|uK+vD\|$.
 The [frontier proof](SENSITIVITY_FRONTIER.md) identifies the coherent
 attainable set and handles nominal-budget endpoints and force construction.
 

@@ -78,7 +78,7 @@ $$
 where $\varphi_{\rm g}$ is an overall phase and
 
 $$
-\Theta(\delta)=\operatorname{Im}\int_0^T
+\Theta(\delta)=\mathrm{Im}\int_0^T
 \bigl[\beta_1^*\dot\beta_2+\beta_2^*\dot\beta_1\bigr]\,dt.
 \tag{4}
 $$
@@ -106,13 +106,13 @@ $$
 with
 
 $$
-\boxed{\chi=-2\operatorname{Re}\int_0^T
+\boxed{\chi=-2\mathrm{Re}\int_0^T
 \alpha_1(t)^*\alpha_2(t)\,dt.}
 \tag{6}
 $$
 
 Indeed expanding the displaced number operator produces the cross term
-$2Z_1Z_2\operatorname{Re}(\alpha_1^*\alpha_2)$. Comparing with the derivative
+$2Z_1Z_2\mathrm{Re}(\alpha_1^*\alpha_2)$. Comparing with the derivative
 of the qubit phase in (3) at nominal closure yields (6). Integration by parts
 also gives
 
@@ -172,15 +172,15 @@ where the notation denotes restriction to $V$. For coefficient vectors
 $c_1,c_2$ of the two forces, (4) and (6) become
 
 $$
-\Theta(0)=2\operatorname{Re}(c_1^\dagger Kc_2),\qquad
-\chi=-2\operatorname{Re}(c_1^\dagger Dc_2),\qquad
+\Theta(0)=2\mathrm{Re}(c_1^\dagger Kc_2),\qquad
+\chi=-2\mathrm{Re}(c_1^\dagger Dc_2),\qquad
 E=\|c_1\|^2+\|c_2\|^2.
 \tag{10}
 $$
 
 To verify the phase normalization, substitute $\alpha_j=-iAf_j$ into (4)
 at zero detuning. Its integral gives
-$\operatorname{Im}(\langle Af_1,f_2\rangle+\langle Af_2,f_1\rangle)$,
+$\mathrm{Im}(\langle Af_1,f_2\rangle+\langle Af_2,f_1\rangle)$,
 which equals the first expression in (10). The overlap expression gives the
 second. Thus $K$ is Hermitian. Moreover, $D$ is strictly positive whenever
 $V\ne\{0\}$: $\langle f,Df\rangle=\|Af\|^2=0$ implies $Af=0$, hence
@@ -223,7 +223,7 @@ If $Ku=\kappa u$, $\|u\|=1$, and $|\kappa|=\lambda>0$, choose
 $$
 c_1=\sqrt{\frac{|\Theta_0|}{2\lambda}}u,
 \qquad
-c_2=\operatorname{sgn}(\Theta_0)\operatorname{sgn}(\kappa)c_1.
+c_2=\mathrm{sgn}(\Theta_0)\mathrm{sgn}(\kappa)c_1.
 $$
 
 This attains the target and the first minimum, including when $K$ has only
@@ -290,7 +290,7 @@ Their phase is $x^\dagger Lx-y^\dagger Ly=r$. Therefore
 
 $$
 c_1=\sqrt{\frac{|\Theta_0|}{r}}\frac{x+y}{\sqrt2},\qquad
-c_2=\operatorname{sgn}(\Theta_0)
+c_2=\mathrm{sgn}(\Theta_0)
 \sqrt{\frac{|\Theta_0|}{r}}\frac{x-y}{\sqrt2}
 \tag{17}
 $$
@@ -315,7 +315,7 @@ $f_\rho=\rho E-x^\dagger Kx+y^\dagger Ky$: nonnegativity on $h=0$ is
 equivalent to some multiplier giving
 
 $$
-\operatorname{diag}(\rho I-K+\zeta D,\rho I+K-\zeta D)\succeq0,
+\mathrm{diag}(\rho I-K+\zeta D,\rho I+K-\zeta D)\succeq0,
 $$
 
 or $\rho\geq\|K-\zeta D\|$. The general optimization principle is established
@@ -426,7 +426,7 @@ nominal qubit gate, the exact channel multiplies $|z\rangle\langle w|$ by
 $$
 c_{zw}=\exp\!\left[
 i\Delta\Theta(p_z-p_w)
-+i\operatorname{Im}(\beta_z\beta_w^*)
++i\mathrm{Im}(\beta_z\beta_w^*)
 -\left(\bar n+\tfrac12\right)|\beta_z-\beta_w|^2
 \right].
 \tag{22}
@@ -439,7 +439,7 @@ $F_e=\frac1{16}\sum_{z,w}c_{zw}$. The established identity
 $F_{\rm avg}=(4F_e+1)/5$ consequently yields
 
 $$
-1-F_{\rm avg}=\frac1{20}\sum_{z,w}(1-\operatorname{Re}c_{zw}).
+1-F_{\rm avg}=\frac1{20}\sum_{z,w}(1-\mathrm{Re}c_{zw}).
 \tag{23}
 $$
 

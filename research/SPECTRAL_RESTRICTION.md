@@ -35,8 +35,8 @@ $$Af=\sum_\ell\frac{c_\ell}{i\omega_\ell}
 The constant part vanishes on $V$. The phase and overlap operators therefore
 are the compressions
 
-$$K=P_V\operatorname{diag}(\omega_\ell^{-1})P_V>0,\qquad
-D=P_V\operatorname{diag}(\omega_\ell^{-2})P_V>0.$$
+$$K=P_V\mathrm{diag}(\omega_\ell^{-1})P_V>0,\qquad
+D=P_V\mathrm{diag}(\omega_\ell^{-2})P_V>0.$$
 
 Here and below compression means an operator **on $V$**, not an ambient
 matrix padded with zeros. Without the first-moment condition, the primitive
@@ -75,7 +75,7 @@ The first condition gives $f(0)=f(T)=0$; the second is the first-moment
 condition. Both forces range independently over this entire two-dimensional
 complex space. Its full parameterization is
 
-$$c=\operatorname{diag}(n)Uz,\qquad
+$$c=\mathrm{diag}(n)Uz,\qquad
 U=\begin{pmatrix}1&0\\-2&1\\1&-2\\0&1\end{pmatrix},\qquad z\in\mathbb C^2.$$
 
 The two constraint rows are independent and annihilate these two independent
@@ -84,13 +84,13 @@ columns. Hence no admissible directions have been discarded.
 Define the dimensionless matrices
 
 $$
-G=U^T\operatorname{diag}(n^2)U
+G=U^T\mathrm{diag}(n^2)U
 =\begin{pmatrix}6N^2+12N+8&-4N^2-12N-10\\
 -4N^2-12N-10&6N^2+24N+26\end{pmatrix},
 $$
 
 $$
-K_0=U^T\operatorname{diag}(n)U
+K_0=U^T\mathrm{diag}(n)U
 =\begin{pmatrix}6N+6&-4N-6\\-4N-6&6N+12\end{pmatrix},\qquad
 D_0=U^TU=\begin{pmatrix}6&-4\\-4&6\end{pmatrix}.
 $$
@@ -116,9 +116,9 @@ multiplier are
 $$\lambda_N=\frac{B_N+\sqrt{S_N}}{2P_N},\qquad
 \zeta_N=\frac{B_N}{Q_N}.$$
 
-Indeed, $\operatorname{tr}(G^{-1}K_0)=B_N/P_N$, and its characteristic
+Indeed, $\mathrm{tr}(G^{-1}K_0)=B_N/P_N$, and its characteristic
 discriminant is $S_N/P_N^2$. Also
-$\operatorname{tr}[G^{-1}(K_0-\zeta_ND_0)]=0$ and
+$\mathrm{tr}[G^{-1}(K_0-\zeta_ND_0)]=0$ and
 
 $$[G^{-1}(K_0-\zeta_ND_0)]^2=r_N^2I,\qquad
 r_N^2=\frac{9R_N}{Q_N^2P_N}>0.$$
