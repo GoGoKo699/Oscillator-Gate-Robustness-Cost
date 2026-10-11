@@ -538,7 +538,7 @@ force direction from a nonzero but attenuated independently commandable
 direction under the output-force resource.
 
 Equal integrated costs do not imply equal individual peak amplitudes. The
-[four-tone equality-family proof](../archive/consolidation-2026-10-09/prior/THEOREM.md#5-the-four-tone-no-cost-example-cannot-keep-the-nominal-per-qubit-peak-cap)
+[four-tone equality-family proof](CONTROL_EXAMPLES.md#every-robust-cost-minimizer-exceeds-the-nominal-individual-peak-cap)
 shows an exact example where every robust cost-minimizer violates the
 nominal common pulse's individual peak cap. The present theorem optimizes
 the declared effective-force resource with one static detuning and one
@@ -558,4 +558,4 @@ Nielsen. Bibliographic entries and the matched comparison are in
 The analytical claims above are proved independently of numerical sampling.
 The [verification instructions](../REPRODUCIBILITY.md) reproduce the preserved
 dynamical and matrix checks and supplemental exact checks, while separately
-reporting archive integrity and reference-report byte identity.
+reporting source integrity and reference-report byte identity.

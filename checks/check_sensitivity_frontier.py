@@ -5,7 +5,7 @@ The two Fourier modes are an actual nominally closed force space. Their phase
 and overlap matrices do not commute. The checks include a smooth support point,
 a coherent witness at a nonsmooth support point, and both budget endpoints.
 These targeted identities supplement the proof, not a numerical optimization
-or a general solver. The report destination must be new and outside archive/.
+or a general solver. The report destination must be new and outside protected source directories.
 """
 from __future__ import annotations
 
@@ -229,9 +229,10 @@ def main(argv=None) -> int:
     if requested.is_symlink() or requested.exists():
         parser.error("Output file must not already exist")
     output = requested.resolve()
-    protected = (ROOT / "archive").resolve()
-    if output == protected or protected in output.parents:
-        parser.error("Output file must lie outside archive/")
+    for directory in ("checks", "references", "scripts", "tests", "provenance"):
+        protected = (ROOT / directory).resolve()
+        if output == protected or protected in output.parents:
+            parser.error("Output file must lie outside protected source directories")
     report = build_report()
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open("x", encoding="utf-8") as stream:

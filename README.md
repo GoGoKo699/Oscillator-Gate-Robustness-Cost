@@ -143,9 +143,10 @@ python3.13 -m venv .venv
   --output-dir /absolute/path/to/new-results --allow-report-differences
 ```
 
-The output directory must be new and outside `archive/`. The verifier runs all
-27 scientific groups and the infrastructure tests, and checks all 89 archived
-source files. Its receipt separates scientific assertions from canonical
+The output directory must be new and outside the source and reference directories.
+The verifier runs all 27 scientific groups and the infrastructure tests, and
+checks the integrity of all scientific implementations and reference reports.
+Its receipt separates scientific assertions from canonical
 report byte identity. [Verification](REPRODUCIBILITY.md) explains the strict
 and portability policies; the latter retains every finite floating-point
 report difference. Numerical checks support the analytical proofs.

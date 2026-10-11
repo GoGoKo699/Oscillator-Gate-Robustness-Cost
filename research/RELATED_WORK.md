@@ -53,9 +53,11 @@ The distinction here is joint optimization of both pulses for one positive
 overlap constraint in a matched complex force space. The source's fixed-first
 construction is a feasible-design predecessor; its broader multimode,
 higher-order task is not solved by the present theorem. Its optical-control
-normalization must be translated before comparing costs. The archive's
-adapted fixed-first-pulse comparison is a calculation in this repository's
-model, not an experimental ratio from the source.
+normalization must be translated before comparing costs. The
+[adapted fixed-first-pulse comparison](CONTROL_EXAMPLES.md#the-cost-of-fixing-the-first-pulse)
+gives the exact factor $\sqrt{1762}/9$ in this repository's symmetric
+four-tone space. It is a calculation in the stated model, not an experimental
+ratio from the source.
 
 ### Jia et al.: cancellation between concatenated gates
 

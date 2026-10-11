@@ -1,20 +1,16 @@
-# Source provenance
+# Source integrity
 
-The preserved scientific source package is
-`quadrature_gate_consolidation_2026-10-09.zip` (171,772 bytes), with SHA-256
+The [integrity manifest](reference-integrity.json) pins the seven scientific
+Python files in [`checks/`](../checks/) and the four canonical reports in
+[`references/`](../references/) by SHA-256 and byte count. The verifier checks
+the full inventory before and after execution, including unexpected files
+and unsupported paths.
 
-```text
-7a19fd462dd28eb2a1b051f220e1de70d235b95fd96071a81b357b04b2759b6a
-```
+The manifest also identifies the exact source commit and original paths for
+the five core implementations and four reference reports. Their bytes can be
+compared directly with those objects in Git history.
 
-Its 89 files are preserved byte for byte in
-[`archive/consolidation-2026-10-09/`](../archive/consolidation-2026-10-09/).
-The [inventory](archive.json) anchors every file, including the source manifest.
-The verifier checks the complete inventory before and after executing the
-scientific suites.
-
-The current scientific account is linked from the [repository overview](../README.md).
-[Reproducibility](../REPRODUCIBILITY.md) explains the scientific assertions,
-source-integrity checks, and reference-report comparisons. The
-[platform comparison](platform-review.json) retains field-level floating-point
-differences and report hashes for its recorded environments.
+[Reproducibility](../REPRODUCIBILITY.md) describes the assertions, acceptance
+policies, and receipts. The [platform comparison](platform-review.json)
+records individual floating-point differences and report hashes for its
+specified environments; its source paths refer to that recorded snapshot.

@@ -1,0 +1,66 @@
+{
+  "file_count": 11,
+  "files": {
+    "checks/check_gate_dynamics.py": {
+      "bytes": 16601,
+      "sha256": "e44d98cf9144e3614f3de01ddcb409f49344fe7b1456a95bd0cd38d38a763b22"
+    },
+    "checks/check_oscillator_channel.py": {
+      "bytes": 13429,
+      "sha256": "f19a1ad98d4b4232950f679395abf398bcd1eed71358bbca239fd1ee6603f6ea"
+    },
+    "checks/check_resource_geometry.py": {
+      "bytes": 13608,
+      "sha256": "a22b79e0a31f4938d9e2455553f66c73b735e1e49e746324fb8aa37d5b20ebdd"
+    },
+    "checks/check_robust_cost.py": {
+      "bytes": 11389,
+      "sha256": "a6806725a563c9ff29a835eb3aae582f92a0f409891de9490f1492876880a8a6"
+    },
+    "checks/check_sensitivity_frontier.py": {
+      "bytes": 14367,
+      "sha256": "267e08ea103c72ece75d2669bf167bd7115de82dccdd90f4849ed12b34ba8fc4"
+    },
+    "checks/check_spectral_cost.py": {
+      "bytes": 9421,
+      "sha256": "2b899c58359056315bce22133df6bc66fc32078034b20c1258dbe1e34e32b8b1"
+    },
+    "checks/cost_solver.py": {
+      "bytes": 3025,
+      "sha256": "a77c87c61988162989f0694b916e45eeec06cca4f11f2ca9f38707b492098454"
+    },
+    "references/gate_dynamics.json": {
+      "bytes": 7260,
+      "sha256": "7c57b79a2cc59bdab558e71659a9812031afa04f77deab84ff9578496f594620"
+    },
+    "references/oscillator_channel.json": {
+      "bytes": 7594,
+      "sha256": "0d9a05476dabfae4b1bd9dfd55888b7792395c26cc5261c3e26ce1af8e0b14a3"
+    },
+    "references/resource_geometry.json": {
+      "bytes": 5550,
+      "sha256": "f11710d4af63292c991e424c4607be69df70549be621c14e3db3fd53fc7e19b7"
+    },
+    "references/robust_cost.json": {
+      "bytes": 8621,
+      "sha256": "f016af36a36137902ecf7b2212b9f45140b315f65bd589540128242a7f0a8007"
+    }
+  },
+  "protected_roots": [
+    "checks",
+    "references"
+  ],
+  "schema_version": 1,
+  "source_commit": "ef8958ede2091931f239daadff4a20d28051033a",
+  "source_paths": {
+    "checks/check_gate_dynamics.py": "archive/consolidation-2026-10-09/check_consolidation.py",
+    "checks/check_oscillator_channel.py": "archive/consolidation-2026-10-09/prior/prior/prior/check_pilot.py",
+    "checks/check_resource_geometry.py": "archive/consolidation-2026-10-09/prior/prior/check_review.py",
+    "checks/check_robust_cost.py": "archive/consolidation-2026-10-09/prior/check_audit.py",
+    "checks/cost_solver.py": "archive/consolidation-2026-10-09/prior/cost_solver.py",
+    "references/gate_dynamics.json": "archive/consolidation-2026-10-09/evidence/final.json",
+    "references/oscillator_channel.json": "archive/consolidation-2026-10-09/prior/prior/prior/evidence/final.json",
+    "references/resource_geometry.json": "archive/consolidation-2026-10-09/prior/prior/evidence/first.json",
+    "references/robust_cost.json": "archive/consolidation-2026-10-09/prior/evidence/final.json"
+  }
+}

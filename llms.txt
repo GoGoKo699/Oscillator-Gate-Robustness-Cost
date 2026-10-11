@@ -35,6 +35,7 @@ optimization; equality S-lemma; joint numerical range.
 - [Exact sensitivity frontier](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/SENSITIVITY_FRONTIER.md): the optimum at every feasible budget, endpoint cases, and a worked two-tone example.
 - [Spectral restriction](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/SPECTRAL_RESTRICTION.md): the positive-band bound and feasible four-tone family.
 - [Control access](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/CONTROL_ACCESS.md): sideband controls, effective-force normalization, and access to conjugate directions.
+- [Control examples](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/CONTROL_EXAMPLES.md): a symmetric four-tone space, a fixed-first-pulse comparison, and the distinction between integrated cost and individual peak caps.
 
 ## Single learning anchor and attribution
 
@@ -78,14 +79,13 @@ model, with spectral and full-gate consequences.
 - The positive-band penalty compares matched optima within each force space;
   the nominal cost also grows along the four-tone family.
 
-## Evidence and preserved material
+## Evidence and reproduction
 
 - [Reproducibility](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/REPRODUCIBILITY.md): pinned execution, scientific assertions, and report-identity checks.
-- [Source provenance](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/provenance/README.md): source package and hashes anchoring the 89 preserved files.
-- [Source archive](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/tree/main/archive/consolidation-2026-10-09): historical source versions and evidence.
+- [Source integrity](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/provenance/README.md): hashes anchoring the scientific implementations and canonical reference reports.
+- [Scientific checks](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/tree/main/checks): executable checks for the model, exact costs, frontier, and spectral consequences.
 
 The current account is in the root README and research files linked above.
-Archived statements describe preserved versions and may be superseded there.
 Numerical checks support specified identities and constructions; they do not
 replace analytical proofs. Verification receipts distinguish assertion success,
 source integrity, and canonical report byte identity. Code-maintenance rules

@@ -33,12 +33,13 @@ Use the Blümel paper and supplement, arXiv:1905.09292v2, as one learning anchor
 
 ## Preservation and verification
 
-`archive/consolidation-2026-10-09/` is an immutable 89-file source record. Preserve
-every byte, including old source versions and reports. Do not edit its tests,
-tolerances, manifests, or historical statements. Put corrections, current
-exposition, and new checks outside the archive with a reason and source link.
-`provenance/archive.json` anchors the recovered file inventory; never regenerate
-its expected hashes to conceal an archive change.
+`checks/` contains the scientific implementations and `references/` contains
+the four canonical numerical reports. `provenance/reference-integrity.json`
+anchors all 11 files and records the original locations of the five migrated
+implementations and four reference reports. Preserve their scientific assertions,
+tolerances, and reference values. Never regenerate expected hashes or reference
+reports to conceal a scientific change. Any intentional source change must have
+an explicit reason, a reviewed diff, and verification evidence.
 
 Run `python scripts/verify.py --output-dir /absolute/new/output-directory` in
 the pinned environment. Read the receipt: passing scientific assertions,
@@ -46,12 +47,12 @@ canonical report identity, and source integrity are distinct facts. Record
 environment differences instead of weakening assertions or replacing evidence.
 Default verification is strict about reference bytes. The documented
 `--allow-report-differences` mode may accept finite floating-point report
-differences only after every scientific assertion, structure check, and archive
+differences only after every scientific assertion, structure check, and source
 integrity check passes; it must still report byte nonidentity explicitly.
 Numerical checks are not analytical proofs or external peer review.
 
-The preserved Fourier helper assumes distinct nonzero integer harmonics over
-their common period. Every archived example meets this precondition; the helper
+The Fourier helper assumes distinct nonzero integer harmonics over
+their common period. Every checked example meets this precondition; the helper
 does not validate arbitrary frequency inputs. Preserve its source and use only
 the supported inputs documented in `REPRODUCIBILITY.md`.
 
