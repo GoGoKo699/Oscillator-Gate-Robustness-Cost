@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Check exact symbolic identities for research/SPECTRAL_RESTRICTION.md.
 
-This supplements, and never rewrites, the twenty archived scientific groups.
+This supplements, and never rewrites, the twenty numerical scientific groups.
 It checks identities for symbolic parameters rather than sampling a finite grid.
-The report destination must be new and outside archive/.
+The report destination must be new and outside protected source directories.
 """
 from __future__ import annotations
 
@@ -156,9 +156,10 @@ def main(argv=None) -> int:
     if requested.is_symlink() or requested.exists():
         parser.error("Output file must not already exist")
     output = requested.resolve()
-    protected = (ROOT / "archive").resolve()
-    if output == protected or protected in output.parents:
-        parser.error("Output file must lie outside archive/")
+    for directory in ("checks", "references", "scripts", "tests", "provenance"):
+        protected = (ROOT / directory).resolve()
+        if output == protected or protected in output.parents:
+            parser.error("Output file must lie outside protected source directories")
     report = build_report()
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open("x", encoding="utf-8") as stream:

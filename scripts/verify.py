@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Verify the unchanged scientific archive and the supplemental exact checks.
+"""Verify scientific checks, protected reference data, and exact identities.
 
 From the repository root: python scripts/verify.py --output-dir verification-results/run-001
-The destination must be new and outside archive/. By default exit 0 requires
-infrastructure tests, archive integrity, scientific assertions, and canonical
+The destination must be new and outside protected source directories. Exit 0
+requires infrastructure tests, source integrity, scientific assertions, and canonical
 report bytes to pass independently. --allow-report-differences explicitly accepts
 finite floating-point report differences only. No baseline or tolerance is updated.
 """
@@ -24,19 +24,19 @@ import sys
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE_PATH = "archive/consolidation-2026-10-09"
-ARCHIVE = ROOT / ARCHIVE_PATH
-MANIFEST = ROOT / "provenance/archive.json"
-EXPECTED_FILE_COUNT = 89
+PROTECTED_ROOTS = ("checks", "references")
+OUTPUT_PROTECTED_ROOTS = (*PROTECTED_ROOTS, "scripts", "tests", "provenance")
+MANIFEST = ROOT / "provenance/reference-integrity.json"
+EXPECTED_FILE_COUNT = 11
 SUITES = ("consolidation", "cost_audit", "resource_review", "pilot")
 SUPPLEMENTAL_GROUPS = ("positive_band_factors", "four_tone_exact_matrices", "matrix_pencil_asymptotics")
 FRONTIER_GROUPS = ("force_geometry_and_fourier_forms", "noncommuting_smooth_frontier",
                    "coherent_kink_and_robust_endpoint", "proportional_infeasibility_and_budget_padding")
 REFERENCE_REPORTS = {
-    "consolidation": "evidence/final.json",
-    "cost_audit": "prior/evidence/final.json",
-    "resource_review": "prior/prior/evidence/first.json",
-    "pilot": "prior/prior/prior/evidence/final.json",
+    "consolidation": "references/gate_dynamics.json",
+    "cost_audit": "references/robust_cost.json",
+    "resource_review": "references/resource_geometry.json",
+    "pilot": "references/oscillator_channel.json",
 }
 ENVIRONMENT_OVERRIDES = {
     "PYTHONDONTWRITEBYTECODE": "1",
@@ -65,17 +65,20 @@ def read_json(path: Path):
 
 def load_manifest(path: Path, expected_count: int = EXPECTED_FILE_COUNT) -> dict:
     manifest = read_json(path)
-    if not isinstance(manifest, dict) or manifest.get("archive_path") != ARCHIVE_PATH:
-        raise ValueError("Unexpected archive_path in provenance manifest")
+    if (not isinstance(manifest, dict) or type(manifest.get("schema_version")) is not int
+            or manifest["schema_version"] != 1
+            or manifest.get("protected_roots") != list(PROTECTED_ROOTS)):
+        raise ValueError("Unexpected schema or protected_roots in integrity manifest")
     files = manifest.get("files")
     if not isinstance(files, dict) or len(files) != expected_count:
-        raise ValueError(f"Expected exactly {expected_count} archive files")
+        raise ValueError(f"Expected exactly {expected_count} protected files")
     if type(manifest.get("file_count")) is not int or manifest["file_count"] != len(files):
         raise ValueError("Manifest file_count does not match files")
     for name, identity in files.items():
         relative = PurePosixPath(name)
         if (not name or relative.is_absolute() or ".." in relative.parts
-                or "\\" in name or relative.as_posix() != name or name == "."):
+                or "\\" in name or relative.as_posix() != name
+                or len(relative.parts) < 2 or relative.parts[0] not in PROTECTED_ROOTS):
             raise ValueError(f"Unsafe manifest path: {name!r}")
         if not isinstance(identity, dict):
             raise ValueError(f"Invalid identity for {name}")
@@ -86,29 +89,31 @@ def load_manifest(path: Path, expected_count: int = EXPECTED_FILE_COUNT) -> dict
     return files
 
 
-def archive_inventory(archive: Path) -> tuple[dict, list[str]]:
-    """Inventory regular files without following symlinks, including hidden files."""
-    if archive.is_symlink() or not archive.is_dir():
-        raise ValueError("Archive root must be a real directory")
+def source_inventory(root: Path) -> tuple[dict, list[str]]:
+    """Inventory protected regular files without following any symlinks."""
     files, unsupported = {}, []
-    for directory, directories, names in os.walk(archive, followlinks=False):
-        for name in list(directories):
-            path = Path(directory) / name
-            if path.is_symlink():
-                unsupported.append(path.relative_to(archive).as_posix())
-                directories.remove(name)
-        for name in names:
-            path = Path(directory) / name
-            relative = path.relative_to(archive).as_posix()
-            if path.is_symlink() or not path.is_file():
-                unsupported.append(relative)
-            else:
-                files[relative] = file_identity(path)
+    for name in PROTECTED_ROOTS:
+        protected = root / name
+        if protected.is_symlink() or not protected.is_dir():
+            raise ValueError(f"Protected root must be a real directory: {name}")
+        for directory, directories, names in os.walk(protected, followlinks=False):
+            for name in list(directories):
+                path = Path(directory) / name
+                if path.is_symlink():
+                    unsupported.append(path.relative_to(root).as_posix())
+                    directories.remove(name)
+            for name in names:
+                path = Path(directory) / name
+                relative = path.relative_to(root).as_posix()
+                if path.is_symlink() or not path.is_file():
+                    unsupported.append(relative)
+                else:
+                    files[relative] = file_identity(path)
     return dict(sorted(files.items())), sorted(unsupported)
 
 
-def check_archive(archive: Path, expected: dict) -> dict:
-    actual, unsupported = archive_inventory(archive)
+def check_source(root: Path, expected: dict) -> dict:
+    actual, unsupported = source_inventory(root)
     missing = sorted(expected.keys() - actual.keys())
     extra = sorted(actual.keys() - expected.keys())
     changed = sorted(name for name in expected.keys() & actual.keys()
@@ -121,15 +126,16 @@ def check_archive(archive: Path, expected: dict) -> dict:
     }
 
 
-def validate_output(requested: Path, protected: Path = ROOT / "archive") -> Path:
+def validate_output(requested: Path, root: Path = ROOT) -> Path:
     requested = requested.expanduser()
     # Reject a dangling symlink too, before resolving it to a nonexisting target.
     if requested.is_symlink() or requested.exists():
         raise ValueError("Output directory must not already exist")
     output = requested.resolve()
-    protected = protected.resolve()
-    if output == protected or protected in output.parents:
-        raise ValueError("Output directory must lie outside archive/")
+    for name in OUTPUT_PROTECTED_ROOTS:
+        protected = (root / name).resolve()
+        if output == protected or protected in output.parents:
+            raise ValueError("Output directory must lie outside protected source directories")
     return output
 
 
@@ -211,7 +217,7 @@ def scientific_summary(receipt: dict | None, returncode: int | None) -> dict:
 
 
 def supplemental_summary(report: dict | None, returncode: int | None) -> dict:
-    """Supplemental failures cannot be waived by the historical report policy."""
+    """Supplemental failures cannot be waived by the reference report policy."""
     result = {"suite": "spectral_cost", "scientific_assertions_pass": False,
               "report_valid": False, "returncode": returncode, "test_groups": 0,
               "method": "exact_symbolic_algebra", "groups": []}
@@ -237,7 +243,7 @@ def supplemental_summary(report: dict | None, returncode: int | None) -> dict:
 
 
 def frontier_summary(report: dict | None, returncode: int | None) -> dict:
-    """Require all distinct exact frontier groups, independently of old reports."""
+    """Require all distinct exact frontier groups, independently of reference reports."""
     result = {"suite": "sensitivity_frontier", "scientific_assertions_pass": False,
               "report_valid": False, "returncode": returncode, "test_groups": 0,
               "method": "exact_symbolic_algebra", "groups": []}
@@ -299,10 +305,10 @@ def classify_report_difference(reference, actual, path="") -> dict:
     return result
 
 
-def inspect_reports(output: Path, archive: Path = ARCHIVE) -> dict:
+def inspect_reports(output: Path, root: Path = ROOT) -> dict:
     comparisons = []
     for suite, reference_name in REFERENCE_REPORTS.items():
-        reference = archive / reference_name
+        reference = root / reference_name
         report = output / (suite + ".json")
         if report.is_symlink() or not report.is_file():
             raise ValueError(f"Missing or nonregular scientific report: {suite}")
@@ -339,8 +345,8 @@ def verification_passes(record: dict, allow_report_differences: bool) -> bool:
                                    and science["wrapper_returncode"] == 1)
     return bool(
         not record["errors"]
-        and record["archive_integrity_before"] and record["archive_integrity_before"]["pass"]
-        and record["archive_integrity_after"] and record["archive_integrity_after"]["pass"]
+        and record["source_integrity_before"] and record["source_integrity_before"]["pass"]
+        and record["source_integrity_after"] and record["source_integrity_after"]["pass"]
         and record["infrastructure_tests"] and record["infrastructure_tests"]["returncode"] == 0
         and science["receipt_valid"] and science["scientific_assertions_pass"]
         and supplemental and supplemental["report_valid"]
@@ -366,10 +372,10 @@ def main(argv=None) -> int:
     # mkdir's exclusive creation also catches a competing invocation's directory.
     output.mkdir(parents=True, exist_ok=False)
     record = {
-        "schema_version": 1, "started_utc": datetime.now(timezone.utc).isoformat(),
+        "schema_version": 2, "started_utc": datetime.now(timezone.utc).isoformat(),
         "source": source, "environment": environment_record(),
-        "archive_path": ARCHIVE_PATH, "archive_integrity_before": None,
-        "archive_integrity_after": None, "infrastructure_tests": None,
+        "protected_roots": list(PROTECTED_ROOTS), "source_integrity_before": None,
+        "source_integrity_after": None, "infrastructure_tests": None,
         "scientific_wrapper": None, "scientific": scientific_summary(None, None),
         "supplemental_run": None, "supplemental_scientific": supplemental_summary(None, None),
         "frontier_run": None, "frontier_scientific": frontier_summary(None, None),
@@ -381,9 +387,9 @@ def main(argv=None) -> int:
     expected = None
     try:
         expected = load_manifest(MANIFEST)
-        record["archive_integrity_before"] = check_archive(ARCHIVE, expected)
-        if not record["archive_integrity_before"]["pass"]:
-            raise ValueError("Archive integrity failed; scientific code was not executed")
+        record["source_integrity_before"] = check_source(ROOT, expected)
+        if not record["source_integrity_before"]["pass"]:
+            raise ValueError("Source integrity failed; scientific code was not executed")
 
         env = dict(os.environ, **ENVIRONMENT_OVERRIDES)
         test_tmp = output / "test-tmp"
@@ -398,7 +404,7 @@ def main(argv=None) -> int:
             raise ValueError("Infrastructure tests failed; scientific code was not executed")
 
         wrapper = run_logged(
-            [sys.executable, "-B", str(ARCHIVE / "verify.py"), "--output-dir", str(output / "scientific")],
+            [sys.executable, "-B", str(ROOT / "scripts/run_scientific.py"), "--output-dir", str(output / "scientific")],
             output / "scientific-wrapper.log", env, 600)
         record["scientific_wrapper"] = wrapper
         wrapper_receipt = output / "scientific/receipt.json"
@@ -441,9 +447,9 @@ def main(argv=None) -> int:
     finally:
         if expected is not None:
             try:
-                record["archive_integrity_after"] = check_archive(ARCHIVE, expected)
+                record["source_integrity_after"] = check_source(ROOT, expected)
             except (OSError, ValueError) as error:
-                record["errors"].append(f"Final archive check failed: {error}")
+                record["errors"].append(f"Final source check failed: {error}")
 
     science = record["scientific"]
     record["verification_pass"] = verification_passes(record, args.allow_report_differences)
