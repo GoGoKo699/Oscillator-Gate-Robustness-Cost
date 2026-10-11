@@ -31,7 +31,7 @@ Then the minimum is attained and
 \boxed{\quad
 s_V(B;t)=\max\left\{0,\ \sup_{\zeta\in\mathbb R\setminus\{0\}}
 \frac{t-B\rho(\zeta)}{|\zeta|}\right\}.
-\quad} \tag{1}
+\quad} \qquad\text{(1)}
 ```
 
 The same value and an attaining pair exist if the budget condition is
@@ -73,7 +73,7 @@ $`\|x\|^2=1/2`$. Its support function is
 ```math
 h_C(\alpha,\beta)
 =\lambda_{\max}(\alpha M+\beta N)
-=\|\alpha K+\beta D\|. \tag{2}
+=\|\alpha K+\beta D\|. \qquad\text{(2)}
 ```
 
 Consequently the attainable set under $`E=B`$ is $`BC`$. The set under
@@ -96,7 +96,7 @@ The support inequalities (2) show that feasibility requires
 
 ```math
 t\leq B\rho(\zeta)+|\zeta|s
-\qquad\text{for every real }\zeta. \tag{3}
+\qquad\text{for every real }\zeta. \qquad\text{(3)}
 ```
 
 They are also sufficient. If the two compact convex sets were disjoint,
@@ -175,7 +175,7 @@ $`N_G=P_GN|_G`$. Then
 
 ```math
 s_V(t/\lambda;t)
-=\frac{t}{\lambda}\,\mathrm{dist}\bigl(0,[\eta_-,\eta_+]\bigr). \tag{4}
+=\frac{t}{\lambda}\,\mathrm{dist}\bigl(0,[\eta_-,\eta_+]\bigr). \qquad\text{(4)}
 ```
 
 Choose the endpoint eigenvector nearest zero if the interval does not
@@ -267,7 +267,7 @@ gives, for every fixed finite thermal occupation,
 \min_{\substack{f_1,f_2\in V_1,\ \Theta=\Theta_0\\ E\leq B}}
 \lim_{\delta\to0}\frac{1-F_{\mathrm{avg}}(\delta)}{\delta^2}
 =\frac45s_{V_1}(B;t)^2.
-\quad} \tag{5}
+\quad} \qquad\text{(5)}
 ```
 
 The attaining forces from above also attain (5), since both displacement

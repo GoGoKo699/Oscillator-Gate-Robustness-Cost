@@ -15,7 +15,7 @@ Set $`\hbar=1`$, fix $`T>0`$, and use
 ```math
 H_\delta(t)=\delta a^\dagger a+
 \sum_{j=1}^2 Z_j\bigl[f_j(t)a^\dagger+f_j(t)^*a\bigr].
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Here $`\delta\in\mathbb R`$ is an unknown static error. The predetermined,
@@ -32,7 +32,7 @@ equivalents are not substitute targets. The cost is
 ```math
 E=\|f_1\|_2^2+\|f_2\|_2^2
 =\int_0^T\bigl(|f_1(t)|^2+|f_2(t)|^2\bigr)\,dt.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 Both competitors receive the same $`V`$, duration, independent addressing, and
@@ -72,7 +72,7 @@ $`D(\beta)=\exp(\beta a^\dagger-\beta^*a)`$, the exact propagator is
 U_\delta(T)=e^{-i\delta T a^\dagger a}
 e^{i\varphi_{\rm g}(\delta)}e^{i\Theta(\delta)Z_1Z_2}
 D\bigl(B(T;\delta)\bigr),
-\tag{3}
+\qquad\text{(3)}
 ```
 
 where $`\varphi_{\rm g}`$ is an overall phase and
@@ -80,7 +80,7 @@ where $`\varphi_{\rm g}`$ is an overall phase and
 ```math
 \Theta(\delta)=\mathrm{Im}\int_0^T
 \bigl[\beta_1^*\dot\beta_2+\beta_2^*\dot\beta_1\bigr]\,dt.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 The oscillator rotation at the left of (3) disappears under the final
@@ -100,7 +100,7 @@ $`D(\beta)^\dagger aD(\beta)=a+\beta`$ imply
 &=Tn+\sum_{j=1}^2 Z_j(m_ja^\dagger+m_j^*a)
   +qI-\chi Z_1Z_2,
 \end{aligned}
-\tag{5}
+\qquad\text{(5)}
 ```
 
 with
@@ -108,7 +108,7 @@ with
 ```math
 \boxed{\chi=-2\mathrm{Re}\int_0^T
 \alpha_1(t)^*\alpha_2(t)\,dt.}
-\tag{6}
+\qquad\text{(6)}
 ```
 
 Indeed expanding the displaced number operator produces the cross term
@@ -120,7 +120,7 @@ also gives
 m_j=i\int_0^T t f_j(t)\,dt,
 \qquad
 \beta_j(T;\delta)=-i\delta m_j+O(\delta^2).
-\tag{7}
+\qquad\text{(7)}
 ```
 
 Equation (5) is an operator derivative on the oscillator's finite-number
@@ -142,7 +142,7 @@ Then $`I_{++}=I_{--}`$, $`I_{+-}=I_{-+}`$, and
 
 ```math
 \boxed{\chi=-\tfrac12(I_{++}-I_{+-}).}
-\tag{8}
+\qquad\text{(8)}
 ```
 
 Angle robustness therefore requires equal integrated displacement-induced
@@ -165,7 +165,7 @@ $`(Af)(t)=\int_0^t f(u)\,du`$. In an orthonormal basis of $`V`$, let
 K=P_V\frac{A^\dagger-A}{2i}P_V,
 \qquad
 D=P_VA^\dagger AP_V,
-\tag{9}
+\qquad\text{(9)}
 ```
 
 where the notation denotes restriction to $`V`$. For coefficient vectors
@@ -175,7 +175,7 @@ $`c_1,c_2`$ of the two forces, (4) and (6) become
 \Theta(0)=2\mathrm{Re}(c_1^\dagger Kc_2),\qquad
 \chi=-2\mathrm{Re}(c_1^\dagger Dc_2),\qquad
 E=\|c_1\|^2+\|c_2\|^2.
-\tag{10}
+\qquad\text{(10)}
 ```
 
 To verify the phase normalization, substitute $`\alpha_j=-iAf_j`$ into (4)
@@ -198,7 +198,7 @@ For $`V\ne\{0\}`$ define
 ```math
 \lambda=\|K\|,\qquad
 r=\min_{\zeta\in\mathbb R}\|K-\zeta D\|.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 **Theorem.** The nominal and static angle-robust minimum costs are
@@ -207,7 +207,7 @@ r=\min_{\zeta\in\mathbb R}\|K-\zeta D\|.
 \boxed{
 E_{\rm nom}=\frac{|\Theta_0|}{\lambda},\qquad
 E_{\rm angle}=\frac{|\Theta_0|}{r}.}
-\tag{12}
+\qquad\text{(12)}
 ```
 
 A zero efficiency means infeasibility for the prescribed nonzero target,
@@ -237,7 +237,7 @@ Set $`x=(c_1+c_2)/\sqrt2`$, $`y=(c_1-c_2)/\sqrt2`$. Then
 \Theta=x^\dagger Kx-y^\dagger Ky,\qquad
 -\chi=x^\dagger Dx-y^\dagger Dy,\qquad
 E=\|x\|^2+\|y\|^2.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 For $`\chi=0`$ and any real $`\zeta`$,
@@ -246,7 +246,7 @@ For $`\chi=0`$ and any real $`\zeta`$,
 |\Theta|=
 \left|x^\dagger(K-\zeta D)x-y^\dagger(K-\zeta D)y\right|
 \leq\|K-\zeta D\|E.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 To minimize this bound, write
@@ -263,7 +263,7 @@ infinities at the two ends of the real line. Hence there is a unique root
 
 ```math
 u(\zeta_*)+\ell(\zeta_*)=0.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 To its left the norm equals $`u(\zeta)`$ and strictly decreases; to its right
@@ -282,7 +282,7 @@ $`d_\pm=u_\pm^\dagger Du_\pm>0`$. Take
 x=\sqrt{\frac{d_-}{d_++d_-}}u_+,
 \qquad
 y=\sqrt{\frac{d_+}{d_++d_-}}u_-.
-\tag{16}
+\qquad\text{(16)}
 ```
 
 They obey $`\|x\|^2+\|y\|^2=1`$ and $`x^\dagger Dx=y^\dagger Dy`$.
@@ -292,7 +292,7 @@ Their phase is $`x^\dagger Lx-y^\dagger Ly=r`$. Therefore
 c_1=\sqrt{\frac{|\Theta_0|}{r}}\frac{x+y}{\sqrt2},\qquad
 c_2=\mathrm{sgn}(\Theta_0)
 \sqrt{\frac{|\Theta_0|}{r}}\frac{x-y}{\sqrt2}
-\tag{17}
+\qquad\text{(17)}
 ```
 
 attain the robust target with cost $`|\Theta_0|/r`$. The opposite-eigenvalue
@@ -335,7 +335,7 @@ For nominally feasible $`K\ne0`$,
 \boxed{E_{\rm angle}=E_{\rm nom}
 \quad\Longleftrightarrow\quad
 \lambda_{\max}(K)=-\lambda_{\min}(K)=\|K\|.}
-\tag{18}
+\qquad\text{(18)}
 ```
 
 Indeed $`r=\lambda`$ holds exactly when zero is the unique minimizer in (11),
@@ -366,7 +366,7 @@ $`f_1=f_2=g`$ in the $`+\lambda`$ eigenspace for a positive target, and form
 ```math
 f_1^{\rm sp}=\frac{g-g^*}{\sqrt2},\qquad
 f_2^{\rm sp}=\frac{g+g^*}{\sqrt2}.
-\tag{19}
+\qquad\text{(19)}
 ```
 
 These remain in $`V`$ and preserve $`|f_1|^2+|f_2|^2=2|g|^2`$ pointwise. Every
@@ -390,7 +390,7 @@ $`\phi(T)`$ and $`e^{i\delta u}`$ by $`e^{i\phi(u)}`$. Direct substitution gives
  \bigl\{\mathcal A(u,t)\cos[\phi(t)-\phi(u)]
        +\mathcal B(u,t)\sin[\phi(t)-\phi(u)]\bigr\},
 \end{aligned}
-\tag{20}
+\qquad\text{(20)}
 ```
 
 where $`\mathcal A(u,t)=\dot X(u)\dot Y(t)-\dot Y(u)\dot X(t)`$ and
@@ -399,7 +399,7 @@ $`\mathcal B(u,t)=\dot X(u)\dot X(t)+\dot Y(u)\dot Y(t)`$. Thus
 ```math
 \Theta_{\rm sp}[\delta]=\Theta_{\rm sp}[-\delta]
 =\tfrac12\bigl(\Theta_{\rm com}[\delta]+\Theta_{\rm com}[-\delta]\bigr).
-\tag{21}
+\qquad\text{(21)}
 ```
 
 At zero error the phase and cost are preserved, so an optimum can satisfy
@@ -429,7 +429,7 @@ i\Delta\Theta(p_z-p_w)
 +i\mathrm{Im}(\beta_z\beta_w^*)
 -\left(\bar n+\tfrac12\right)|\beta_z-\beta_w|^2
 \right].
-\tag{22}
+\qquad\text{(22)}
 ```
 
 The Weyl product in the thermal trace gives the displayed phase sign, and
@@ -440,7 +440,7 @@ $`F_{\rm avg}=(4F_e+1)/5`$ consequently yields
 
 ```math
 1-F_{\rm avg}=\frac1{20}\sum_{z,w}(1-\mathrm{Re}c_{zw}).
-\tag{23}
+\qquad\text{(23)}
 ```
 
 Use $`\beta_j=-i\delta m_j+O(\delta^2)`$ and
@@ -459,7 +459,7 @@ then give
 \boxed{
 \lim_{\delta\to0}\frac{1-F_{\rm avg}(\delta)}{\delta^2}
 =\frac45\left[\chi^2+(2\bar n+1)(|m_1|^2+|m_2|^2)\right].}
-\tag{24}
+\qquad\text{(24)}
 ```
 
 This leading thermal displacement-plus-angle coefficient is established in
@@ -476,7 +476,7 @@ $`\beta_j=O(\delta^2)`$ and $`\Delta\Theta=O(\delta^2)`$; substituting into
 ```math
 \boxed{1-F_{\rm avg}(\delta)=O(\delta^4)
 \quad\Longleftrightarrow\quad m_1=m_2=\chi=0.}
-\tag{25}
+\qquad\text{(25)}
 ```
 
 The Taylor remainders hold for each fixed $`L^2`$ force on the finite interval:
@@ -490,7 +490,7 @@ Now start with any prescribed nominally closed finite space $`V_0`$ and set
 
 ```math
 V_1=\left\{f\in V_0:\int_0^T t f(t)\,dt=0\right\}.
-\tag{26}
+\qquad\text{(26)}
 ```
 
 Compute $`K_1,D_1`$ by restriction to this space. Necessity in (25) forces
@@ -501,7 +501,7 @@ therefore proves the global optimum
 \boxed{E_{\rm quartic}(V_0)
 =\frac{|\Theta_0|}{r_1},\qquad
 r_1=\min_{\zeta\in\mathbb R}\|K_1-\zeta D_1\|.}
-\tag{27}
+\qquad\text{(27)}
 ```
 
 Take this cost as $`+\infty`$ if $`V_1=\{0\}`$ or $`r_1=0`$. When it is finite,
@@ -520,7 +520,7 @@ the sensitivity term in (13), for every pair in $`V`$,
 ```math
 \Theta=x^\dagger Lx-y^\dagger Ly-\zeta_*\chi,\qquad
 |\Theta|\leq rE+|\zeta_*|\,|\chi|.
-\tag{28}
+\qquad\text{(28)}
 ```
 
 For $`\zeta_*\ne0`$, (24) converts a cost cap below the robust threshold into

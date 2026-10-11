@@ -34,6 +34,8 @@ For named operators in GitHub mathematics, use `\mathrm{...}`; the renderer
 rejects `\operatorname`. Keep mathematical content unchanged in display fixes.
 Use fenced `math` blocks for display equations and `$`-backtick delimiters for
 inline mathematics so Markdown preserves matrix row breaks and norm bars.
+Keep equation numbers in the math row with `\qquad\text{(n)}`; GitHub's
+automatic `\tag{n}` layout can stack or overlap symbols.
 
 ## Preservation and verification
 
