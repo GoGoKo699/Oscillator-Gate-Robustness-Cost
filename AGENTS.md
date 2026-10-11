@@ -2,7 +2,11 @@
 
 Work only in `GoGoKo699/Oscillator-Gate-Robustness-Cost`. The user has authorized
 repository changes and merging; that authorization does not extend to other
-repositories. Start with `README.md`, `WORKSPACE.md`, and `work_orders/CURRENT.md`.
+repositories. Start with `README.md`, `research/CLAIMS.md`, and
+`research/THEORY.md`. The tutorial bridge supplies the single-source learning
+route; `research/RELATED_WORK.md` records attribution and exact source passages.
+The frontier, spectral restriction, and control-access pages contain the
+specialized results. `llms.txt` is the retrieval index for readers and assistants.
 
 ## Scientific scope
 
@@ -18,6 +22,14 @@ multimode, arbitrary-error, or finite-detuning optimality claim. Further model
 extensions need a new scientific work order. Credit the equality S-lemma,
 independent-pulse stabilization, quadrature gates, displacement moments, and
 average-fidelity identity. A failed source lookup is not evidence of novelty.
+
+## Reader-facing documentation
+
+Present the complete scientific account with explicit hypotheses and source
+attribution. Keep development chronology, review-status claims, abandoned
+candidate narratives, and lists of unperformed work out of the reading path.
+Maintain one canonical proof or source comparison and link to it from summaries.
+Use the Blümel paper and supplement, arXiv:1905.09292v2, as one learning anchor.
 
 ## Preservation and verification
 
@@ -37,6 +49,11 @@ Default verification is strict about reference bytes. The documented
 differences only after every scientific assertion, structure check, and archive
 integrity check passes; it must still report byte nonidentity explicitly.
 Numerical checks are not analytical proofs or external peer review.
+
+The preserved Fourier helper assumes distinct nonzero integer harmonics over
+their common period. Every archived example meets this precondition; the helper
+does not validate arbitrary frequency inputs. Preserve its source and use only
+the supported inputs documented in `REPRODUCIBILITY.md`.
 
 Before merging, review and verify the actual PR head, inspect hosted results,
 and use an expected-head guard. After merging, verify the merged main separately.

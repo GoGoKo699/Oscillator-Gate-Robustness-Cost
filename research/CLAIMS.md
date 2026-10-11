@@ -97,8 +97,7 @@ in [the self-contained theory](THEORY.md). Infeasibility has the exact
 characterization $r=0$ if and only if $K=cD$ for some real $c$; this includes
 every one-dimensional force space. The nominal target is already infeasible
 when $K=0$.
-The scalar optimization is a structured equality-S-lemma consequence, not a
-new general optimization theorem.
+The scalar optimization is a structured equality-S-lemma consequence.
 
 ## C2. When the angle penalty vanishes
 
@@ -164,7 +163,7 @@ E_{\mathrm{quartic}}(V_0)
 =\frac{|\Theta_0|}{\min_\zeta\|K_1-\zeta D_1\|}.
 $$
 
-Empty $V_1$ or zero efficiency means infeasibility. This is a corollary of the
+$V_1=\{0\}$ or zero efficiency means infeasibility. This is a corollary of the
 positive coefficient and C1. In conjugation-invariant spaces angle robustness
 is free **after** displacement constraints; imposing those constraints can
 itself raise the cost.
@@ -201,8 +200,8 @@ endpoint constructions and an exactly solved physical two-tone example.
 In a first-moment-zero space, the optimal quadratic thermal-infidelity
 coefficient is exactly $4s(B)^2/5$. In a general nominally closed space this
 quantity is a lower bound: displacement contributions must also be included,
-and their joint minimization is a different objective. These are local
-small-detuning coefficients for fixed controls, not finite-error guarantees.
+and their joint minimization is a different objective. These are leading
+small-detuning coefficients for fixed controls.
 
 ## C5. A positive spectral band forces growing cost
 
@@ -222,8 +221,7 @@ $$\frac{E_{\mathrm{angle}}}{E_{\mathrm{nom}}}
 This compares matched optima within each prescribed space; the nominal cost
 also grows with $N$. Duration, tone count, and absolute bandwidth stay fixed.
 The result is a same-model consequence of C1, with a complete
-[spectral proof and normalization](SPECTRAL_RESTRICTION.md). It establishes
-neither a sharp universal prefactor nor a device-power or finite-detuning law.
+[spectral proof and normalization](SPECTRAL_RESTRICTION.md).
 
 ## Attribution and evidence
 
@@ -233,7 +231,8 @@ displacement moments, trajectory-overlap sensitivity, and the leading thermal
 fidelity expansion have direct precedents. The [matched comparison](RELATED_WORK.md)
 identifies those passages and states how the optimization tasks differ.
 
-The self-contained proofs and [analytical review](PROOF_REVIEW.md) support the
-claims. The twenty archived scientific groups and supplemental checks provide
-reproducible evidence for their stated identities and constructions. Verification
-receipts separately record assertion success and reference-byte identity.
+The [self-contained theory](THEORY.md), [frontier proof](SENSITIVITY_FRONTIER.md),
+and [spectral proof](SPECTRAL_RESTRICTION.md) establish the claims.
+The 27 scientific check groups provide reproducible evidence for the stated
+identities and constructions. [Verification receipts](../REPRODUCIBILITY.md)
+separately record assertion success, source integrity, and reference-byte identity.

@@ -3,8 +3,8 @@
 The [exact robustness cost](CLAIMS.md#c1-exact-attainable-angle-cost) is the
 budget at which the smallest achievable angle slope first reaches zero. The
 same finite-space model also determines the entire budget-dependent minimum.
-Optimizing the supporting multiplier, instead of fixing it at the robust-cost
-optimizer, turns the earlier lower certificate into an attainable equality.
+Optimizing all supporting multipliers gives an exact, attainable formula
+for the residual sensitivity.
 
 ## Statement and conventions
 
@@ -42,7 +42,7 @@ attainment by forces.
 
 The function is nonincreasing and convex in its feasible budget variable.
 It vanishes exactly when $Br\geq t$. In particular, if $r=0$, no finite
-budget eliminates the slope. For $r>0$, its first zero is the existing
+budget eliminates the slope. For $r>0$, its first zero is the
 angle-robust threshold $t/r$.
 
 ## Joint numerical range and exact duality
@@ -184,7 +184,7 @@ of $D$ compressed to that phase eigenspace.
 
 ### Zero slope and proportional matrices
 
-When $r>0$ and $B\geq t/r$, the existing opposite-extreme construction
+When $r>0$ and $B\geq t/r$, the opposite-extreme construction
 attains zero slope at cost $t/r$. The reciprocal rescaling of $a,b$
 described above raises its cost to exactly $B$ if required.
 
@@ -198,7 +198,7 @@ includes every nominally feasible one-dimensional force space. Thus a
 zero robust efficiency is not confused with an asymptotically vanishing
 slope at larger budgets.
 
-## A physical two-tone example where the old certificate is strict
+## A physical two-tone example
 
 Choose $T=2\pi$ and the orthonormal forces
 $u_1(t)=e^{it}/\sqrt{2\pi}$ and
@@ -216,7 +216,7 @@ and their robust multiplier and efficiency are
 $$\zeta_*=3/5,\qquad r=\sqrt{13}/10.$$
 
 For target $t=1$, the nominal budget $B=1$ forces the top phase
-eigenvector, so (4) gives $s_V(1;1)=2$. The earlier certificate using only
+eigenvector, so (4) gives $s_V(1;1)=2$. The certificate using only
 $\zeta_*$ gives $(10-\sqrt{13})/6<2$.
 
 Strict improvement also holds at an interior budget. At $B=5/4$, let
@@ -236,7 +236,7 @@ s_V(5/4;1)=\frac{7-\sqrt6}{4}
 >\frac{5(8-\sqrt{13})}{24},
 $$
 
-where the right side is the previous single-multiplier certificate.
+where the right side is the centered-multiplier certificate.
 This is an angle-sensitivity example: its full force space has no imposed
 first-moment constraint, so the slope alone is not its complete thermal
 infidelity coefficient.
@@ -249,7 +249,7 @@ $$V_1=\left\{f\in V_0:\int_0^Tt f(t)dt=0\right\}.$$
 
 Assume the target is feasible in $V_1$ at budget $B$, and compute (1) from
 $K_1,D_1$ on that space. The established
-[thermal-channel expansion](../archive/consolidation-2026-10-09/THEOREM.md#3-exact-leading-average-infidelity-coefficient)
+[thermal-channel expansion](THEORY.md#6-full-thermal-gate-error-and-its-exact-minimum)
 gives, for every fixed finite thermal occupation,
 
 $$
@@ -273,9 +273,8 @@ or a statement about input power or peak-limited controls.
 ## Mathematical attribution and verification
 
 The convexity and support-function arguments use established numerical-range
-theory. They are not a new general convexity or duality theorem. This result
-completes the attainable sensitivity–cost relation for the physical control
-class used throughout the repository.
+theory to characterize the attainable sensitivity–cost relation for the
+prescribed physical control class.
 
 - **[S17]** Joel H. Shapiro, *Notes on the Numerical Range*, 5 May 2017,
   [author-hosted notes](https://www.joelshapiro.org/Pubvit/Downloads/NumRangeNotes/numrange_notes.pdf),

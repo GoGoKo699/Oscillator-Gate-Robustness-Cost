@@ -1,7 +1,7 @@
 # A spectral restriction can force unbounded robustness cost
 
-The [exact cost theorem](CLAIMS.md#c1-exact-attainable-angle-cost) has a
-simple consequence beyond an isolated costly example. If an admissible
+The [exact cost theorem](CLAIMS.md#c1-exact-attainable-angle-cost) gives a
+uniform spectral bound. If an admissible
 first-moment-zero force space uses only positive harmonics in a band
 $[a,b]$, with $0<a<b$, then
 
@@ -13,8 +13,7 @@ $$
 The ratio is infinite when the robust target is infeasible. Four consecutive
 tones with endpoint and first-moment conditions give a feasible family whose
 ratio grows at the same order as this bound. Both statements concern the
-same ideal oscillator and integrated-force cost as the original theorem;
-they are consequences of that theorem, not a new optimization principle.
+same ideal oscillator and integrated-force cost as the exact cost theorem.
 
 ## Positive-band bound
 
@@ -63,8 +62,7 @@ $\lambda=\|K\|>0$, it follows that
 $$r=\min_\xi\|K-\xi D\|\leq\|K-\zeta D\|\leq q\lambda.$$
 
 The exact cost formulas give the boxed result. This is a bound for every
-admissible pair in the space, not a limitation of one chosen pulse ansatz.
-It is not asserted to be the sharp universal bound.
+admissible pair in the space.
 
 ## A feasible four-tone family
 
@@ -129,7 +127,7 @@ This raw pencil is similar to the whitened Hermitian matrix. Its eigenvalues
 are $\pm r_N$, so the centering theorem identifies the global robust optimum.
 We do not take the Euclidean operator norm of the unwhitened pencil.
 Physical efficiencies are $\lambda_N/\nu,r_N/\nu$, and the physical optimal
-multiplier is $\nu\zeta_N$. The original $N=1$ example is recovered exactly:
+multiplier is $\nu\zeta_N$. At $N=1$ the exact values are
 $\zeta_1=155/71$ and $r_1^2=190905/4615^2$.
 
 The leading coefficients give
@@ -179,9 +177,6 @@ labels and examines a documented implementation.
 
 [The exact symbolic checker](../checks/check_spectral_cost.py) verifies the
 band identities, constraint kernel and matrix formulas, centered pencil,
-recovery of the old example, and asymptotic constants in three groups. It
-uses no fitted sweep or floating-point threshold. The root verifier runs
-these supplemental checks separately from the twenty immutable historical
-groups. Independent analytical review found no gap in the bound, family,
-normalization, or asymptotics. These checks support the proof above; they do
-not establish novelty or editorial significance.
+$N=1$ values, and asymptotic constants in three groups. It uses exact algebra
+for symbolic parameters. Run it through the
+[repository verifier](../REPRODUCIBILITY.md).
