@@ -1,0 +1,96 @@
+# Oscillator-Gate-Robustness-Cost
+
+> Exact integrated-force costs and attainable sensitivity tradeoffs for
+> static-detuning robustness of two-qubit gates mediated by one ideal oscillator.
+
+Repository: https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost
+Author: Ruge Lin
+Contact: [gogoko699@gmail.com](mailto:gogoko699@gmail.com)
+
+This repository is a research record and a guide for the author's self-directed
+learning. This index describes its scope and points to the current scientific
+account; it is not a substitute for the assumptions and proofs in those files.
+
+## Questions addressed
+
+- When does first-order detuning robustness require additional integrated force?
+- Which finite control spaces make angle robustness free, costly, or infeasible?
+- What is the smallest angle sensitivity attainable at a fixed force budget?
+- How do displacement robustness and angle robustness differ?
+- What is the exact cost of quartic-or-better small-detuning thermal infidelity?
+- Why can a narrow positive-frequency force band produce unbounded cost ratios?
+- How does independent-pulse stabilization lead to an exact joint optimization?
+
+Relevant terminology: oscillator-mediated entangling gates; spin-dependent
+forces; geometric phase; trapped-ion pulse design; static number detuning;
+trajectory overlap; force-space projection; conjugate quadratures; spectral
+optimization; equality S-lemma; joint numerical range.
+
+## Reading route
+
+- [Overview](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/README.md): the question, central formulas, and reading map.
+- [Tutorial bridge](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/TUTORIAL_BRIDGE.md): the path from Blümel et al. to this repository's notation, assumptions, and result.
+- [Claims and physical meaning](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/CLAIMS.md): precise comparison class, feasibility, and distinctions between robustness conditions.
+- [Self-contained theory](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/THEORY.md): dynamics, matrix reduction, exact costs, attaining controls, and thermal-channel consequences.
+- [Exact sensitivity frontier](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/SENSITIVITY_FRONTIER.md): the optimum at every feasible budget, endpoint cases, and a worked two-tone example.
+- [Spectral restriction](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/SPECTRAL_RESTRICTION.md): the positive-band bound and feasible four-tone family.
+- [Control access](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/CONTROL_ACCESS.md): sideband controls, effective-force normalization, and access to conjugate directions.
+
+## Single learning anchor and attribution
+
+The selected learning anchor is R. Blümel et al., *Power-optimal, stabilized
+entangling gate between trapped-ion qubits* (2021),
+[arXiv:1905.09292v2, including its supplement](https://arxiv.org/pdf/1905.09292v2).
+It is a research article with detailed derivations. Its main text develops
+projected spectral pulse optimization; supplement S16 treats independently
+stabilized pulses. The tutorial bridge explains the change of control class
+and normalization before comparing the optimization tasks.
+
+- [Matched related work](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/RELATED_WORK.md): what is inherited and what the scoped joint optimum adds.
+- [Source passages](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/SOURCE_REVIEW.md): locations supporting the literature comparison.
+- [Analytical review](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/PROOF_REVIEW.md): proof checks and qualifications.
+
+Independent-pulse stabilization, quadrature gates, displacement moments,
+trajectory-overlap sensitivity, and the leading thermal fidelity expansion
+have direct predecessors. Equality-S-lemma and numerical-range arguments are
+established mathematics. The repository's contribution is the exact jointly
+attained force-resource classification and sensitivity frontier in its stated
+model, with spectral and full-gate consequences.
+
+## Scope needed when using the results
+
+- One ideal linear oscillator mediates two independently chosen complex forces
+  in the same prescribed finite-dimensional, nominally closed force space.
+- The error is an unknown static number detuning. Controls do not depend on it.
+- Comparisons fix the duration, force normalization, control space, and nonzero
+  unwrapped target angle in exp(i Theta_0 Z_1 Z_2).
+- Cost is E = integral (|f_1|^2 + |f_2|^2) dt, the integrated squared effective
+  force. It is not automatically laboratory input power or a peak-amplitude cost.
+- With phase matrix K and positive overlap matrix D, the nominal cost is
+  |Theta_0| / ||K|| and the angle-robust cost is
+  |Theta_0| / min_{zeta real} ||K - zeta D||. A zero denominator means infeasibility.
+- Nominal closure, first-order displacement robustness, first-order angle
+  robustness, and phase evenness are different requirements.
+- Quartic-or-better thermal infidelity additionally needs both first force
+  moments to vanish. The oscillator initially has an uncorrelated thermal state
+  with fixed finite mean occupation; the statements are local in detuning.
+- Angle robustness has no additional cost when the space remaining after
+  displacement constraints is conjugation invariant. Imposing displacement
+  constraints can itself cost.
+- The positive-band penalty compares matched optima within each force space;
+  the nominal cost also grows along the four-tone family.
+- The theorem does not establish multimode, heating-optimal, individually
+  peak-constrained, or finite-detuning optimality, nor a device operating window.
+
+## Evidence and preserved material
+
+- [Reproducibility](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/REPRODUCIBILITY.md): pinned execution, scientific assertions, and report-identity checks.
+- [Archive inventory](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/provenance/archive.json): hashes anchoring the 89 preserved source files.
+- [Source archive](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/tree/main/archive/consolidation-2026-10-09): historical source versions and evidence.
+
+The current account is in the root README and research files linked above.
+Archived statements describe preserved versions and may be superseded there.
+Numerical checks support specified identities and constructions; they do not
+replace analytical proofs. Verification receipts distinguish assertion success,
+source integrity, and canonical report byte identity. Code-maintenance rules
+are in [AGENTS.md](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/AGENTS.md).
