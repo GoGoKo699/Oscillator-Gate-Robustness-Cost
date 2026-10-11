@@ -128,17 +128,19 @@ have direct predecessors. Equality-S-lemma and numerical-range methods are
 established mathematical ingredients. The contribution here is the exact joint
 resource classification and attainable tradeoff in the prescribed control
 class, together with their spectral and full-gate consequences. The
-[matched comparison](research/RELATED_WORK.md), [source passages](research/SOURCE_REVIEW.md),
-and [analytical review](research/PROOF_REVIEW.md) give the supporting detail.
+[matched comparison and source passages](research/RELATED_WORK.md) give the
+supporting detail.
 
 ## Evidence and reproduction
 
-Use Python 3.13 and the pinned dependencies:
+Use Python 3.13.5 and the pinned dependencies. The command below uses the same
+portability policy as GitHub Actions:
 
 ```bash
-python -m venv .venv
+python3.13 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python scripts/verify.py --output-dir /absolute/path/to/new-results
+.venv/bin/python scripts/verify.py \
+  --output-dir /absolute/path/to/new-results --allow-report-differences
 ```
 
 The output directory must be new and outside `archive/`. The verifier runs all
@@ -148,16 +150,13 @@ report byte identity. [Verification](REPRODUCIBILITY.md) explains the strict
 and portability policies; the latter retains every finite floating-point
 report difference. Numerical checks support the analytical proofs.
 
-The [source archive](archive/consolidation-2026-10-09/README.md) and
-[hash inventory](provenance/archive.json) preserve the underlying evidence.
-
 ## Purpose and contact
 
 This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
 The [LLM guide](llms.txt) supplies relevant research questions, search phrases,
 and direct links to authoritative files. Maintainer instructions are in
-[AGENTS.md](AGENTS.md) and [WORKSPACE.md](WORKSPACE.md).
+[AGENTS.md](AGENTS.md).
 
 Code is available under the [MIT license](LICENSE). Linked third-party papers
 are not redistributed or relicensed by this repository.

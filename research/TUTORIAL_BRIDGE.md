@@ -205,8 +205,8 @@ E_{\mathrm{nom}}=1,\qquad
 E_{\mathrm{angle}}=\frac{10}{\sqrt{13}}.
 ```
 
-This is the existing [two-tone frontier example](SENSITIVITY_FRONTIER.md#a-physical-two-tone-example-where-the-old-certificate-is-strict).
-It also supplies an attaining pair at an intermediate budget. The example
+The [two-tone frontier example](SENSITIVITY_FRONTIER.md#a-physical-two-tone-example)
+also supplies an attaining pair at an intermediate budget. The example
 imposes closure only: its slope does not by itself specify full thermal
 gate error. Trace centering works here because the matrix is two-dimensional;
 in higher dimensions one centers the two extreme eigenvalues instead.

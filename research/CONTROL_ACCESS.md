@@ -9,8 +9,8 @@ does not remove a direction. Completing a space with all its conjugates gives
 $$E_{\mathrm{angle}}(V+\overline V)
 =E_{\mathrm{nom}}(V+\overline V)\leq E_{\mathrm{nom}}(V),$$
 
-provided the nominal nonzero target in $V$ is feasible. This is an elementary
-consequence of the existing [balanced-spectrum theorem](CLAIMS.md#c2-when-the-angle-penalty-vanishes).
+provided the nominal nonzero target in $V$ is feasible. This follows from
+the [balanced-spectrum theorem](CLAIMS.md#c2-when-the-angle-penalty-vanishes).
 It specifies the control and resource assumptions needed to interpret a
 positive-band penalty physically.
 
@@ -19,9 +19,10 @@ positive-band penalty physically.
 Use one selected motional mode, the Lamb–Dicke and sideband rotating-wave
 approximations, and balanced real red/blue Rabi envelopes $\Omega_j(t)$.
 Let $\eta_j$ include the selected mode's real participation factor and put
-$g_j=\eta_j\Omega_j/2$. A phase convention consistent with the standard
-sideband decomposition in [Lee et al., Eqs. (28)–(30)](https://arxiv.org/pdf/quant-ph/0505203)
-is
+$g_j=\eta_j\Omega_j/2$. P. J. Lee et al., *Phase Control of Trapped Ion
+Quantum Gates*, [quant-ph/0505203v1](https://arxiv.org/pdf/quant-ph/0505203v1),
+§2.3, Eqs. (28)–(30), PDF pp. 13–14, separate the spin and force phases.
+A phase convention consistent with that sideband decomposition is
 
 $$H_j=g_j\sigma_+^j
 \left[a e^{i\Delta t-i\phi_r^j}
@@ -123,32 +124,34 @@ If instead all eight raw harmonics are granted and only the two combined
 endpoint/moment constraints are imposed, the admissible dimension is six.
 That space is also conjugation invariant, but has its own nominal optimum.
 
-## What the QSCOUT example establishes
+## Interpreting QSCOUT controls
 
-[Yale et al.](https://arxiv.org/html/2504.06259v1), Introduction and Eq. (2),
-describe individually addressed two-tone controls and a multimode Hamiltonian.
-Section II selects Gaussian shaping and mode balancing. Sections III–IV
-describe saturation and optical coupling calibration. Selecting one mode
-gives a conditional effective-force mapping, not an account of that complete
-operating protocol.
+C. G. Yale et al., *Realization and Calibration of Continuously Parameterized
+Two-Qubit Gates on a Trapped-Ion Quantum Processor*,
+[arXiv:2504.06259v1](https://arxiv.org/html/2504.06259v1), Introduction and
+Eq. (2), describe individually addressed two-tone controls and a multimode
+Hamiltonian. Section II selects Gaussian shaping and mode balancing;
+Sections III–IV describe saturation and optical coupling calibration.
+Eqs. (3)–(4) and (13) give the relevant gate and calibration relations.
 
-[Clark et al.](https://arxiv.org/html/2104.00759v1), Section VI A, document
+S. M. Clark et al., *Engineering the Quantum Scientific Computing Open User
+Testbed (QSCOUT): Design details and user guide*,
+[arXiv:2104.00759v1](https://arxiv.org/html/2104.00759v1), §VI A and its
+phase-synchronization and gate-sequencer subsections (VI.1 in HTML), document
 tone-resolved amplitude, phase, and frequency programming, together with
-finite RF range, digital precision, spline, and memory constraints. Those
-constraints do not by themselves impose a positive-harmonic output-force
-space relative to one motional mode. Positive laboratory frequencies and
-the two red/blue tones are not the signs of that output-force spectrum.
+finite RF range, digital precision, spline, and memory constraints.
 
-**Audit conclusion:** this documented candidate does not establish the hard
-one-sided restriction required to interpret the spectral penalty as an
-unavoidable device constraint. The phase dictionary identifies the control
-to check; it does not prove every mirrored waveform satisfies the hardware's
-limits. The attenuation lemma also does not establish that a real device has
-unrestricted inputs or a conjugation-invariant feasible set.
+The admissible effective-force space is distinct from both the laboratory
+tone labels and a selected gate waveform. Positive laboratory frequencies
+and the two red/blue tones do not by themselves impose a positive-harmonic
+output-force space relative to one motional mode. The spectral penalty
+requires that restriction on the complete allowed force space; the cited
+controls alone establish neither that restriction nor unrestricted access
+to every conjugate waveform.
 
-A valid realization would additionally need the chosen offsets, modulation,
-and required amplitudes to preserve the sideband and Lamb–Dicke approximations,
-with the neglected modes under control. The checked mode-balancing protocol
-does not certify that regime for the one-sided family. Assigning a numerical
-operating window would therefore be unsupported. The exact restricted-space
-cost theorem and its asymptotics remain unchanged.
+A one-mode interpretation uses balanced sidebands and a fixed spin axis
+within the sideband and Lamb–Dicke approximations, with neglected modes
+under control. The calibrated control map determines the effective forces
+and their squared-force cost. Optical or RF input energy uses its own
+calibrated resource model, while finite input and waveform limits determine
+which force directions are actually admissible.

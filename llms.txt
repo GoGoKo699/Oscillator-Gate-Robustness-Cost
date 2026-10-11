@@ -46,9 +46,7 @@ projected spectral pulse optimization; supplement S16 treats independently
 stabilized pulses. The tutorial bridge explains the change of control class
 and normalization before comparing the optimization tasks.
 
-- [Matched related work](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/RELATED_WORK.md): what is inherited and what the scoped joint optimum adds.
-- [Source passages](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/SOURCE_REVIEW.md): locations supporting the literature comparison.
-- [Analytical review](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/PROOF_REVIEW.md): proof checks and qualifications.
+- [Matched related work and source passages](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/research/RELATED_WORK.md): inherited ingredients, exact source locations, and the scoped joint optimum.
 
 Independent-pulse stabilization, quadrature gates, displacement moments,
 trajectory-overlap sensitivity, and the leading thermal fidelity expansion
@@ -79,13 +77,11 @@ model, with spectral and full-gate consequences.
   constraints can itself cost.
 - The positive-band penalty compares matched optima within each force space;
   the nominal cost also grows along the four-tone family.
-- The theorem does not establish multimode, heating-optimal, individually
-  peak-constrained, or finite-detuning optimality, nor a device operating window.
 
 ## Evidence and preserved material
 
 - [Reproducibility](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/REPRODUCIBILITY.md): pinned execution, scientific assertions, and report-identity checks.
-- [Archive inventory](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/provenance/archive.json): hashes anchoring the 89 preserved source files.
+- [Source provenance](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/blob/main/provenance/README.md): source package and hashes anchoring the 89 preserved files.
 - [Source archive](https://github.com/GoGoKo699/Oscillator-Gate-Robustness-Cost/tree/main/archive/consolidation-2026-10-09): historical source versions and evidence.
 
 The current account is in the root README and research files linked above.

@@ -319,7 +319,7 @@ $$
 $$
 
 or $\rho\geq\|K-\zeta D\|$. The general optimization principle is established
-mathematics; see [the primary-source specialization](SOURCE_REVIEW.md).
+mathematics; see [the source passages](RELATED_WORK.md).
 
 An optimal candidate with $r>0$ can be certified by
 $rI\pm(K-\zeta D)\succeq0$, together with an actual pair satisfying
@@ -465,7 +465,8 @@ $$
 This leading thermal displacement-plus-angle coefficient is established in
 the gate literature, including Huo et al., Appendix G, Eq. (89). The
 [matched source comparison](RELATED_WORK.md) identifies that precedent and
-the [source review](SOURCE_REVIEW.md) gives Nielsen's fidelity normalization.
+the average-fidelity normalization, including the Horodecki attribution
+recorded by Nielsen.
 
 All weights are strictly positive. A quartic-or-better error therefore
 requires $m_1=m_2=\chi=0$. Conversely those vanishings give
@@ -552,8 +553,7 @@ and nominal power eigenproblems in Blümel et al.; angle-robust gates in Jia
 et al.; displacement, phase-slope, and thermal-error formulas in Huo et al.;
 the equality S-lemma in Xia--Wang--Sheu; and the average-fidelity identity in
 Nielsen. Bibliographic entries and the matched comparison are in
-[RELATED_WORK.md](RELATED_WORK.md); the inspected passages are recorded in
-[SOURCE_REVIEW.md](SOURCE_REVIEW.md).
+[RELATED_WORK.md](RELATED_WORK.md), together with the relevant source passages.
 
 The analytical claims above are proved independently of numerical sampling.
 The [verification instructions](../REPRODUCIBILITY.md) reproduce the preserved
